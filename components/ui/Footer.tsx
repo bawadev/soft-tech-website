@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Container } from './Container';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold mb-4 text-gradient">
-              Soft Tech
+            <div className="mb-4">
+              <Logo />
             </div>
             <p className="text-secondary-300 mb-4 max-w-md">
               Your strategic AI technology partner. We help businesses gain competitive advantage through cutting-edge AI solutions and strategic consultation.
@@ -71,7 +72,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-secondary-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Soft Tech. All rights reserved.
+              © {currentYear} Softx World. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacy" className="text-secondary-400 hover:text-primary-400 text-sm transition-colors">

@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
+import { Metadata } from 'next';
 import { Navigation, Footer, Container, Card, Button } from '@/components/ui';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo/schemas';
 
 // This would typically come from a CMS or database
 const blogPostsData: Record<string, any> = {
@@ -9,7 +12,7 @@ const blogPostsData: Record<string, any> = {
     title: 'AI Transformation: How Small Businesses Can Compete with Enterprise Giants',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
     category: 'AI Technology',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2024-01-15',
     readTime: '5 min read',
     content: `
@@ -44,8 +47,55 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogPostsData[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPostsData[slug];
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  const description = post.content.substring(0, 160).replace(/<[^>]*>/g, '').trim() + '...';
+
+  return {
+    title: post.title,
+    description: description,
+    keywords: [post.category, 'AI technology', 'business growth', 'digital transformation'],
+    authors: [{ name: post.author, url: 'https://softx-world.com' }],
+    openGraph: {
+      title: post.title,
+      description: description,
+      type: 'article',
+      url: `https://softx-world.com/blog/${slug}`,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      publishedTime: post.date,
+      authors: [post.author],
+      section: post.category,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: description,
+      images: [post.image],
+    },
+    alternates: {
+      canonical: `https://softx-world.com/blog/${slug}`,
+    },
+  };
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = blogPostsData[slug];
 
   if (!post) {
     return (
@@ -78,8 +128,34 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
     },
   ];
 
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.content.substring(0, 160).replace(/<[^>]*>/g, '').trim(),
+    image: post.image,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    author: post.author,
+    url: `https://softx-world.com/blog/${slug}`,
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://softx-world.com' },
+    { name: 'Blog', url: 'https://softx-world.com/blog' },
+    { name: post.title, url: `https://softx-world.com/blog/${slug}` },
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navigation />
 
       {/* Hero Image */}
@@ -88,10 +164,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           src={post.image}
           alt={post.title}
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-secondary-900/60"></div>
         <Container className="relative h-full flex items-end pb-12">
           <div className="text-white max-w-4xl">
             <div className="inline-block px-4 py-2 bg-primary-600 rounded-full text-sm font-medium mb-4">
@@ -134,14 +211,14 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                     {post.author}
                   </h4>
                   <p className="text-secondary-600">
-                    The Soft Tech team brings 7+ years of experience in AI technology and business transformation. We're passionate about helping businesses leverage cutting-edge technology for competitive advantage.
+                    The Softx World team brings 7+ years of experience in AI technology and business transformation. We're passionate about helping businesses leverage cutting-edge technology for competitive advantage.
                   </p>
                 </div>
               </div>
             </Card>
 
             {/* CTA */}
-            <Card className="bg-gradient-to-r from-primary-600 to-accent-600 text-white text-center" padding="lg">
+            <Card className="bg-primary-600 text-white text-center" padding="lg">
               <h3 className="text-2xl font-bold mb-4">
                 Ready to Transform Your Business?
               </h3>
@@ -169,6 +246,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                       src={relatedPost.image}
                       alt={relatedPost.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </div>

@@ -5,8 +5,41 @@ import { Metadata } from 'next';
 import { Navigation, Footer, Container, Card, Button } from '@/components/ui';
 
 export const metadata: Metadata = {
-  title: 'Blog - AI Insights & Business Growth | Soft Tech',
-  description: 'Stay updated with the latest trends in AI technology, business growth strategies, and technology insights from Soft Tech experts.',
+  title: 'Blog - AI Insights & Business Growth',
+  description: 'Stay updated with the latest trends in AI technology, business growth strategies, and technology insights from Softx World experts. Expert articles on AI implementation, digital transformation, and business success.',
+  keywords: [
+    'AI blog',
+    'business technology articles',
+    'AI transformation',
+    'digital transformation',
+    'legacy system migration',
+    'customer acquisition strategies',
+    'AI chat agents',
+    'technology insights'
+  ],
+  openGraph: {
+    title: 'Blog - AI Insights & Business Growth | Softx World',
+    description: 'Expert articles on AI technology, business growth strategies, and digital transformation from Softx World.',
+    type: 'website',
+    url: 'https://softx-world.com/blog',
+    images: [
+      {
+        url: '/og-blog.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Softx World Blog - AI Insights & Business Growth',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - AI Insights & Business Growth | Softx World',
+    description: 'Expert articles on AI technology and business growth strategies.',
+    images: ['/twitter-blog.jpg'],
+  },
+  alternates: {
+    canonical: 'https://softx-world.com/blog',
+  },
 };
 
 const blogPosts = [
@@ -16,7 +49,7 @@ const blogPosts = [
     excerpt: 'Discover how AI levels the playing field and gives small businesses the tools to compete effectively with larger competitors.',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80',
     category: 'AI Technology',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2024-01-15',
     readTime: '5 min read',
   },
@@ -26,7 +59,7 @@ const blogPosts = [
     excerpt: 'Step-by-step approach to modernizing outdated systems without disrupting your business operations.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
     category: 'Technology',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2024-01-10',
     readTime: '8 min read',
   },
@@ -36,7 +69,7 @@ const blogPosts = [
     excerpt: 'Learn how AI-powered tools can help you identify, attract, and convert more customers effectively.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     category: 'Business Growth',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2024-01-05',
     readTime: '6 min read',
   },
@@ -46,7 +79,7 @@ const blogPosts = [
     excerpt: 'Key metrics and KPIs to measure the success of your AI chat agent implementation.',
     image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
     category: 'AI Technology',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2024-01-01',
     readTime: '7 min read',
   },
@@ -56,7 +89,7 @@ const blogPosts = [
     excerpt: 'Case studies showing how businesses leverage AI to gain significant competitive advantages.',
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
     category: 'Business Strategy',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2023-12-28',
     readTime: '9 min read',
   },
@@ -66,7 +99,7 @@ const blogPosts = [
     excerpt: 'Explore how AI is transforming workplace dynamics and what it means for your business.',
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
     category: 'Future Trends',
-    author: 'Soft Tech Team',
+    author: 'Softx World Team',
     date: '2023-12-20',
     readTime: '6 min read',
   },
@@ -80,7 +113,7 @@ export default function BlogPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-accent-50">
+      <section className="pt-32 pb-16 bg-primary-50">
         <Container>
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="heading-1 mb-6">
@@ -120,7 +153,9 @@ export default function BlogPage() {
                   src={blogPosts[0].image}
                   alt={blogPosts[0].title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
+                  priority
                 />
               </div>
               <div className="p-8">
@@ -156,6 +191,7 @@ export default function BlogPage() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -189,7 +225,7 @@ export default function BlogPage() {
           </div>
 
           {/* Newsletter CTA */}
-          <Card className="mt-16 bg-gradient-to-r from-primary-600 to-accent-600 text-white text-center" padding="lg">
+          <Card className="mt-16 bg-primary-600 text-white text-center" padding="lg">
             <h3 className="text-3xl font-bold mb-4">
               Subscribe to Our Newsletter
             </h3>
