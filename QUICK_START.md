@@ -9,7 +9,7 @@ cd soft-tech-website
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3200](http://localhost:3200) in your browser.
 
 ### Step 2: Explore the Website
 
@@ -130,6 +130,6 @@ The website is fully functional and production-ready. Make the customizations ab
 
 ---
 
-**Server running?** The dev server should be at [http://localhost:3000](http://localhost:3000)
+**Server running?** The dev server should be at [http://localhost:3200](http://localhost:3200)
 
 **Not running?** Use `npm run dev` to start it.

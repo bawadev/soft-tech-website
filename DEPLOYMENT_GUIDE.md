@@ -116,9 +116,9 @@ RUN chown -R appuser:nodejs /app
 USER appuser
 
 # Expose port
-EXPOSE 3000
+EXPOSE 3200
 
-ENV PORT 3000
+ENV PORT 3200
 ENV HOSTNAME "0.0.0.0"
 
 # Start application
@@ -182,7 +182,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --only=production
 COPY . .
-EXPOSE 3000
+EXPOSE 3200
 CMD ["node", "index.js"]
 ```
 
@@ -199,10 +199,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3200:3200"
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=3200
     restart: unless-stopped
 ```
 
@@ -252,7 +252,7 @@ ufw allow 80/tcp
 ufw allow 443/tcp
 
 # Allow Dokploy (if needed)
-ufw allow 3000/tcp
+ufw allow 3200/tcp
 
 # Enable firewall
 ufw enable
@@ -286,7 +286,7 @@ docker-compose up -d
 
 ### Access Dokploy
 
-1. Open browser: `http://YOUR_SERVER_IP:3000`
+1. Open browser: `http://YOUR_SERVER_IP:3200`
 2. Complete initial setup:
    - Create admin account
    - Set secure password
@@ -365,7 +365,7 @@ git push -u origin master
 
 ### 1. Create New Project
 
-1. Log into Dokploy dashboard: `http://YOUR_SERVER_IP:3000`
+1. Log into Dokploy dashboard: `http://YOUR_SERVER_IP:3200`
 2. Click **"Create Project"**
 3. Enter project details:
    - **Name**: Your Project Name
@@ -517,7 +517,7 @@ Add a **CNAME Record**:
 3. Enter domain details:
    - **Domain**: `your-domain.com` or `subdomain.your-domain.com`
    - **Path**: `/` (default)
-   - **Port**: `3000` (or your app's port)
+   - **Port**: `3200` (or your app's port)
 4. **Enable SSL/TLS**:
    - Toggle **"Certificate"** to ON
    - Select **"Generate Certificate"**
@@ -603,10 +603,10 @@ module.exports = {
 
 #### 3. Port Already in Use
 
-**Error**: Port 3000 is already in use
+**Error**: Port 3200 is already in use
 
 **Solution**:
-- Dokploy uses port 3000
+- Dokploy uses port 3200
 - Use different port for your app in Dockerfile
 - Or, let Dokploy's Traefik handle routing (recommended)
 

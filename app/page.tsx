@@ -1,7 +1,7 @@
 import React from 'react';
 import Script from 'next/script';
 import { Navigation, Footer } from '@/components/ui';
-import { Hero, About, Services, Portfolio, Pricing, Contact } from '@/components/sections';
+import { Hero, TrustedCompanies, About, Services, Portfolio, Pricing, Contact } from '@/components/sections';
 import { ServicesSchema, WebSiteSchema } from '@/lib/seo/schemas';
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
       />
       <Navigation />
       <Hero />
+      <TrustedCompanies />
       <About />
       <Services />
       <Portfolio />

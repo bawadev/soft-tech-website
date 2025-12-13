@@ -127,14 +127,14 @@ Vercel is the easiest way to deploy Next.js applications.
    COPY --from=builder /app/node_modules ./node_modules
    COPY --from=builder /app/package.json ./package.json
 
-   EXPOSE 3000
+   EXPOSE 3200
    CMD ["npm", "start"]
    ```
 
 2. **Build and Run**
    ```bash
    docker build -t soft-tech-website .
-   docker run -p 3000:3000 soft-tech-website
+   docker run -p 3200:3200 soft-tech-website
    ```
 
 ## Post-Deployment

@@ -1,0 +1,2 @@
+- test the changes with playwrite mcp browser
+- this application should run on 3200

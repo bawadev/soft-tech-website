@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Rocket, Bot } from 'lucide-react';
-import { Button, Container, TrustedBy } from '../ui';
+import { Button, Container } from '../ui';
 
 export const Hero: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose">
-              We don't just build websites—we bring you actual clients. Partner with Softx World for cutting-edge AI solutions that drive growth and competitive advantage.
+              We don't build websites—we build platforms that bring actual customers to your doorstep. Partner with Softx World for cutting-edge AI solutions that drive growth and competitive advantage.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -58,9 +58,6 @@ export const Hero: React.FC = () => {
                 <div className="text-xs sm:text-sm text-secondary-700">Support</div>
               </div>
             </div>
-
-            {/* Trusted By Section */}
-            <TrustedBy showTestimonial={true} />
           </div>
 
           {/* Right Content - Hero Image */}
