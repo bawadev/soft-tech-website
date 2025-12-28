@@ -11,14 +11,14 @@ export const Pricing: React.FC = () => {
 
   const packages = [
     {
-      name: 'Starter',
-      description: 'Perfect for small businesses getting started with AI',
+      name: 'Essential',
+      description: 'Get started with AI chatbots and basic automation. Perfect for small businesses wanting to reduce support costs.',
       price: 'Starting at $2,500',
       priceDetail: 'Typical range: $2,500 - $5,000',
       features: [
-        'AI Chat Agent Integration',
-        'Basic Analytics Dashboard',
-        'Email Support',
+        'AI Chatbot (80% query handling)',
+        'Basic RAG Knowledge System',
+        'Email Support (under 2 hrs response)',
         '3 Months Support',
         'Up to 1,000 monthly interactions',
       ],
@@ -26,29 +26,29 @@ export const Pricing: React.FC = () => {
       badge: null,
     },
     {
-      name: 'Professional',
-      description: 'Ideal for growing businesses ready to scale',
+      name: 'Growth',
+      description: 'Full automation suite with n8n workflows, advanced RAG, and marketing tools. Delivers 3-5x ROI within 6 months.',
       price: 'Starting at $5,000',
       priceDetail: 'Typical range: $5,000 - $12,000',
       features: [
-        'Everything in Starter',
-        'Custom AI Knowledge System',
-        'Legacy System Migration',
+        'Everything in Essential',
+        'Advanced RAG (3.5x ROI per $1)',
+        'n8n Workflow Automation',
         'Priority 24/7 Support',
         'Unlimited interactions',
-        'Advanced Analytics',
+        'Advanced Analytics Dashboard',
         '1 Year Support',
       ],
       highlighted: true,
       badge: 'Most Popular',
     },
     {
-      name: 'Enterprise',
-      description: 'Comprehensive solution for large-scale operations',
+      name: 'Partner',
+      description: 'Complete customer acquisition machine. AI, automation, marketing, and dedicated account management. We become your growth partner.',
       price: 'Starting at $15,000',
       priceDetail: 'Custom quote based on scope',
       features: [
-        'Everything in Professional',
+        'Everything in Growth',
         'Dedicated Account Manager',
         'Custom AI Solutions',
         'Multi-platform Integration',
@@ -150,7 +150,7 @@ export const Pricing: React.FC = () => {
           Transparent <span className="text-gradient">Pricing</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          Custom solutions tailored to your needs and budget. Every package includes our commitment to your long-term success.
+          Simple, value-based pricing from a team of senior engineers who previously worked at Sri Lanka's leading software companies. Every dollar you invest returns $3.50+ in ROI through automation, efficiency, and customer acquisition.
         </p>
       </div>
 

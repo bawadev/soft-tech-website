@@ -20,42 +20,45 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-5 sm:mb-6">
-              <Rocket className="w-4 h-4" aria-hidden="true" />
-              <span>AI-Powered Business Solutions</span>
+            {/* Trust Badge */}
+            <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Built by Ex-Employees from Sri Lanka's Tech Giants
             </div>
 
             <h1 className="heading-1 mb-5 sm:mb-6">
-              Transform Your Business with{' '}
-              <span className="text-gradient">AI Technology</span>
+              You Focus on Business.{' '}
+              <span className="text-gradient">We Bring You Customers.</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose">
-              We don't build websites—we build platforms that bring actual customers to your doorstep. Partner with Softx World for cutting-edge AI solutions that drive growth and competitive advantage.
+              Our team consists of senior engineers and solution architects who previously worked at Sri Lanka's leading software companies. We bring enterprise-grade expertise in AI, automation, and digital transformation to deliver results that actually matter for your business.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-              <Button href="#contact" size="lg">
-                Get Free Consultation
+              <Button href="#contact" size="lg" className="shadow-xl">
+                Start Getting Customers
               </Button>
-              <Button href="#services" variant="outline" size="lg">
-                Explore Services
+              <Button href="#services" variant="secondary" size="lg">
+                See How It Works
               </Button>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-6 sm:gap-8 items-center">
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">7+</div>
-                <div className="text-xs sm:text-sm text-secondary-700">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary-600">90%</div>
+                <div className="text-xs sm:text-sm text-secondary-700">Cost Reduction</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">50+</div>
-                <div className="text-xs sm:text-sm text-secondary-700">Projects Delivered</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary-600">$3.5</div>
+                <div className="text-xs sm:text-sm text-secondary-700">Avg ROI per $1</div>
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-primary-600">24/7</div>
-                <div className="text-xs sm:text-sm text-secondary-700">Support</div>
+                <div className="text-xs sm:text-sm text-secondary-700">Customer Acquisition</div>
               </div>
             </div>
           </div>
@@ -64,7 +67,7 @@ export const Hero: React.FC = () => {
           <div className="relative animate-fade-in">
             <div className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
                 alt="AI Technology and Business Growth"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
@@ -76,29 +79,9 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl animate-scale-in hidden sm:block">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <span className="text-2xl">✓</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-secondary-900">100% Client Satisfaction</div>
-                  <div className="text-sm text-secondary-700">Guaranteed Results</div>
-                </div>
-              </div>
-            </div>
+            
 
-            <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-xl animate-scale-in hidden sm:block">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-primary-600" aria-hidden="true" />
-                </div>
-                <div>
-                  <div className="font-semibold text-secondary-900">AI-Powered</div>
-                  <div className="text-sm text-secondary-700">Latest Technology</div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </Container>

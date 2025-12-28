@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp } from 'lucide-react';
+import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Zap, Globe, Megaphone } from 'lucide-react';
 import { Section, Card, Button } from '../ui';
 
 interface Service {
@@ -29,33 +29,101 @@ export const Services: React.FC = () => {
       id: 'ai-solutions',
       name: 'AI Solutions',
       icon: Sparkles,
-      description: 'Cutting-edge artificial intelligence to transform your business',
+      description: 'AI chatbots and RAG systems that handle 80% of customer queries automatically',
       services: [
         {
           icon: Bot,
           title: 'AI-Powered Chat Agents',
-          description: 'Intelligent conversational AI that engages customers 24/7, qualifies leads, and drives conversions. Seamlessly integrate with your existing systems.',
+          description: '24/7 intelligent chatbots that qualify leads, handle support queries, and drive conversions. Cut support costs by up to 90% while boosting satisfaction by 30%.',
           features: [
-            'Natural language processing',
-            'Multi-language support',
-            'Custom training on your data',
-            'CRM integration',
+            'Handles 80% of routine queries',
+            'Response time: under 5 seconds',
+            'Custom RAG training on your data',
+            'CRM & email integration',
           ],
           pricing: 'Starting at $2,999/mo',
-          cta: 'Explore Chat Agents',
+          cta: 'Deploy Chatbot',
         },
         {
           icon: BookOpen,
-          title: 'AI Knowledge Systems',
-          description: 'Build intelligent knowledge bases that learn and evolve. Empower your team and customers with instant access to accurate information.',
+          title: 'RAG Knowledge Systems',
+          description: 'Retrieval-Augmented Generation that provides accurate, context-aware responses from your business data. Deliver $3.5 ROI for every $1 invested.',
           features: [
-            'Semantic search capabilities',
-            'Automated content updates',
-            'User behavior analytics',
-            'Multi-source integration',
+            'Semantic search on your documents',
+            'Real-time data updates',
+            'Source attribution & citations',
+            'Multi-format integration (PDF, DB, API)',
           ],
           pricing: 'Starting at $1,999/mo',
-          cta: 'Build Knowledge Base',
+          cta: 'Build RAG System',
+        },
+      ],
+    },
+    {
+      id: 'automation',
+      name: 'Automation',
+      icon: Zap,
+      description: 'n8n-powered workflows that eliminate manual tasks and save 20+ hours weekly',
+      services: [
+        {
+          icon: RefreshCw,
+          title: 'n8n Business Automation',
+          description: 'Custom workflow automation using n8n that connects your tools, eliminates manual data entry, and scales with your business. Typical ROI: 3-5x within 6 months.',
+          features: [
+            '500+ tool integrations available',
+            'Lead management workflows',
+            'Customer support automation',
+            'Accounting & finance workflows',
+          ],
+          pricing: 'Starting at $1,499/mo',
+          cta: 'Automate Your Workflows',
+        },
+        {
+          icon: Wrench,
+          title: 'API Integration Services',
+          description: 'Connect your business systems with custom API integrations. Enable real-time data sync between CRM, ERP, marketing platforms, and more.',
+          features: [
+            'RESTful & GraphQL APIs',
+            'Real-time data synchronization',
+            'Error handling & retry logic',
+            'Webhook notifications',
+          ],
+          pricing: 'Starting at $2,499/mo',
+          cta: 'Integrate Your Systems',
+        },
+      ],
+    },
+    {
+      id: 'marketing-growth',
+      name: 'Marketing & Growth',
+      icon: Megaphone,
+      description: 'Data-driven marketing that brings you qualified leads and paying customers',
+      services: [
+        {
+          icon: Briefcase,
+          title: 'Strategic Consultation',
+          description: 'Navigate the rapidly changing technology landscape with expert guidance. We help you identify opportunities and implement solutions that matter.',
+          features: [
+            'Email drip campaigns',
+            'Lead scoring & qualification',
+            'Social media automation',
+            'A/B testing & optimization',
+          ],
+          pricing: 'Starting at $2,999/mo',
+          cta: 'Start Getting Leads',
+        },
+        {
+          icon: BarChart3,
+          title: 'Customer Acquisition',
+          description: 'Comprehensive customer acquisition strategy combining paid ads, content marketing, and SEO. We focus on ROI: generating qualified leads that convert into revenue.',
+          features: [
+            'Google Ads & Meta Ads management',
+            'Content marketing & SEO',
+            'Conversion rate optimization',
+            'Monthly performance reports',
+          ],
+          pricing: 'Starting at $3,999/mo',
+          cta: 'Grow Your Revenue',
         },
       ],
     },
@@ -63,67 +131,33 @@ export const Services: React.FC = () => {
       id: 'modernization',
       name: 'Modernization',
       icon: Rocket,
-      description: 'Transform legacy systems into modern, scalable solutions',
+      description: 'Software migration and legacy system modernization that future-proofs your business',
       services: [
         {
           icon: RefreshCw,
-          title: 'Legacy System Migrations',
-          description: 'Transform outdated systems into modern AI-powered solutions. Maintain business continuity while upgrading to cutting-edge technology.',
+          title: 'Legacy System Migration',
+          description: 'Modernize your outdated software to cloud-native, AI-ready solutions. Reduce maintenance costs by 40% while improving security and performance.',
           features: [
-            'Risk-free migration strategy',
-            'Data preservation & validation',
-            'Minimal downtime',
-            'Training & documentation',
+            'Zero-downtime migration strategy',
+            'Data integrity validation',
+            'Staff training & documentation',
+            'Phased rollout approach',
           ],
           pricing: 'Custom pricing',
-          cta: 'Plan Your Migration',
+          cta: 'Plan Migration',
         },
         {
           icon: Wrench,
-          title: 'Website Maintenance & Tech Upgrades',
-          description: 'Keep your digital presence cutting-edge with continuous improvements, security updates, and performance optimization.',
+          title: 'Technical Support & Maintenance',
+          description: 'Ongoing technical support, security updates, and performance optimization. Keep your systems running smoothly with 24/7 monitoring.',
           features: [
-            'Proactive monitoring',
-            'Security patches',
+            'Proactive system monitoring',
+            'Security patches & updates',
             'Performance optimization',
-            'Feature enhancements',
+            'Unlimited change requests',
           ],
           pricing: 'Starting at $999/mo',
-          cta: 'Upgrade Your Tech',
-        },
-      ],
-    },
-    {
-      id: 'strategy-growth',
-      name: 'Strategy & Growth',
-      icon: TrendingUp,
-      description: 'Data-driven strategies to accelerate your business growth',
-      services: [
-        {
-          icon: Briefcase,
-          title: 'Strategic Consultation',
-          description: 'Navigate the rapidly changing technology landscape with expert guidance. We help you identify opportunities and implement solutions that matter.',
-          features: [
-            'Technology roadmap planning',
-            'Competitive analysis',
-            'ROI optimization',
-            'Growth strategy development',
-          ],
-          pricing: 'Starting at $299/hr',
-          cta: 'Book Consultation',
-        },
-        {
-          icon: BarChart3,
-          title: 'User Analysis & Customer Acquisition',
-          description: 'Data-driven insights to understand your users and attract more customers. Turn analytics into actionable growth strategies.',
-          features: [
-            'Behavioral analytics',
-            'Conversion optimization',
-            'A/B testing',
-            'Customer journey mapping',
-          ],
-          pricing: 'Starting at $1,499/mo',
-          cta: 'Grow Your Audience',
+          cta: 'Get Support',
         },
       ],
     },
@@ -138,7 +172,7 @@ export const Services: React.FC = () => {
           Our <span className="text-gradient">Services</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          Comprehensive AI-powered solutions designed to drive growth, improve efficiency, and give you a competitive edge in your industry.
+          Led by senior engineers who previously worked at Sri Lanka's leading software companies, we provide everything you need to acquire, engage, and retain customers. From AI automation to marketing strategy—we handle customer acquisition so you can focus on business growth.
         </p>
       </div>
 

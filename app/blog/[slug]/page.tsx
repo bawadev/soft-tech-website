@@ -5,51 +5,17 @@ import Script from 'next/script';
 import { Metadata } from 'next';
 import { Navigation, Footer, Container, Card, Button } from '@/components/ui';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/seo/schemas';
-
-// This would typically come from a CMS or database
-const blogPostsData: Record<string, any> = {
-  'ai-transformation-2024': {
-    title: 'AI Transformation: How Small Businesses Can Compete with Enterprise Giants',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
-    category: 'AI Technology',
-    author: 'Softx World Team',
-    date: '2024-01-15',
-    readTime: '5 min read',
-    content: `
-      <p>The landscape of business competition has dramatically shifted with the advent of accessible AI technologies. Small businesses no longer need massive budgets to implement sophisticated solutions that were once exclusive to enterprise giants.</p>
-
-      <h2>The AI Equalizer</h2>
-      <p>AI technology has become the great equalizer in the business world. Cloud-based AI services, affordable machine learning platforms, and accessible APIs have democratized access to powerful capabilities that can transform how small businesses operate and compete.</p>
-
-      <h2>Key Areas Where AI Levels the Playing Field</h2>
-
-      <h3>1. Customer Service & Support</h3>
-      <p>AI-powered chat agents enable small businesses to provide 24/7 customer support without the overhead of maintaining a large support team. These intelligent systems can handle routine inquiries, qualify leads, and escalate complex issues to human agents when necessary.</p>
-
-      <h3>2. Marketing Automation</h3>
-      <p>AI-driven marketing tools help small businesses personalize customer experiences at scale. From email campaigns to social media management, AI can analyze customer behavior and optimize marketing efforts for better results.</p>
-
-      <h3>3. Data Analytics</h3>
-      <p>Advanced analytics that were once the domain of large enterprises are now accessible to businesses of all sizes. AI can process vast amounts of data to provide actionable insights about customer behavior, market trends, and business performance.</p>
-
-      <h2>Getting Started with AI</h2>
-      <p>The key to successful AI adoption is starting small and scaling gradually. Focus on one area where AI can make an immediate impact, measure the results, and expand from there. Don't try to transform everything at once.</p>
-
-      <h2>Conclusion</h2>
-      <p>The AI revolution is here, and it's more accessible than ever. Small businesses that embrace these technologies now will be well-positioned to compete effectively in an increasingly digital marketplace.</p>
-    `,
-  },
-};
+import { blogPosts, getBlogPostBySlug } from '@/data/blog-posts';
 
 export async function generateStaticParams() {
-  return Object.keys(blogPostsData).map((slug) => ({
-    slug,
+  return blogPosts.map((post) => ({
+    slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPostsData[slug];
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -57,16 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  const description = post.content.substring(0, 160).replace(/<[^>]*>/g, '').trim() + '...';
-
   return {
-    title: post.title,
-    description: description,
-    keywords: [post.category, 'AI technology', 'business growth', 'digital transformation'],
+    title: `${post.title} | Softx World`,
+    description: post.excerpt,
+    keywords: post.tags,
     authors: [{ name: post.author, url: 'https://softx-world.com' }],
     openGraph: {
       title: post.title,
-      description: description,
+      description: post.excerpt,
       type: 'article',
       url: `https://softx-world.com/blog/${slug}`,
       images: [
@@ -84,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: description,
+      description: post.excerpt,
       images: [post.image],
     },
     alternates: {
@@ -93,9 +57,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+const renderMarkdown = (markdown: string) => {
+  let html = markdown;
+
+  // Headers
+  html = html.replace(/^### (.*$)/gim, '<h4 class="text-xl font-semibold mt-6 mb-3 text-secondary-900">$1</h4>');
+  html = html.replace(/^## (.*$)/gim, '<h3 class="text-2xl font-bold mt-8 mb-4 text-secondary-900">$1</h3>');
+  html = html.replace(/^# (.*$)/gim, '<h2 class="text-4xl font-bold mt-12 mb-6 text-secondary-900">$1</h2>');
+
+  // Bold
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+  // Paragraphs - handle lines that aren't headers
+  const lines = html.split('\n');
+  const processedLines = lines.map(line => {
+    // Skip empty lines
+    if (!line.trim()) return '';
+
+    // Skip lines that start with HTML tags (already processed)
+    if (line.trim().startsWith('<')) return line;
+
+    // Wrap plain text in p tags
+    return `<p class="mb-4 text-secondary-700 leading-relaxed">${line}</p>`;
+  });
+
+  html = processedLines.join('\n');
+
+  return html;
+};
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = blogPostsData[slug];
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return (
@@ -115,22 +108,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     );
   }
 
-  const relatedPosts = [
-    {
-      id: 'legacy-migration-guide',
-      title: 'The Complete Guide to Legacy System Migration',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80',
-    },
-    {
-      id: 'customer-acquisition-ai',
-      title: 'Using AI for Customer Acquisition',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
-    },
-  ];
+  const relatedPosts = blogPosts
+    .filter((p) => p.id !== post.id && p.category === post.category)
+    .slice(0, 2);
 
   const articleSchema = generateArticleSchema({
     title: post.title,
-    description: post.content.substring(0, 160).replace(/<[^>]*>/g, '').trim(),
+    description: post.excerpt,
     image: post.image,
     datePublished: new Date(post.date).toISOString(),
     dateModified: new Date(post.date).toISOString(),
@@ -193,7 +177,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {/* Article Content */}
             <div
               className="prose prose-lg max-w-none mb-12"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: renderMarkdown(post.content) }}
               style={{
                 color: '#475569',
                 lineHeight: '1.75',
@@ -239,7 +223,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <h3 className="heading-3 mb-8 text-center">Related Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {relatedPosts.map((relatedPost) => (
-              <Link key={relatedPost.id} href={`/blog/${relatedPost.id}`}>
+              <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
                 <Card className="overflow-hidden p-0 h-full" hoverable>
                   <div className="relative h-48">
                     <Image

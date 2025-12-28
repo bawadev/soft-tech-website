@@ -14,6 +14,7 @@ const navLinks = [
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 export const Navigation: React.FC = () => {
@@ -118,7 +119,7 @@ export const Navigation: React.FC = () => {
                     relative px-4 py-2 rounded-lg font-medium transition-all duration-300
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2
                     ${isActive
-                      ? 'text-primary-600'
+                      ? 'bg-primary-50 text-primary-600'
                       : 'text-secondary-700 hover:text-primary-600 hover:bg-primary-50'
                     }
                   `}

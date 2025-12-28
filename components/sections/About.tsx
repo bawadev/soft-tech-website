@@ -5,12 +5,30 @@ import { Section, Card } from '../ui';
 
 export const About: React.FC = () => {
   const companies = [
-    'New York Life Insurance',
-    'Work Wave',
-    'Mapbe Well Being',
-    'Virtusa',
-    'Codegen',
-    'IFS',
+    {
+      name: 'IFS',
+      logo: '/logos/ifs.svg',
+    },
+    {
+      name: 'Tech Mahindra',
+      logo: '/logos/tech-mahindra.svg',
+    },
+    {
+      name: 'WorkWave',
+      logo: '/logos/workwave.svg',
+    },
+    {
+      name: 'Virtusa',
+      logo: '/logos/virtusa.svg',
+    },
+    {
+      name: 'New York Life Insurance',
+      logo: '/logos/new-york-life.svg',
+    },
+    {
+      name: 'Codegen',
+      logo: '/logos/codegen.svg',
+    },
   ];
 
   const values = [
@@ -32,7 +50,7 @@ export const About: React.FC = () => {
     {
       icon: TrendingUp,
       title: 'Proven Track Record',
-      description: '7+ years of experience from top companies, delivering real results for businesses of all sizes.',
+      description: 'Ex-employees from Sri Lanka\'s leading software companies with decades of enterprise experience delivering real results for businesses of all sizes.',
     },
   ];
 
@@ -43,7 +61,7 @@ export const About: React.FC = () => {
           Why Choose <span className="text-gradient">Softx World</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          We're not your typical web development agency. We're your strategic technology partner, focused on delivering competitive advantage through AI-powered solutions.
+          Our team consists of senior software engineers and architects who previously worked at Sri Lanka's leading software companies. We bring enterprise-level expertise to businesses of all sizes.
         </p>
       </div>
 
@@ -96,7 +114,7 @@ export const About: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-secondary-900">Industry Best Practices</h4>
-                <p className="text-secondary-700">Proven methodologies from Fortune 500 companies</p>
+                <p className="text-secondary-700">Enterprise methodologies from Sri Lanka's tech giants</p>
               </div>
             </div>
 
@@ -125,18 +143,22 @@ export const About: React.FC = () => {
             />
           </div>
 
-          {/* Company Badges */}
+          {/* Company Logos */}
           <div className="mt-8">
-            <p className="text-sm text-secondary-700 mb-4 font-medium">
-              Trusted by professionals from:
+            <p className="text-base text-secondary-700 mb-6 font-semibold text-center">
+              Our team previously worked at:
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {companies.map((company, index) => (
                 <div
                   key={index}
-                  className="bg-secondary-50 px-4 py-2 rounded-lg text-sm text-secondary-700 text-center font-medium"
+                  className="bg-white border border-secondary-200 px-6 py-8 rounded-xl flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
                 >
-                  {company}
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="max-h-[60px] w-auto object-contain"
+                  />
                 </div>
               ))}
             </div>

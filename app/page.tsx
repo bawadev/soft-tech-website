@@ -6,7 +6,15 @@ import { ServicesSchema, WebSiteSchema } from '@/lib/seo/schemas';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <>
+      {/* Skip link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-primary-600 text-white px-4 py-2 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600"
+      >
+        Skip to main content
+      </a>
+      <main id="main-content" className="min-h-screen">
       <Script
         id="website-schema"
         type="application/ld+json"
@@ -29,5 +37,6 @@ export default function Home() {
       <Contact />
       <Footer />
     </main>
+    </>
   );
 }

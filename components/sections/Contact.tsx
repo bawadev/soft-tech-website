@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-secondary-900 mb-1">Response Time</h4>
-                <p className="text-secondary-600">Within 24 hours</p>
+                <p className="text-secondary-600">We respond in under 2 hours</p>
               </div>
             </div>
 
@@ -300,17 +300,24 @@ export const Contact: React.FC = () => {
 
             {submitStatus === 'success' && (
               <div
-                className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3 animate-in slide-in-from-bottom-2 duration-300"
+                className="p-4 bg-green-50 border border-green-200 rounded-lg flex flex-col gap-3 animate-in slide-in-from-bottom-2 duration-300"
                 role="alert"
                 aria-live="polite"
               >
-                <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <div>
-                  <p className="font-semibold text-green-800">Message sent successfully!</p>
-                  <p className="text-sm text-green-700 mt-1">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <div className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <div>
+                    <p className="font-semibold text-green-800">What happens next?</p>
+                  </div>
                 </div>
+                <ol className="list-decimal list-inside space-y-1 text-sm text-green-700 ml-9">
+                  <li>You'll receive a confirmation email</li>
+                  <li>We'll review within 2 hours</li>
+                  <li>Schedule a free 30-min consultation</li>
+                  <li>Get a custom proposal within 24 hours</li>
+                </ol>
               </div>
             )}
 

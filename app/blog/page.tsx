@@ -3,23 +3,25 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { Navigation, Footer, Container, Card, Button } from '@/components/ui';
+import { blogPosts } from '@/data/blog-posts';
 
 export const metadata: Metadata = {
-  title: 'Blog - AI Insights & Business Growth',
-  description: 'Stay updated with the latest trends in AI technology, business growth strategies, and technology insights from Softx World experts. Expert articles on AI implementation, digital transformation, and business success.',
+  title: 'Blog - AI, Automation & Marketing Insights for Business Growth',
+  description: 'Expert articles on n8n automation, RAG systems, AI chatbots, marketing automation ROI, legacy system migration, and digital transformation strategies to grow your business.',
   keywords: [
-    'AI blog',
-    'business technology articles',
-    'AI transformation',
-    'digital transformation',
+    'n8n automation',
+    'RAG systems',
+    'AI chatbot ROI',
+    'marketing automation',
     'legacy system migration',
-    'customer acquisition strategies',
-    'AI chat agents',
-    'technology insights'
+    'business automation',
+    'AI transformation',
+    'customer acquisition',
+    'workflow automation'
   ],
   openGraph: {
-    title: 'Blog - AI Insights & Business Growth | Softx World',
-    description: 'Expert articles on AI technology, business growth strategies, and digital transformation from Softx World.',
+    title: 'Blog - AI, Automation & Marketing Insights | Softx World',
+    description: 'Expert articles on n8n automation, RAG systems, AI chatbots, marketing automation, and digital transformation.',
     type: 'website',
     url: 'https://softx-world.com/blog',
     images: [
@@ -27,14 +29,14 @@ export const metadata: Metadata = {
         url: '/og-blog.jpg',
         width: 1200,
         height: 630,
-        alt: 'Softx World Blog - AI Insights & Business Growth',
+        alt: 'Softx World Blog - AI, Automation & Marketing Insights',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - AI Insights & Business Growth | Softx World',
-    description: 'Expert articles on AI technology and business growth strategies.',
+    title: 'Blog - AI, Automation & Marketing Insights | Softx World',
+    description: 'Expert articles on n8n automation, RAG systems, and marketing automation.',
     images: ['/twitter-blog.jpg'],
   },
   alternates: {
@@ -42,70 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-const blogPosts = [
-  {
-    id: 'ai-transformation-2024',
-    title: 'AI Transformation: How Small Businesses Can Compete with Enterprise Giants',
-    excerpt: 'Discover how AI levels the playing field and gives small businesses the tools to compete effectively with larger competitors.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80',
-    category: 'AI Technology',
-    author: 'Softx World Team',
-    date: '2024-01-15',
-    readTime: '5 min read',
-  },
-  {
-    id: 'legacy-migration-guide',
-    title: 'The Complete Guide to Legacy System Migration',
-    excerpt: 'Step-by-step approach to modernizing outdated systems without disrupting your business operations.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
-    category: 'Technology',
-    author: 'Softx World Team',
-    date: '2024-01-10',
-    readTime: '8 min read',
-  },
-  {
-    id: 'customer-acquisition-ai',
-    title: 'Using AI for Customer Acquisition: A Practical Guide',
-    excerpt: 'Learn how AI-powered tools can help you identify, attract, and convert more customers effectively.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-    category: 'Business Growth',
-    author: 'Softx World Team',
-    date: '2024-01-05',
-    readTime: '6 min read',
-  },
-  {
-    id: 'chatbot-roi',
-    title: 'Measuring ROI from AI Chat Agents: What to Track',
-    excerpt: 'Key metrics and KPIs to measure the success of your AI chat agent implementation.',
-    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
-    category: 'AI Technology',
-    author: 'Softx World Team',
-    date: '2024-01-01',
-    readTime: '7 min read',
-  },
-  {
-    id: 'competitive-advantage-ai',
-    title: 'Building Competitive Advantage with AI: Real-World Examples',
-    excerpt: 'Case studies showing how businesses leverage AI to gain significant competitive advantages.',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
-    category: 'Business Strategy',
-    author: 'Softx World Team',
-    date: '2023-12-28',
-    readTime: '9 min read',
-  },
-  {
-    id: 'future-of-work-ai',
-    title: 'The Future of Work: How AI is Reshaping Business Operations',
-    excerpt: 'Explore how AI is transforming workplace dynamics and what it means for your business.',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-    category: 'Future Trends',
-    author: 'Softx World Team',
-    date: '2023-12-20',
-    readTime: '6 min read',
-  },
-];
-
-const categories = ['All', 'AI Technology', 'Business Growth', 'Technology', 'Business Strategy', 'Future Trends'];
+const categories = ['All', 'AI', 'Automation', 'Marketing', 'Technology'];
 
 export default function BlogPage() {
   return (
@@ -117,10 +56,10 @@ export default function BlogPage() {
         <Container>
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="heading-1 mb-6">
-              Insights & <span className="text-gradient">Resources</span>
+              Learn How <span className="text-gradient">Automation & AI</span> Grows Your Revenue
             </h1>
             <p className="text-xl text-secondary-600">
-              Stay ahead with expert insights on AI technology, business growth strategies, and digital transformation.
+              Real-world guides on n8n automation, RAG systems, AI chatbots, marketing automation, and legacy system migration. Every article includes ROI calculations and implementation strategies.
             </p>
           </div>
         </Container>
@@ -175,7 +114,7 @@ export default function BlogPage() {
                   <span>•</span>
                   <span>{blogPosts[0].category}</span>
                 </div>
-                <Button href={`/blog/${blogPosts[0].id}`}>
+                <Button href={`/blog/${blogPosts[0].slug}`}>
                   Read Article
                 </Button>
               </div>
@@ -211,7 +150,7 @@ export default function BlogPage() {
                     <span>{post.readTime}</span>
                   </div>
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="text-primary-600 font-medium hover:text-primary-700 transition-colors inline-flex items-center gap-2"
                   >
                     Read More
@@ -227,10 +166,10 @@ export default function BlogPage() {
           {/* Newsletter CTA */}
           <Card className="mt-16 bg-primary-600 text-white text-center" padding="lg">
             <h3 className="text-3xl font-bold mb-4">
-              Subscribe to Our Newsletter
+              Get Weekly ROI Insights
             </h3>
             <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
-              Get the latest insights on AI technology and business growth delivered directly to your inbox.
+              Join 5,000+ business leaders receiving actionable strategies on automation, AI implementation, and customer acquisition ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input

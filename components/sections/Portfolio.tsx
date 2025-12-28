@@ -52,7 +52,7 @@ export const Portfolio: React.FC = () => {
           Success <span className="text-gradient">Stories</span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          Real results for real businesses. See how we've helped companies leverage AI technology to gain competitive advantage.
+          Led by senior engineers who previously worked at Sri Lanka's leading software companies, we deliver real results for businesses through AI-powered solutions and enterprise-grade expertise.
         </p>
       </div>
 
