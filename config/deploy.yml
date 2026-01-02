@@ -1,0 +1,33 @@
+# SoftX Website - Kamal Deployment Config
+# Domain: dev.softx.world
+
+service: softx-website
+image: ghcr.io/bawadev/soft-tech-website
+
+servers:
+  web:
+    hosts:
+      - 185.211.6.206
+
+registry:
+  server: ghcr.io
+  username: bawadev
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+ssh:
+  user: root
+
+proxy:
+  ssl: true
+  host: dev.softx.world
+  app_port: 3000
+
+env:
+  clear:
+    NODE_ENV: production
+  secret:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
