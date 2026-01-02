@@ -1,5 +1,7 @@
 # SoftX Website - Kamal Deployment Config
-# Domain: dev.softx.world
+# Copy to bawadev/soft-tech-website repo as config/deploy.yml
+# Reference: server-credentials.md
+# Uses Traefik (from Appwrite) for reverse proxy and SSL
 
 service: softx-website
 image: ghcr.io/bawadev/soft-tech-website
@@ -8,6 +10,17 @@ servers:
   web:
     hosts:
       - 185.211.6.206
+    labels:
+      traefik.enable: "true"
+      traefik.constraint-label-stack: "appwrite"
+      traefik.http.routers.softx-website.rule: "Host(`dev.softx.world`)"
+      traefik.http.routers.softx-website.entrypoints: "appwrite_websecure"
+      traefik.http.routers.softx-website.tls: "true"
+      traefik.http.routers.softx-website.tls.certresolver: "dns"
+      traefik.http.services.softx-website.loadbalancer.server.port: "3000"
+      traefik.docker.network: "gateway"
+    options:
+      network: gateway
 
 registry:
   server: ghcr.io
@@ -18,10 +31,8 @@ registry:
 ssh:
   user: root
 
-proxy:
-  ssl: true
-  host: dev.softx.world
-  app_port: 3000
+# Disable kamal-proxy - using Traefik instead
+proxy: false
 
 env:
   clear:
