@@ -1,11 +1,24 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Rocket, Bot } from 'lucide-react';
 import { Button, Container } from '../ui';
 
 export const Hero: React.FC = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Attempt to play video
+      video.play().catch((error) => {
+        console.log('Autoplay was prevented:', error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-50">
       {/* Background Pattern */}
@@ -29,12 +42,12 @@ export const Hero: React.FC = () => {
             </div>
 
             <h1 className="heading-1 mb-5 sm:mb-6">
-              You Focus on Business.{' '}
+              Just Focus on Business.{' '}
               <span className="text-gradient">We Bring You Customers.</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose">
-              Our team consists of senior engineers and solution architects who previously worked at Sri Lanka's leading software companies. We bring enterprise-grade expertise in AI, automation, and digital transformation to deliver results that actually matter for your business.
+              Accelerate your business growth in new AI era with us. With years of experience of enterprise software and AI, we help companies grow, operate efficiently, and make confident decisions—turning ambition into measurable results.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -63,19 +76,40 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Right Content - Hero Video */}
           <div className="relative animate-fade-in">
             <div className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-                alt="AI Technology and Business Growth"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                className="object-cover"
-                priority
-              />
+              {/* Video Background */}
+              <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                onCanPlay={() => setVideoLoaded(true)}
+                onLoadedData={() => setVideoLoaded(true)}
+                onError={() => console.log('Video failed to load')}
+              >
+                <source src="/media/hero-video.mp4" type="video/mp4" />
+              </video>
+
+              {/* First Frame Overlay - Fades out when video loads */}
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
+                videoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+              }`}>
+                <Image
+                  src="/media/hero-video-frame-1.png"
+                  alt="AI Technology and Business Growth"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
               {/* Overlay */}
-              <div className="absolute inset-0 bg-primary-900/10"></div>
+              <div className="absolute inset-0 bg-primary-900/10 pointer-events-none"></div>
             </div>
 
             {/* Floating Cards */}

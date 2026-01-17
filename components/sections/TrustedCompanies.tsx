@@ -27,11 +27,11 @@ export const TrustedCompanies: React.FC = () => {
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-            Our Team Previously Worked at Sri Lanka's Tech Giants
+            Crafted by Engineers from Sri Lanka’s Leading Tech Companies
           </h2>
 
           <p className="text-base sm:text-lg text-secondary-700 max-w-3xl mx-auto">
-            Our software company consists of senior engineers and solution architects who previously worked at Sri Lanka's leading software companies. We bring decades of enterprise-level experience to deliver world-class AI and automation solutions for your business.
+            We are a software company founded by senior engineers and solution architects with deep roots in Sri Lanka’s leading technology companies. Our enterprise-grade experience powers intelligent AI and automation solutions built for scale, reliability, and impact.
           </p>
 
           {/* Star Rating */}
@@ -48,36 +48,7 @@ export const TrustedCompanies: React.FC = () => {
             <span className="ml-2 text-sm text-secondary-700 font-medium">5.0 Client Rating</span>
           </div>
         </div>
-
-        {/* Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10">
-          {companies.map((company, index) => (
-            <div
-              key={company.name}
-              className="group relative animate-slide-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Logo Card */}
-              <div className="relative h-40 sm:h-48 lg:h-56 flex items-center justify-center p-8 rounded-xl border-2 border-secondary-100 bg-white hover:border-primary-300 hover:shadow-2xl transition-all duration-500 grayscale hover:grayscale-0 hover:scale-105">
-                {/* Company Logo Image */}
-                <img
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  className="max-h-[80px] w-auto object-contain"
-                />
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-              </div>
-
-              {/* Company Name Tooltip */}
-              <div className="absolute bottom-full mb-3 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-secondary-900 text-white text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 shadow-xl">
-                {company.name}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-secondary-900"></div>
-              </div>
-            </div>
-          ))}
-        </div>
+        
 
         {/* Stats Bar */}
         <div className="mt-12 sm:mt-16 pt-8 border-t border-secondary-100">
