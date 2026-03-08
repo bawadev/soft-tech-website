@@ -48,7 +48,7 @@ export const Portfolio: React.FC = () => {
   ];
 
   return (
-    <Section id="portfolio" className="bg-white">
+    <Section id="portfolio" className="bg-[linear-gradient(135deg,_#f0f9ff_0%,_#ffffff_50%,_#fafafa_100%)]">
       <ScrollReveal variant="fadeUp">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="heading-2 mb-4">
@@ -70,13 +70,13 @@ export const Portfolio: React.FC = () => {
             >
               {/* Image */}
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-xl">
+                <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-xl group">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-secondary-900/30"></div>
                 </div>

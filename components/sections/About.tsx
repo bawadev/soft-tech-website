@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Award } from 'lucide-react';
-import { Section, Button, ScrollReveal, AnimateCounter } from '../ui';
+import { Section, Button, ScrollReveal, AnimateCounter, ParallaxSection } from '../ui';
 
 export const About: React.FC = () => {
   const companies = [
@@ -16,7 +16,12 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <Section id="about" className="bg-gradient-to-b from-white to-slate-50">
+    <Section id="about" className="relative bg-gradient-to-b from-white to-slate-50">
+      {/* Background Depth Orbs */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-primary-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-blue-100/30 rounded-full blur-2xl pointer-events-none" />
+
+      <ParallaxSection>
       {/* Header */}
       <ScrollReveal variant="fadeUp">
         <div className="mb-12 sm:mb-16 lg:mb-20">
@@ -110,7 +115,7 @@ export const About: React.FC = () => {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 border border-secondary-100">
+                <div className="absolute -bottom-6 -left-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6 border border-white/50">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
                       <Award className="w-6 h-6 text-white" />
@@ -157,6 +162,7 @@ export const About: React.FC = () => {
           </ScrollReveal>
         </div>
       </div>
+      </ParallaxSection>
     </Section>
   );
 };

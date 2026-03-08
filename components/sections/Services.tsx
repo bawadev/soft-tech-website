@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Zap, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
-import { Section, Card, Button, ScrollReveal } from '../ui';
+import { Section, Card, Button, ScrollReveal, ParallaxSection } from '../ui';
 
 interface Service {
   icon: React.ElementType;
@@ -289,7 +289,15 @@ export const Services: React.FC = () => {
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab) || serviceCategories[0];
 
   return (
-    <Section id="services" className="bg-secondary-50">
+    <Section id="services" className="relative bg-secondary-50">
+      {/* Background Depth */}
+      <div className="absolute inset-0 pointer-events-none opacity-50" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.08) 1px, transparent 0)',
+        backgroundSize: '32px 32px'
+      }} />
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl pointer-events-none" />
+
+      <ParallaxSection>
       <ScrollReveal variant="fadeUp">
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="heading-2 mb-4">
@@ -433,6 +441,7 @@ export const Services: React.FC = () => {
           </Button>
         </div>
       </Card>
+      </ParallaxSection>
     </Section>
   );
 };

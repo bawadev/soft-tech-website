@@ -33,29 +33,14 @@ export const Hero: React.FC = () => {
         }}></div>
       </div>
 
-      {/* Depth Orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-300/15 rounded-full blur-2xl pointer-events-none" />
+      {/* Depth Orbs — animated */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" style={{ animation: 'float 8s ease-in-out infinite' }} />
+      <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-300/15 rounded-full blur-2xl pointer-events-none" style={{ animation: 'float-delayed 10s ease-in-out infinite' }} />
 
       <Container className="relative z-10 pt-20 sm:pt-24 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <div>
-            {/* Trust Badge */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUpVariants}
-              transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-            >
-              <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                Built by Ex-Employees from Sri Lanka&apos;s Tech Giants
-              </div>
-            </motion.div>
-
             <motion.h1
               className="heading-1 mb-5 sm:mb-6"
               initial="hidden"
@@ -94,12 +79,13 @@ export const Hero: React.FC = () => {
 
             {/* Trust Indicators */}
             <motion.div
-              className="flex flex-wrap gap-6 sm:gap-8 items-center"
+              className="relative flex flex-wrap gap-6 sm:gap-8 items-center"
               initial="hidden"
               animate="visible"
               variants={fadeUpVariants}
               transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
             >
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] rounded-2xl pointer-events-none" />
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-primary-600">
                   <AnimateCounter value={90} suffix="%" />

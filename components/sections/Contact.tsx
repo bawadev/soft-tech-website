@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Section, Card, Button, Input, Textarea, Select } from '../ui';
+import { Section, Card, Button, Input, Textarea, Select, ScrollReveal } from '../ui';
 import { useFormPersist } from '@/hooks/useFormPersist';
 
 const contactSchema = z.object({
@@ -114,71 +114,85 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <Section id="contact" className="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+    <Section id="contact" className="relative bg-white">
+      {/* Left half tint overlay */}
+      <div className="absolute inset-y-0 left-0 w-1/2 bg-primary-50/50 pointer-events-none" />
+
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Left Side - Info */}
         <div>
-          <h2 className="heading-2 mb-6">
-            Let's Build Something <span className="text-gradient">Amazing</span>
-          </h2>
-          <p className="text-lg text-secondary-600 mb-8">
-            Ready to transform your business with AI-powered solutions? Schedule a free consultation to discuss your needs and discover how we can help you gain competitive advantage.
-          </p>
+          <ScrollReveal variant="fadeLeft">
+            <h2 className="heading-2 mb-6">
+              Let's Build Something <span className="text-gradient">Amazing</span>
+            </h2>
+            <p className="text-lg text-secondary-600 mb-8">
+              Ready to transform your business with AI-powered solutions? Schedule a free consultation to discuss your needs and discover how we can help you gain competitive advantage.
+            </p>
+          </ScrollReveal>
 
           {/* Contact Info */}
           <div className="space-y-6 mb-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+            <ScrollReveal variant="fadeLeft" delay={0}>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-secondary-900 mb-1">Email Us</h4>
+                  <p className="text-secondary-600">contact@softtech.com</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-secondary-900 mb-1">Email Us</h4>
-                <p className="text-secondary-600">contact@softtech.com</p>
-              </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            <ScrollReveal variant="fadeLeft" delay={0.1}>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-secondary-900 mb-1">Response Time</h4>
+                  <p className="text-secondary-600">We respond in under 2 hours</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-secondary-900 mb-1">Response Time</h4>
-                <p className="text-secondary-600">We respond in under 2 hours</p>
-              </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+            <ScrollReveal variant="fadeLeft" delay={0.2}>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-secondary-900 mb-1">Support</h4>
+                  <p className="text-secondary-600">24/7 Available</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-secondary-900 mb-1">Support</h4>
-                <p className="text-secondary-600">24/7 Available</p>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Trust Badges */}
-          <Card className="bg-secondary-50 border-none">
-            <div className="flex items-center gap-3">
-              <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <div>
-                <div className="font-semibold text-secondary-900">No Obligation Consultation</div>
-                <div className="text-sm text-secondary-600">100% Free, No Commitment Required</div>
+          <ScrollReveal variant="fadeUp" delay={0.3}>
+            <Card className="bg-white/60 backdrop-blur-sm border border-white/40">
+              <div className="flex items-center gap-3">
+                <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <div className="font-semibold text-secondary-900">No Obligation Consultation</div>
+                  <div className="text-sm text-secondary-600">100% Free, No Commitment Required</div>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </ScrollReveal>
         </div>
 
         {/* Right Side - Form */}
+        <ScrollReveal variant="fadeRight">
         <Card>
           {/* Draft Banner */}
           {showDraftBanner && (
@@ -338,6 +352,7 @@ export const Contact: React.FC = () => {
             )}
           </form>
         </Card>
+        </ScrollReveal>
       </div>
     </Section>
   );

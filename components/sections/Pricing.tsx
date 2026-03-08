@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Script from 'next/script';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { RefreshCw, Rocket, Shield, TrendingUp } from 'lucide-react';
 import { Section, Card, Button, ScrollReveal } from '../ui';
 import { generateFAQSchema } from '@/lib/seo/schemas';
@@ -140,7 +140,10 @@ export const Pricing: React.FC = () => {
   );
 
   return (
-    <Section id="pricing" className="bg-secondary-50">
+    <Section id="pricing" className="relative bg-secondary-50">
+      {/* Background Depth */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-primary-200/20 rounded-full blur-3xl pointer-events-none" />
+
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -168,7 +171,7 @@ export const Pricing: React.FC = () => {
           <Card
             className={`flex flex-col h-full ${
               pkg.highlighted
-                ? 'border-2 border-primary-600 shadow-2xl scale-105'
+                ? 'border-2 border-primary-600 shadow-2xl scale-105 bg-white/80 backdrop-blur-sm'
                 : ''
             }`}
             padding="lg"
@@ -322,11 +325,21 @@ export const Pricing: React.FC = () => {
                   />
                 </svg>
               </button>
-              {openFAQ === index && (
-                <div className="px-6 pb-4 pt-0 text-secondary-700 border-t border-secondary-100">
-                  <p className="pt-4">{faq.answer}</p>
-                </div>
-              )}
+              <AnimatePresence>
+                {openFAQ === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <div className="px-6 pb-4 pt-0 text-secondary-700 border-t border-secondary-100">
+                      <p className="pt-4">{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </Card>
           ))}
         </div>

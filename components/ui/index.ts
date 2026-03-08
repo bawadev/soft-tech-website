@@ -11,3 +11,4 @@ export { Footer } from './Footer';
 export { TrustedBy } from './TrustedBy';
 export { ScrollReveal } from './ScrollReveal';
 export { AnimateCounter } from './AnimateCounter';
+export { ParallaxSection } from './ParallaxSection';
