@@ -4,6 +4,7 @@ export const OrganizationSchema: WithContext<Organization> = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Softx World",
+  "legalName": "Softx LLC",
   "url": "https://softx-world.com",
   "logo": "https://softx-world.com/logo.png",
   "description": "AI-powered business solutions and strategic technology partnership. Expert in AI chat agents, legacy system migrations, and business consultation.",
@@ -11,6 +12,7 @@ export const OrganizationSchema: WithContext<Organization> = {
   "email": "contact@softx-world.com",
   "address": {
     "@type": "PostalAddress",
+    "addressRegion": "MT",
     "addressCountry": "US"
   },
   "sameAs": [

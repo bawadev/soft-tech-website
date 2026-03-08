@@ -9,3 +9,5 @@ export { Logo } from './Logo';
 export { Navigation } from './Navigation';
 export { Footer } from './Footer';
 export { TrustedBy } from './TrustedBy';
+export { ScrollReveal } from './ScrollReveal';
+export { AnimateCounter } from './AnimateCounter';

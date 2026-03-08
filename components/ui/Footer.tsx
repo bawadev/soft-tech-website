@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-secondary-900 text-white py-12">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-4">
@@ -136,7 +136,7 @@ export const Footer: React.FC = () => {
         <div className="border-t border-secondary-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Softx World. All rights reserved.
+              © {currentYear} Softx LLC (Softx World). All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacy" className="text-secondary-400 hover:text-primary-400 text-sm transition-colors">

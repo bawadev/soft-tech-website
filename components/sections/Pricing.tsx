@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Script from 'next/script';
+import { motion } from 'framer-motion';
 import { RefreshCw, Rocket, Shield, TrendingUp } from 'lucide-react';
-import { Section, Card, Button } from '../ui';
+import { Section, Card, Button, ScrollReveal } from '../ui';
 import { generateFAQSchema } from '@/lib/seo/schemas';
 
 export const Pricing: React.FC = () => {
@@ -145,20 +146,26 @@ export const Pricing: React.FC = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className="heading-2 mb-4">
-          Transparent <span className="text-gradient">Pricing</span>
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          Simple, value-based pricing from a team of senior engineers who previously worked at Sri Lanka's leading software companies. Every dollar you invest returns $3.50+ in ROI through automation, efficiency, and customer acquisition.
-        </p>
-      </div>
+      <ScrollReveal variant="fadeUp">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="heading-2 mb-4">
+            Transparent <span className="text-gradient">Pricing</span>
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
+            Simple, value-based pricing from a team of senior engineers who previously worked at Sri Lanka&apos;s leading software companies. Every dollar you invest returns $3.50+ in ROI through automation, efficiency, and customer acquisition.
+          </p>
+        </div>
+      </ScrollReveal>
 
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mb-12 sm:mb-16">
         {packages.map((pkg, index) => (
+          <ScrollReveal key={index} variant={pkg.highlighted ? 'scale' : 'fadeUp'} delay={index * 0.1}>
+          <motion.div
+            whileInView={pkg.highlighted ? { scale: 1.02 } : {}}
+            viewport={{ once: true }}
+          >
           <Card
-            key={index}
             className={`flex flex-col h-full ${
               pkg.highlighted
                 ? 'border-2 border-primary-600 shadow-2xl scale-105'
@@ -216,6 +223,8 @@ export const Pricing: React.FC = () => {
               Get Quote
             </Button>
           </Card>
+          </motion.div>
+          </ScrollReveal>
         ))}
       </div>
 

@@ -2,8 +2,13 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { Rocket, Bot } from 'lucide-react';
-import { Button, Container } from '../ui';
+import { motion } from 'framer-motion';
+import { Button, Container, AnimateCounter } from '../ui';
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export const Hero: React.FC = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -12,7 +17,6 @@ export const Hero: React.FC = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Attempt to play video
       video.play().catch((error) => {
         console.log('Autoplay was prevented:', error);
       });
@@ -29,55 +33,99 @@ export const Hero: React.FC = () => {
         }}></div>
       </div>
 
+      {/* Depth Orbs */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-300/15 rounded-full blur-2xl pointer-events-none" />
+
       <Container className="relative z-10 pt-20 sm:pt-24 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="animate-slide-up">
+          <div>
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              Built by Ex-Employees from Sri Lanka's Tech Giants
-            </div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
+            >
+              <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Built by Ex-Employees from Sri Lanka&apos;s Tech Giants
+              </div>
+            </motion.div>
 
-            <h1 className="heading-1 mb-5 sm:mb-6">
+            <motion.h1
+              className="heading-1 mb-5 sm:mb-6"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+            >
               Just Focus on Business.{' '}
               <span className="text-gradient">We Bring You Customers.</span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose">
-              Accelerate your business growth in new AI era with us. With years of experience of enterprise software and AI, we help companies grow, operate efficiently, and make confident decisions—turning ambition into measurable results.
-            </p>
+            <motion.p
+              className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+            >
+              With deep expertise in enterprise software and AI, we help companies acquire customers, reduce costs, and grow with confidence.
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <motion.div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
+            >
               <Button href="#contact" size="lg" className="shadow-xl">
                 Start Getting Customers
               </Button>
               <Button href="#services" variant="secondary" size="lg">
                 See How It Works
               </Button>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6 sm:gap-8 items-center">
+            <motion.div
+              className="flex flex-wrap gap-6 sm:gap-8 items-center"
+              initial="hidden"
+              animate="visible"
+              variants={fadeUpVariants}
+              transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
+            >
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">90%</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary-600">
+                  <AnimateCounter value={90} suffix="%" />
+                </div>
                 <div className="text-xs sm:text-sm text-secondary-700">Cost Reduction</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">$3.5</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary-600">
+                  $<AnimateCounter value={3.5} decimals={1} />
+                </div>
                 <div className="text-xs sm:text-sm text-secondary-700">Avg ROI per $1</div>
               </div>
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-primary-600">24/7</div>
                 <div className="text-xs sm:text-sm text-secondary-700">Customer Acquisition</div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Content - Hero Video */}
-          <div className="relative animate-fade-in">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+          >
             <div className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               {/* Video Background */}
               <video
@@ -111,12 +159,7 @@ export const Hero: React.FC = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-primary-900/10 pointer-events-none"></div>
             </div>
-
-            {/* Floating Cards */}
-            
-
-            
-          </div>
+          </motion.div>
         </div>
       </Container>
 

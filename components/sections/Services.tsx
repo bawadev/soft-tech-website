@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Zap, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
-import { Section, Card, Button } from '../ui';
+import { Section, Card, Button, ScrollReveal } from '../ui';
 
 interface Service {
   icon: React.ElementType;
@@ -290,14 +290,16 @@ export const Services: React.FC = () => {
 
   return (
     <Section id="services" className="bg-secondary-50">
-      <div className="text-center mb-10 sm:mb-12">
-        <h2 className="heading-2 mb-4">
-          Our <span className="text-gradient">Services</span>
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-          We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
-        </p>
-      </div>
+      <ScrollReveal variant="fadeUp">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="heading-2 mb-4">
+            Our <span className="text-gradient">Services</span>
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
+            We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
+          </p>
+        </div>
+      </ScrollReveal>
 
       {/* Tabbed Navigation */}
       <div className="mb-10 sm:mb-12">
@@ -362,8 +364,8 @@ export const Services: React.FC = () => {
           {activeCategory.services.map((service, index) => {
             const IconComponent = service.icon;
             return (
+              <ScrollReveal key={index} variant="fadeUp" delay={index * 0.1}>
               <Card
-                key={index}
                 padding="lg"
                 className="flex flex-col h-full group hover:border-primary-300 border-2 border-transparent"
               >
@@ -411,6 +413,7 @@ export const Services: React.FC = () => {
                   {service.cta}
                 </Button>
               </Card>
+              </ScrollReveal>
             );
           })}
         </div>
