@@ -53,9 +53,6 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <ScrollReveal variant="fadeLeft">
             <div>
-              <div className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                Industry Expertise
-              </div>
               <h3 className="heading-3 mb-6">
                 Experience from Industry Leaders
               </h3>
