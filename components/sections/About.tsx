@@ -176,7 +176,7 @@ function ProgressDots({
       ].map((dot, i) => (
         <motion.div
           key={i}
-          className={`relative z-10 w-3 h-3 rounded-full ${dot.color}`}
+          className={`relative z-10 w-3 h-3 sm:w-4 sm:h-4 rounded-full ${dot.color}`}
           style={{ opacity: dot.opacity, scale: dot.scale }}
         />
       ))}

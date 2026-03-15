@@ -122,7 +122,7 @@ export const Portfolio: React.FC = () => {
                   </div>
 
                   {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
                     {project.metrics.map((metric, idx) => (
                       <div key={idx} className="text-center">
                         <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">
