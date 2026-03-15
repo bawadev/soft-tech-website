@@ -266,7 +266,11 @@ const serviceCategories: ServiceCategory[] = [
 
 export const Services: React.FC = () => {
   const [activeTab, setActiveTab] = useState('software-development');
-  const [isPaused, setIsPaused] = useState(false);
+  const [autoRotate, setAutoRotate] = useState(true);
+
+  const stopAutoRotate = useCallback(() => {
+    setAutoRotate(false);
+  }, []);
 
   const nextTab = useCallback(() => {
     setActiveTab(current => {
@@ -277,19 +281,15 @@ export const Services: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        nextTab();
-      }, 5000); // Change every 5 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [isPaused, nextTab]);
+    if (!autoRotate) return;
+    const interval = setInterval(nextTab, 5000);
+    return () => clearInterval(interval);
+  }, [autoRotate, nextTab]);
 
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab) || serviceCategories[0];
 
   return (
-    <section id="services" className="relative bg-secondary-50/70 pt-16 md:pt-24 lg:pt-32">
+    <section id="services" className="relative bg-secondary-50/70 pt-16 md:pt-24 lg:pt-32" onMouseMove={autoRotate ? stopAutoRotate : undefined}>
       {/* Background Depth */}
       <div className="absolute inset-0 pointer-events-none opacity-50" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.08) 1px, transparent 0)',
@@ -320,8 +320,6 @@ export const Services: React.FC = () => {
             className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3"
             role="tablist"
             aria-label="Service categories"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
           >
             {serviceCategories.map((category) => {
               const TabIcon = category.icon;
@@ -330,7 +328,7 @@ export const Services: React.FC = () => {
               return (
                 <button
                   key={category.id}
-                  onClick={() => setActiveTab(category.id)}
+                  onClick={() => { stopAutoRotate(); setActiveTab(category.id); }}
                   role="tab"
                   aria-selected={isActive}
                   aria-controls={`panel-${category.id}`}
@@ -340,7 +338,7 @@ export const Services: React.FC = () => {
                     transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
                     ${isActive
                       ? 'bg-primary-600 text-white shadow-lg scale-105'
-                      : 'bg-white text-secondary-700 hover:bg-secondary-100 hover:shadow-md hover:scale-102 shadow-sm'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-100 hover:shadow-lg hover:scale-102 shadow-md'
                     }
                   `}
                 >

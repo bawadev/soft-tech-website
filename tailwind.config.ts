@@ -53,6 +53,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'Cambria', 'serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.5' }],

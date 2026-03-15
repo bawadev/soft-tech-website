@@ -18,12 +18,12 @@ const panels = [
     badgeColor: 'blue',
     content: (
       <>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-light leading-relaxed max-w-3xl mx-auto">
-          <span className="text-primary-400 font-semibold">Softx World</span> was
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 italic leading-snug max-w-3xl mx-auto">
+          <span className="text-primary-400 not-italic font-bold">Softx World</span> was
           built by former engineers and architects who spent years inside Sri
           Lanka&apos;s leading software companies.
         </p>
-        <p className="mt-5 text-base sm:text-lg md:text-xl text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-6 font-serif text-base sm:text-lg md:text-xl text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
           We learned what it takes to design, build, and maintain systems that
           operate at scale — where reliability, security, and long-term thinking
           are non-negotiable.
@@ -36,17 +36,15 @@ const panels = [
     badgeColor: 'cyan',
     content: (
       <>
-        <div className="bg-white/10 border-l-4 border-primary-400 p-5 sm:p-6 rounded-r-xl mb-5 max-w-3xl mx-auto">
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
+        <div className="bg-white/10 border-l-4 border-primary-400 p-5 sm:p-6 rounded-r-xl mb-6 max-w-3xl mx-auto">
+          <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white italic leading-snug">
             We saw a gap: businesses needed{' '}
-            <span className="text-primary-300">enterprise-level engineering</span>{' '}
+            <span className="text-primary-300 not-italic font-bold">enterprise-level engineering</span>{' '}
             without the enterprise-level cost and complexity.
           </p>
         </div>
-        <p className="text-lg sm:text-xl md:text-2xl text-primary-200/90 font-medium leading-relaxed max-w-3xl mx-auto">
-          <span className="text-primary-300 font-bold">
-            Softx World bridges that gap.
-          </span>
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-primary-300 font-bold not-italic leading-snug max-w-3xl mx-auto">
+          Softx World bridges that gap.
         </p>
       </>
     ),
@@ -56,14 +54,14 @@ const panels = [
     badgeColor: 'indigo',
     content: (
       <>
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 leading-relaxed max-w-3xl mx-auto mb-5">
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 italic leading-snug max-w-3xl mx-auto mb-6">
           We bring enterprise-level experience to organizations of all sizes.
         </p>
-        <p className="text-base sm:text-lg md:text-xl text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
+        <p className="font-serif text-base sm:text-lg md:text-xl text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
           Whether you&apos;re scaling an established business or building
           something new in a rapidly evolving, AI-driven landscape, we work as a
           practical partner — focused on{' '}
-          <span className="text-primary-400 font-semibold">
+          <span className="text-primary-400 not-italic font-bold">
             clarity, efficiency, and real business outcomes
           </span>
           .
@@ -101,12 +99,16 @@ function StoryPanel({
       className="absolute inset-0"
       style={{ y, opacity, scale }}
     >
-      {/* Glass card — separate from opacity-animated parent so backdrop-filter works */}
+      {/* Glass card — matches Hero panel frosted-glass aesthetic */}
       <div
-        className="w-full h-full glass-panel-dark p-6 sm:p-10 lg:p-14 overflow-hidden flex items-center justify-center"
+        className="relative w-full h-full liquid-glass glass-panel-dark p-6 sm:p-10 lg:p-14 overflow-hidden flex items-center justify-center"
       >
-        {/* Top highlight line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-200/25 to-transparent pointer-events-none" />
+        {/* Top edge highlight */}
+        <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-100/70 to-transparent pointer-events-none" />
+        {/* Inner surface gloss */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-primary-50/5 to-transparent rounded-2xl sm:rounded-3xl pointer-events-none" />
+        {/* Bottom glow bloom */}
+        <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-primary-400/25 rounded-full blur-2xl pointer-events-none" />
 
         <div className="relative z-10 text-center">
           {/* Badge */}
