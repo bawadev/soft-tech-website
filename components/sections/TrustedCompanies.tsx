@@ -86,7 +86,7 @@ export const TrustedCompanies: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent" />
                   {/* Caption badge */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/80 backdrop-blur-md rounded-xl px-4 py-3 border border-white/50 shadow-lg">
+                    <div className="bg-white/80 backdrop-blur-md rounded-xl px-4 py-3 border border-primary-100/40 shadow-lg">
                       <p className="text-sm font-medium text-secondary-800 italic">
                         &quot;Every line of code crafted with the same precision and care.&quot;
                       </p>

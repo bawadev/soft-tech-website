@@ -177,7 +177,7 @@ export const Contact: React.FC = () => {
 
           {/* Trust Badges */}
           <ScrollReveal variant="fadeUp" delay={0.3}>
-            <Card className="bg-white/60 backdrop-blur-sm border border-white/40">
+            <Card className="glass-panel">
               <div className="flex items-center gap-3">
                 <svg className="w-8 h-8 text-success-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

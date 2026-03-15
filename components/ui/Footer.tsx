@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary-900 text-white py-12 border-t border-secondary-700">
+    <footer className="bg-secondary-900 text-white py-12 border-t border-primary-800">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Company Info */}
@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary-800 pt-8">
+        <div className="border-t border-primary-900/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-secondary-400 text-sm mb-4 md:mb-0">
               © {currentYear} Softx LLC (Softx World). All rights reserved.

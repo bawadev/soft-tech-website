@@ -172,7 +172,7 @@ export const Pricing: React.FC = () => {
             className={`flex flex-col h-full ${
               pkg.highlighted
                 ? 'border-2 border-primary-600 shadow-2xl scale-105 bg-white/80 backdrop-blur-sm'
-                : ''
+                : 'brand-border'
             }`}
             padding="lg"
           >

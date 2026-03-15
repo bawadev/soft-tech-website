@@ -50,12 +50,11 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="relative pt-16 md:pt-24 lg:pt-32"
-      style={{ background: 'linear-gradient(135deg, rgba(240,249,255,0.7) 0%, rgba(255,255,255,0.7) 50%, rgba(250,250,250,0.7) 100%)' }}
+      className="relative pt-16 md:pt-24 lg:pt-32 bg-primary-50/70"
     >
       {/* ── Title ── sticks below nav, stays visible above cards */}
       <div
-        className="sticky top-[77px] z-20 py-4 sm:py-6 bg-white/70 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+        className="sticky top-[77px] z-20 py-4 sm:py-6 bg-white/70 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-b border-primary-100/40"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal variant="fadeUp">
@@ -82,7 +81,7 @@ export const Portfolio: React.FC = () => {
               zIndex: 12 + index * 2,
             }}
           >
-            <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden brand-border">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch lg:h-[400px]">
                 {/* Image */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
@@ -94,7 +93,7 @@ export const Portfolio: React.FC = () => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                       className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                     />
-                    <div className="absolute inset-0 bg-secondary-900/30" />
+                    <div className="brand-overlay" />
                   </div>
                 </div>
 
