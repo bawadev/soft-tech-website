@@ -140,6 +140,30 @@
   50% { transform: translateY(15px); }
 }
 
+/* Liquid glass shimmer on hover */
+@keyframes shimmer {
+  0%   { transform: translateX(-150%) skewX(-15deg); }
+  100% { transform: translateX(250%)  skewX(-15deg); }
+}
+.liquid-glass {
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: translateX(-150%) skewX(-15deg);
+  pointer-events: none;
+}
+.liquid-glass:hover::after {
+  animation: shimmer 0.9s ease-out forwards;
+}
+
 /* Reduced motion support for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -29,8 +29,10 @@ export default function Home() {
       />
       <Navigation />
       <Hero />
-      <TrustedCompanies />
-      <About />
+      <div className="relative">
+        <TrustedCompanies />
+        <About />
+      </div>
       <Services />
       <Portfolio />
       <Pricing />

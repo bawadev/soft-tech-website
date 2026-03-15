@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
           {/* Left Content */}
           <div>
             <motion.h1
-              className="heading-1 mb-5 sm:mb-6"
+              className="heading-1 mb-6 sm:mb-8"
               initial="hidden"
               animate="visible"
               variants={fadeUpVariants}
@@ -52,56 +52,70 @@ export const Hero: React.FC = () => {
               <span className="text-gradient">We Bring You Customers.</span>
             </motion.h1>
 
-            <motion.p
-              className="text-base sm:text-lg md:text-xl text-secondary-700 mb-6 sm:mb-8 leading-relaxed max-w-prose"
+            {/* Glass panel — paragraph + buttons + stats */}
+            <motion.div
               initial="hidden"
               animate="visible"
               variants={fadeUpVariants}
               transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
             >
-              With deep expertise in enterprise software and AI, we help companies acquire customers, reduce costs, and grow with confidence.
-            </motion.p>
+              <motion.div
+                className="liquid-glass backdrop-blur-xl rounded-2xl border border-blue-200/40 p-6 sm:p-7 cursor-default"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(96,165,250,0.18) 0%, rgba(147,197,253,0.10) 50%, rgba(59,130,246,0.14) 100%)',
+                  boxShadow: '0 8px 32px rgba(96,165,250,0.22), 0 2px 8px rgba(96,165,250,0.12), inset 0 1px 0 rgba(255,255,255,0.25)',
+                }}
+                animate={{ y: [0, -7, 0] }}
+                transition={{ y: { duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.9 } }}
+                whileHover={{
+                  y: -13,
+                  scale: 1.015,
+                  boxShadow: '0 24px 60px rgba(96,165,250,0.42), 0 6px 20px rgba(96,165,250,0.22), inset 0 1px 0 rgba(255,255,255,0.35)',
+                  transition: { duration: 0.4, ease: 'easeOut' },
+                }}
+              >
+                {/* Top edge highlight */}
+                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-blue-100/70 to-transparent pointer-events-none" />
+                {/* Inner surface gloss */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/18 via-blue-50/5 to-transparent rounded-2xl pointer-events-none" />
+                {/* Bottom glow bloom */}
+                <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-blue-400/25 rounded-full blur-2xl pointer-events-none" />
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8"
-              initial="hidden"
-              animate="visible"
-              variants={fadeUpVariants}
-              transition={{ duration: 0.5, delay: 0.4, ease: 'easeOut' }}
-            >
-              <Button href="#contact" size="lg" className="shadow-xl">
-                Start Getting Customers
-              </Button>
-              <Button href="#services" variant="secondary" size="lg">
-                See How It Works
-              </Button>
-            </motion.div>
+                <p className="relative z-10 text-base sm:text-lg md:text-xl text-secondary-700 mb-6 leading-relaxed">
+                  With deep expertise in enterprise software and AI, we help companies acquire customers, reduce costs, and grow with confidence.
+                </p>
 
-            {/* Trust Indicators */}
-            <motion.div
-              className="relative flex flex-wrap gap-6 sm:gap-8 items-center"
-              initial="hidden"
-              animate="visible"
-              variants={fadeUpVariants}
-              transition={{ duration: 0.5, delay: 0.5, ease: 'easeOut' }}
-            >
-              <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] rounded-2xl pointer-events-none" />
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">
-                  <AnimateCounter value={90} suffix="%" />
+                <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
+                  <Button href="#contact" size="lg" className="shadow-xl">
+                    Start Getting Customers
+                  </Button>
+                  <Button href="#services" variant="secondary" size="lg">
+                    See How It Works
+                  </Button>
                 </div>
-                <div className="text-xs sm:text-sm text-secondary-700">Cost Reduction</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">
-                  $<AnimateCounter value={3.5} decimals={1} />
+
+                {/* Divider */}
+                <div className="relative z-10 border-t border-white/40 pt-5">
+                  <div className="flex flex-wrap gap-6 sm:gap-8 items-center">
+                    <div>
+                      <div className="text-2xl sm:text-3xl font-bold text-primary-600">
+                        <AnimateCounter value={90} suffix="%" />
+                      </div>
+                      <div className="text-xs sm:text-sm text-secondary-700">Cost Reduction</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl sm:text-3xl font-bold text-primary-600">
+                        $<AnimateCounter value={3.5} decimals={1} />
+                      </div>
+                      <div className="text-xs sm:text-sm text-secondary-700">Avg ROI per $1</div>
+                    </div>
+                    <div>
+                      <div className="text-2xl sm:text-3xl font-bold text-primary-600">24/7</div>
+                      <div className="text-xs sm:text-sm text-secondary-700">Customer Acquisition</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-xs sm:text-sm text-secondary-700">Avg ROI per $1</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-primary-600">24/7</div>
-                <div className="text-xs sm:text-sm text-secondary-700">Customer Acquisition</div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 
