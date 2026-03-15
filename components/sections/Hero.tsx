@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
 
       {/* Depth Orbs — animated */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl pointer-events-none" style={{ animation: 'float 8s ease-in-out infinite' }} />
-      <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-blue-300/15 rounded-full blur-2xl pointer-events-none" style={{ animation: 'float-delayed 10s ease-in-out infinite' }} />
+      <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-primary-300/15 rounded-full blur-2xl pointer-events-none" style={{ animation: 'float-delayed 10s ease-in-out infinite' }} />
 
       <Container className="relative z-10 pt-20 sm:pt-24 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
@@ -60,26 +60,26 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
             >
               <motion.div
-                className="liquid-glass backdrop-blur-xl rounded-2xl border border-blue-200/40 p-6 sm:p-7 cursor-default"
+                className="liquid-glass backdrop-blur-xl rounded-2xl border border-primary-200/40 p-6 sm:p-7 cursor-default"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(96,165,250,0.18) 0%, rgba(147,197,253,0.10) 50%, rgba(59,130,246,0.14) 100%)',
-                  boxShadow: '0 8px 32px rgba(96,165,250,0.22), 0 2px 8px rgba(96,165,250,0.12), inset 0 1px 0 rgba(255,255,255,0.25)',
+                  background: 'linear-gradient(135deg, rgba(var(--brand-glow-rgb),0.18) 0%, rgba(var(--brand-light-rgb),0.10) 50%, rgba(var(--brand-primary-rgb),0.14) 100%)',
+                  boxShadow: '0 8px 32px rgba(var(--brand-glow-rgb),0.22), 0 2px 8px rgba(var(--brand-glow-rgb),0.12), inset 0 1px 0 rgba(255,255,255,0.25)',
                 }}
                 animate={{ y: [0, -7, 0] }}
                 transition={{ y: { duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.9 } }}
                 whileHover={{
                   y: -13,
                   scale: 1.015,
-                  boxShadow: '0 24px 60px rgba(96,165,250,0.42), 0 6px 20px rgba(96,165,250,0.22), inset 0 1px 0 rgba(255,255,255,0.35)',
+                  boxShadow: '0 24px 60px rgba(var(--brand-glow-rgb),0.42), 0 6px 20px rgba(var(--brand-glow-rgb),0.22), inset 0 1px 0 rgba(255,255,255,0.35)',
                   transition: { duration: 0.4, ease: 'easeOut' },
                 }}
               >
                 {/* Top edge highlight */}
-                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-blue-100/70 to-transparent pointer-events-none" />
+                <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-100/70 to-transparent pointer-events-none" />
                 {/* Inner surface gloss */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/18 via-blue-50/5 to-transparent rounded-2xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/18 via-primary-50/5 to-transparent rounded-2xl pointer-events-none" />
                 {/* Bottom glow bloom */}
-                <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-blue-400/25 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-primary-400/25 rounded-full blur-2xl pointer-events-none" />
 
                 <p className="relative z-10 text-base sm:text-lg md:text-xl text-secondary-700 mb-6 leading-relaxed">
                   With deep expertise in enterprise software and AI, we help companies acquire customers, reduce costs, and grow with confidence.

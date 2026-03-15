@@ -8,13 +8,6 @@ import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 /*  Shared styles                                                      */
 /* ------------------------------------------------------------------ */
 
-const glassStyle = {
-  background:
-    'linear-gradient(135deg, rgba(8,15,35,0.94) 0%, rgba(12,22,48,0.92) 50%, rgba(8,15,35,0.94) 100%)',
-  boxShadow:
-    '0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(96,165,250,0.08), inset 0 1px 0 rgba(255,255,255,0.08)',
-};
-
 /* ------------------------------------------------------------------ */
 /*  Panel data                                                         */
 /* ------------------------------------------------------------------ */
@@ -26,11 +19,11 @@ const panels = [
     content: (
       <>
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-light leading-relaxed max-w-3xl mx-auto">
-          <span className="text-blue-300 font-semibold">Softx World</span> was
+          <span className="text-primary-300 font-semibold">Softx World</span> was
           built by former engineers and architects who spent years inside Sri
           Lanka&apos;s leading software companies.
         </p>
-        <p className="mt-5 text-base sm:text-lg md:text-xl text-blue-100/80 leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-5 text-base sm:text-lg md:text-xl text-primary-100/80 leading-relaxed max-w-3xl mx-auto">
           We learned what it takes to design, build, and maintain systems that
           operate at scale — where reliability, security, and long-term thinking
           are non-negotiable.
@@ -43,15 +36,15 @@ const panels = [
     badgeColor: 'cyan',
     content: (
       <>
-        <div className="bg-white/10 border-l-4 border-cyan-400 p-5 sm:p-6 rounded-r-xl mb-5 max-w-3xl mx-auto">
+        <div className="bg-white/10 border-l-4 border-primary-300 p-5 sm:p-6 rounded-r-xl mb-5 max-w-3xl mx-auto">
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white font-semibold leading-relaxed">
             We saw a gap: businesses needed{' '}
-            <span className="text-cyan-300">enterprise-level engineering</span>{' '}
+            <span className="text-primary-200">enterprise-level engineering</span>{' '}
             without the enterprise-level cost and complexity.
           </p>
         </div>
-        <p className="text-lg sm:text-xl md:text-2xl text-cyan-100/90 font-medium leading-relaxed max-w-3xl mx-auto">
-          <span className="text-cyan-300 font-bold">
+        <p className="text-lg sm:text-xl md:text-2xl text-primary-100/90 font-medium leading-relaxed max-w-3xl mx-auto">
+          <span className="text-primary-200 font-bold">
             Softx World bridges that gap.
           </span>
         </p>
@@ -66,11 +59,11 @@ const panels = [
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 leading-relaxed max-w-3xl mx-auto mb-5">
           We bring enterprise-level experience to organizations of all sizes.
         </p>
-        <p className="text-base sm:text-lg md:text-xl text-indigo-100/85 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-primary-100/85 leading-relaxed max-w-3xl mx-auto">
           Whether you&apos;re scaling an established business or building
           something new in a rapidly evolving, AI-driven landscape, we work as a
           practical partner — focused on{' '}
-          <span className="text-indigo-300 font-semibold">
+          <span className="text-primary-400 font-semibold">
             clarity, efficiency, and real business outcomes
           </span>
           .
@@ -81,9 +74,9 @@ const panels = [
 ];
 
 const badgeColors: Record<string, { bg: string; border: string; text: string; dot: string }> = {
-  blue:   { bg: 'bg-blue-500/20',   border: 'border-blue-400/40',   text: 'text-blue-200',   dot: 'bg-blue-400' },
-  cyan:   { bg: 'bg-cyan-500/20',   border: 'border-cyan-400/40',   text: 'text-cyan-200',   dot: 'bg-cyan-400' },
-  indigo: { bg: 'bg-indigo-500/20', border: 'border-indigo-400/40', text: 'text-indigo-200', dot: 'bg-indigo-400' },
+  blue:   { bg: 'bg-primary-500/20',   border: 'border-primary-400/40',   text: 'text-primary-200',   dot: 'bg-primary-400' },
+  cyan:   { bg: 'bg-primary-400/20',   border: 'border-primary-300/40',   text: 'text-primary-200',   dot: 'bg-primary-300' },
+  indigo: { bg: 'bg-primary-600/20',   border: 'border-primary-500/40',   text: 'text-primary-100',   dot: 'bg-primary-500' },
 };
 
 /* ------------------------------------------------------------------ */
@@ -110,11 +103,10 @@ function StoryPanel({
     >
       {/* Glass card — separate from opacity-animated parent so backdrop-filter works */}
       <div
-        className="w-full h-full rounded-2xl sm:rounded-3xl border border-white/15 p-6 sm:p-10 lg:p-14 overflow-hidden flex items-center justify-center"
-        style={glassStyle}
+        className="w-full h-full glass-panel-dark p-6 sm:p-10 lg:p-14 overflow-hidden flex items-center justify-center"
       >
         {/* Top highlight line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-200/25 to-transparent pointer-events-none" />
 
         <div className="relative z-10 text-center">
           {/* Badge */}
@@ -165,14 +157,14 @@ function ProgressDots({
       <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 h-[2px] bg-white/10 rounded-full" />
       {/* Active track */}
       <motion.div
-        className="absolute top-1/2 -translate-y-1/2 left-2 h-[2px] bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 rounded-full"
+        className="absolute top-1/2 -translate-y-1/2 left-2 h-[2px] bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 rounded-full"
         style={{ width: progressWidth }}
       />
 
       {[
-        { opacity: dot1, scale: dotScale1, color: 'bg-blue-400' },
-        { opacity: dot2, scale: dotScale2, color: 'bg-cyan-400' },
-        { opacity: dot3, scale: dotScale3, color: 'bg-indigo-400' },
+        { opacity: dot1, scale: dotScale1, color: 'bg-primary-400' },
+        { opacity: dot2, scale: dotScale2, color: 'bg-primary-300' },
+        { opacity: dot3, scale: dotScale3, color: 'bg-primary-500' },
       ].map((dot, i) => (
         <motion.div
           key={i}
@@ -298,11 +290,11 @@ export const About: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center tracking-tight">
               Why Choose{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500">
                 Softx World
               </span>
             </h2>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-blue-100/70 text-center max-w-2xl mx-auto font-light">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-primary-100/70 text-center max-w-2xl mx-auto font-light">
               Built by engineers from Sri Lanka&apos;s leading tech companies
             </p>
           </div>
