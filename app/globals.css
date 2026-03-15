@@ -37,11 +37,6 @@
     max-width: 65ch;
   }
 
-  /* Better color contrast for body text - use secondary-600 for better contrast */
-  .text-secondary-600 {
-    color: #475569 !important;
-  }
-
   /* Improve touch target accessibility */
   button, a, input, select, textarea {
     -webkit-tap-highlight-color: rgba(14, 165, 233, 0.2);
@@ -110,7 +105,11 @@
   }
 
   .text-gradient {
-    @apply text-primary-600;
+    @apply text-primary-700 font-semibold;
+  }
+
+  .text-gradient-light {
+    @apply text-primary-200;
   }
 }
 

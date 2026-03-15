@@ -125,7 +125,7 @@ export const Contact: React.FC = () => {
             <h2 className="heading-2 mb-6">
               Let's Build Something <span className="text-gradient">Amazing</span>
             </h2>
-            <p className="text-lg text-secondary-600 mb-8">
+            <p className="text-lg text-secondary-700 mb-8">
               Ready to transform your business with AI-powered solutions? Schedule a free consultation to discuss your needs and discover how we can help you gain competitive advantage.
             </p>
           </ScrollReveal>
@@ -141,7 +141,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-secondary-900 mb-1">Email Us</h4>
-                  <p className="text-secondary-600">contact@softtech.com</p>
+                  <p className="text-secondary-700">contact@softtech.com</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -155,7 +155,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-secondary-900 mb-1">Response Time</h4>
-                  <p className="text-secondary-600">We respond in under 2 hours</p>
+                  <p className="text-secondary-700">We respond in under 2 hours</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -169,7 +169,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-secondary-900 mb-1">Support</h4>
-                  <p className="text-secondary-600">24/7 Available</p>
+                  <p className="text-secondary-700">24/7 Available</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -179,12 +179,12 @@ export const Contact: React.FC = () => {
           <ScrollReveal variant="fadeUp" delay={0.3}>
             <Card className="bg-white/60 backdrop-blur-sm border border-white/40">
               <div className="flex items-center gap-3">
-                <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg className="w-8 h-8 text-success-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <div>
                   <div className="font-semibold text-secondary-900">No Obligation Consultation</div>
-                  <div className="text-sm text-secondary-600">100% Free, No Commitment Required</div>
+                  <div className="text-sm text-secondary-500">100% Free, No Commitment Required</div>
                 </div>
               </div>
             </Card>
@@ -196,20 +196,20 @@ export const Contact: React.FC = () => {
         <Card>
           {/* Draft Banner */}
           {showDraftBanner && (
-            <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-start justify-between gap-3 animate-in slide-in-from-top-2 duration-300">
+            <div className="mb-6 p-4 bg-info-50 border border-info-100 rounded-lg flex items-start justify-between gap-3 animate-in slide-in-from-top-2 duration-300">
               <div className="flex items-start gap-3 flex-1">
-                <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg className="w-5 h-5 text-info-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <p className="text-sm font-medium text-blue-900">Draft saved</p>
-                  <p className="text-sm text-blue-700">Your previous form data has been restored.</p>
+                  <p className="text-sm font-medium text-secondary-900">Draft saved</p>
+                  <p className="text-sm text-info-600">Your previous form data has been restored.</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={clearDraft}
-                className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors min-h-[44px] flex items-center"
+                className="text-info-600 hover:text-secondary-700 text-sm font-medium transition-colors min-h-[44px] flex items-center"
                 aria-label="Clear saved draft"
               >
                 Clear
@@ -314,19 +314,19 @@ export const Contact: React.FC = () => {
 
             {submitStatus === 'success' && (
               <div
-                className="p-4 bg-green-50 border border-green-200 rounded-lg flex flex-col gap-3 animate-in slide-in-from-bottom-2 duration-300"
+                className="p-4 bg-success-50 border border-success-100 rounded-lg flex flex-col gap-3 animate-in slide-in-from-bottom-2 duration-300"
                 role="alert"
                 aria-live="polite"
               >
                 <div className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <svg className="w-6 h-6 text-success-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <p className="font-semibold text-green-800">What happens next?</p>
+                    <p className="font-semibold text-success-700">What happens next?</p>
                   </div>
                 </div>
-                <ol className="list-decimal list-inside space-y-1 text-sm text-green-700 ml-9">
+                <ol className="list-decimal list-inside space-y-1 text-sm text-success-600 ml-9">
                   <li>You'll receive a confirmation email</li>
                   <li>We'll review within 2 hours</li>
                   <li>Schedule a free 30-min consultation</li>
@@ -337,16 +337,16 @@ export const Contact: React.FC = () => {
 
             {submitStatus === 'error' && (
               <div
-                className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3 animate-in slide-in-from-bottom-2 duration-300"
+                className="p-4 bg-error-50 border border-error-100 rounded-lg flex items-start gap-3 animate-in slide-in-from-bottom-2 duration-300"
                 role="alert"
                 aria-live="assertive"
               >
-                <svg className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg className="w-6 h-6 text-error-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <p className="font-semibold text-red-800">Something went wrong</p>
-                  <p className="text-sm text-red-700 mt-1">Please try again or email us directly at contact@softtech.com</p>
+                  <p className="font-semibold text-error-700">Something went wrong</p>
+                  <p className="text-sm text-error-600 mt-1">Please try again or email us directly at contact@softtech.com</p>
                 </div>
               </div>
             )}
