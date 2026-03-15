@@ -140,7 +140,7 @@ export const Pricing: React.FC = () => {
   );
 
   return (
-    <Section id="pricing" className="relative bg-secondary-50">
+    <Section id="pricing" className="relative bg-secondary-50/70">
       {/* Background Depth */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-primary-200/20 rounded-full blur-3xl pointer-events-none" />
 

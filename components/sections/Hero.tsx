@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-50/70">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

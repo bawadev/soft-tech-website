@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "@/lib/seo/schemas";
 import Script from "next/script";
+import { ParticleNetwork } from "@/components/ui";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -121,7 +122,10 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {children}
+        <ParticleNetwork />
+        <div className="relative z-[2]">
+          {children}
+        </div>
       </body>
     </html>
   );

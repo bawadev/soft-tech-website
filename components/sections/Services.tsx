@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Zap, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
-import { Section, Card, Button, ScrollReveal, ParallaxSection } from '../ui';
+import { Card, Button, ScrollReveal } from '../ui';
 
 interface Service {
   icon: React.ElementType;
@@ -289,7 +289,7 @@ export const Services: React.FC = () => {
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab) || serviceCategories[0];
 
   return (
-    <Section id="services" className="relative bg-secondary-50">
+    <section id="services" className="relative bg-secondary-50/70 pt-16 md:pt-24 lg:pt-32">
       {/* Background Depth */}
       <div className="absolute inset-0 pointer-events-none opacity-50" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.08) 1px, transparent 0)',
@@ -297,151 +297,162 @@ export const Services: React.FC = () => {
       }} />
       <div className="absolute top-1/3 right-0 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl pointer-events-none" />
 
-      <ParallaxSection>
-      <ScrollReveal variant="fadeUp">
-        <div className="text-center mb-10 sm:mb-12">
-          <h2 className="heading-2 mb-4">
-            Our <span className="text-gradient">Services</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-            We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
-          </p>
-        </div>
-      </ScrollReveal>
-
-      {/* Tabbed Navigation */}
-      <div className="mb-10 sm:mb-12">
-        <div
-          className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 mb-6 sm:mb-8"
-          role="tablist"
-          aria-label="Service categories"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {serviceCategories.map((category) => {
-            const TabIcon = category.icon;
-            const isActive = activeTab === category.id;
-
-            return (
-              <button
-                key={category.id}
-                onClick={() => setActiveTab(category.id)}
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`panel-${category.id}`}
-                id={`tab-${category.id}`}
-                className={`
-                  group relative flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold min-h-[48px]
-                  transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
-                  ${isActive
-                    ? 'bg-primary-600 text-white shadow-lg scale-105'
-                    : 'bg-white text-secondary-700 hover:bg-secondary-100 hover:shadow-md hover:scale-102 shadow-sm'
-                  }
-                `}
-              >
-                <TabIcon
-                  className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
-                  aria-hidden="true"
-                />
-                <span className="text-sm sm:text-base">{category.name}</span>
-                {isActive && (
-                  <div
-                    className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full animate-scale-in"
-                    aria-hidden="true"
-                  />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Category Description */}
-        <div className="text-center mb-6 sm:mb-8 animate-fade-in">
-          <p className="text-base sm:text-lg text-secondary-700 max-w-prose mx-auto px-4">
-            {activeCategory.description}
-          </p>
-        </div>
-
-        {/* Services Grid */}
-        <div
-          role="tabpanel"
-          id={`panel-${activeTab}`}
-          aria-labelledby={`tab-${activeTab}`}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8 animate-fade-in"
-        >
-          {activeCategory.services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <ScrollReveal key={index} variant="fadeUp" delay={index * 0.1}>
-              <Card
-                padding="lg"
-                className="flex flex-col h-full group hover:border-primary-300 border-2 border-transparent"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 bg-primary-50 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-8 h-8 text-primary-600" aria-hidden="true" />
-                  </div>
-                </div>
-
-                <h3 className="heading-4 mb-3 group-hover:text-primary-600 transition-colors duration-300">
-                  {service.title}
-                </h3>
-
-                <p className="text-secondary-700 mb-6 flex-grow leading-relaxed">
-                  {service.description}
-                </p>
-
-                <ul className="space-y-3 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center gap-3 text-secondary-700"
-                      style={{ animationDelay: `${idx * 50}ms` }}
-                    >
-                      <svg
-                        className="w-5 h-5 text-primary-600 flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant="outline"
-                  className="w-full group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600 transition-all duration-300"
-                >
-                  {service.cta}
-                </Button>
-              </Card>
-              </ScrollReveal>
-            );
-          })}
+      {/* ── Layer 1: Title ── sticks below nav, gets covered by tab pane + cards */}
+      <div className="sticky top-[77px] z-10 bg-secondary-50/70 backdrop-blur-md py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal variant="fadeUp">
+            <div className="text-center">
+              <h2 className="heading-2 mb-4">
+                Our <span className="text-gradient">Services</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
+                We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
 
-      {/* Support Highlight */}
-      <Card className="bg-primary-600 text-white text-center" padding="lg">
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold mb-4">
-            24/7 Support with Lifetime Change Requests
-          </h3>
-          <p className="text-xl mb-6 opacity-90">
-            Unlike traditional agencies, we're committed to your long-term success. Get unlimited support and continuous improvements as your business evolves.
-          </p>
-          <Button href="#contact" variant="secondary" size="lg">
-            Start Your Project
-          </Button>
+      {/* ── Layer 2: Tab Pane ── scrolls over title (stacks on top), then sticks */}
+      <div className="sticky top-[77px] z-20 bg-secondary-50/70 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
+          <div
+            className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3"
+            role="tablist"
+            aria-label="Service categories"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {serviceCategories.map((category) => {
+              const TabIcon = category.icon;
+              const isActive = activeTab === category.id;
+
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveTab(category.id)}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`panel-${category.id}`}
+                  id={`tab-${category.id}`}
+                  className={`
+                    group relative flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold min-h-[48px]
+                    transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+                    ${isActive
+                      ? 'bg-primary-600 text-white shadow-lg scale-105'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-100 hover:shadow-md hover:scale-102 shadow-sm'
+                    }
+                  `}
+                >
+                  <TabIcon
+                    className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm sm:text-base">{category.name}</span>
+                  {isActive && (
+                    <div
+                      className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full animate-scale-in"
+                      aria-hidden="true"
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Category Description */}
+          <div className="text-center mt-4 animate-fade-in">
+            <p className="text-base sm:text-lg text-secondary-700 max-w-prose mx-auto px-4">
+              {activeCategory.description}
+            </p>
+          </div>
         </div>
-      </Card>
-      </ParallaxSection>
-    </Section>
+      </div>
+
+      {/* ── Layer 3: Service Cards ── covers title (z-[15] > z-10), scrolls under tab pane (z-[15] < z-20) */}
+      <div className="relative z-[15] bg-secondary-50/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-16 md:pb-24 lg:pb-32">
+          <div
+            role="tabpanel"
+            id={`panel-${activeTab}`}
+            aria-labelledby={`tab-${activeTab}`}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8 animate-fade-in"
+          >
+            {activeCategory.services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <ScrollReveal key={index} variant="fadeUp" delay={index * 0.1}>
+                <Card
+                  padding="lg"
+                  className="flex flex-col h-full group hover:border-primary-300 border-2 border-transparent"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-3 bg-primary-50 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-primary-600" aria-hidden="true" />
+                    </div>
+                  </div>
+
+                  <h3 className="heading-4 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-secondary-700 mb-6 flex-grow leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-secondary-700"
+                        style={{ animationDelay: `${idx * 50}ms` }}
+                      >
+                        <svg
+                          className="w-5 h-5 text-primary-600 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    variant="outline"
+                    className="w-full group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600 transition-all duration-300"
+                  >
+                    {service.cta}
+                  </Button>
+                </Card>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          {/* Support Highlight */}
+          <div className="mt-10 sm:mt-12">
+            <Card className="bg-primary-600 text-white text-center" padding="lg">
+              <div className="max-w-3xl mx-auto">
+                <h3 className="text-3xl font-bold mb-4">
+                  24/7 Support with Lifetime Change Requests
+                </h3>
+                <p className="text-xl mb-6 opacity-90">
+                  Unlike traditional agencies, we&apos;re committed to your long-term success. Get unlimited support and continuous improvements as your business evolves.
+                </p>
+                <Button href="#contact" variant="secondary" size="lg">
+                  Start Your Project
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

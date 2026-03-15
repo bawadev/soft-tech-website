@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Section, Card, Button, ScrollReveal } from '../ui';
+import { Card, Button, ScrollReveal } from '../ui';
 
 export const Portfolio: React.FC = () => {
   const projects = [
@@ -48,87 +48,107 @@ export const Portfolio: React.FC = () => {
   ];
 
   return (
-    <Section id="portfolio" className="bg-[linear-gradient(135deg,_#f0f9ff_0%,_#ffffff_50%,_#fafafa_100%)]">
-      <ScrollReveal variant="fadeUp">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="heading-2 mb-4">
-            Success <span className="text-gradient">Stories</span>
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-            Led by senior engineers who previously worked at Sri Lanka&apos;s leading software companies, we deliver real results for businesses through AI-powered solutions and enterprise-grade expertise.
-          </p>
-        </div>
-      </ScrollReveal>
-
-      <div className="space-y-12 sm:space-y-14 lg:space-y-16">
-        {projects.map((project, index) => (
-          <ScrollReveal key={index} variant="fadeUp" delay={index * 0.15}>
-            <div
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
-            >
-              {/* Image */}
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="relative h-[300px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-xl group">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-secondary-900/30"></div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 text-primary-700 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-                  {project.company}
-                </div>
-
-                <h3 className="heading-3 mb-3 sm:mb-4">{project.title}</h3>
-                <p className="text-base sm:text-lg text-secondary-700 mb-5 sm:mb-6 max-w-prose">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-5 sm:mb-6">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-lg text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
-                  {project.metrics.map((metric, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">
-                        {metric.value}
-                      </div>
-                      <div className="text-xs sm:text-sm text-secondary-700">
-                        {metric.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <Button variant="outline" href={`/case-studies/${project.caseStudySlug}`}>View Case Study</Button>
-              </div>
+    <section
+      id="portfolio"
+      className="relative pt-16 md:pt-24 lg:pt-32"
+      style={{ background: 'linear-gradient(135deg, rgba(240,249,255,0.7) 0%, rgba(255,255,255,0.7) 50%, rgba(250,250,250,0.7) 100%)' }}
+    >
+      {/* ── Title ── sticks below nav, stays visible above cards */}
+      <div
+        className="sticky top-[77px] z-20 py-4 sm:py-6 bg-white/70 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal variant="fadeUp">
+            <div className="text-center">
+              <h2 className="heading-2 mb-4">
+                Success <span className="text-gradient">Stories</span>
+              </h2>
+              <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
+                Led by senior engineers who previously worked at Sri Lanka&apos;s leading software companies, we deliver real results for businesses through AI-powered solutions and enterprise-grade expertise.
+              </p>
             </div>
           </ScrollReveal>
-        ))}
+        </div>
       </div>
 
-      {/* CTA Section */}
-      <ScrollReveal variant="fadeUp" delay={0.1}>
-        <div className="mt-16 text-center">
+      {/* ── Stacking project cards ── each sticks with ascending z-index + top offset */}
+      {projects.map((project, index) => (
+        <React.Fragment key={index}>
+          <div
+            className="px-4 sm:px-6 lg:px-8"
+            style={{
+              position: 'sticky',
+              top: `${310 + index * 16}px`,
+              zIndex: 12 + index * 2,
+            }}
+          >
+            <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch lg:h-[400px]">
+                {/* Image */}
+                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                  <div className="relative h-[280px] sm:h-[320px] lg:h-full group">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                      className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-secondary-900/30" />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 text-primary-700 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4 w-fit">
+                    {project.company}
+                  </div>
+
+                  <h3 className="heading-3 mb-3 sm:mb-4">{project.title}</h3>
+                  <p className="text-base sm:text-lg text-secondary-700 mb-5 sm:mb-6 max-w-prose">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-5 sm:mb-6">
+                    {project.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-lg text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
+                    {project.metrics.map((metric, idx) => (
+                      <div key={idx} className="text-center">
+                        <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">
+                          {metric.value}
+                        </div>
+                        <div className="text-xs sm:text-sm text-secondary-700">
+                          {metric.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button variant="outline" href={`/case-studies/${project.caseStudySlug}`}>View Case Study</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll room spacer */}
+          <div className="h-[40vh] sm:h-[50vh]" />
+        </React.Fragment>
+      ))}
+
+      {/* ── CTA ── scrolls over the last stuck card */}
+      <div className="relative z-30 bg-white/70 pb-16 md:pb-24 lg:pb-32 pt-10 sm:pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Card className="bg-secondary-50 inline-block" padding="lg">
             <h3 className="text-2xl font-bold text-secondary-900 mb-4">
               Ready to write your success story?
@@ -141,7 +161,7 @@ export const Portfolio: React.FC = () => {
             </Button>
           </Card>
         </div>
-      </ScrollReveal>
-    </Section>
+      </div>
+    </section>
   );
 };

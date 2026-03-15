@@ -114,7 +114,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <Section id="contact" className="relative bg-white">
+    <Section id="contact" className="relative bg-white/70">
       {/* Left half tint overlay */}
       <div className="absolute inset-y-0 left-0 w-1/2 bg-primary-50/50 pointer-events-none" />
 
