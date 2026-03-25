@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://softx-world.com';
+  const baseUrl = 'https://softx.world';
 
   // Blog posts
   const blogPosts = [
@@ -20,6 +20,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Case studies
+  const caseStudies = [
+    'new-york-life-insurance-platform-modernization',
+    'workwave-smart-service-management',
+    'mapbe-wellbeing-health-ai-assistant',
+  ];
+
+  const caseStudyUrls = caseStudies.map((slug) => ({
+    url: `${baseUrl}/case-studies/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -34,5 +48,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...blogUrls,
+    ...caseStudyUrls,
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 }

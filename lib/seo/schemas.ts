@@ -3,13 +3,14 @@ import { WithContext, Organization, Service, Article, BreadcrumbList, WebSite } 
 export const OrganizationSchema: WithContext<Organization> = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Softx World",
+  "name": "SoftX World",
+  "alternateName": ["SoftX", "Softx", "Softx World", "SoftX World"],
   "legalName": "Softx LLC",
-  "url": "https://softx-world.com",
-  "logo": "https://softx-world.com/logo.png",
-  "description": "AI-powered business solutions and strategic technology partnership. Expert in AI chat agents, legacy system migrations, and business consultation.",
+  "url": "https://softx.world",
+  "logo": "https://softx.world/logo.png",
+  "description": "SoftX World — AI-powered business solutions and strategic technology partnership. Expert in AI chat agents, legacy system migrations, n8n automation, RAG systems, and business consultation.",
   "foundingDate": "2017",
-  "email": "contact@softx-world.com",
+  "email": "contact@softx.world",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "MT",
@@ -47,9 +48,10 @@ export const OrganizationSchema: WithContext<Organization> = {
 export const WebSiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Softx World",
-  "url": "https://softx-world.com",
-  "description": "AI-powered business solutions and strategic technology partnership",
+  "name": "SoftX World",
+  "alternateName": ["SoftX", "Softx"],
+  "url": "https://softx.world",
+  "description": "SoftX World — AI-powered automation, RAG systems, n8n workflows, and customer acquisition solutions",
   "publisher": {
     "@type": "Organization",
     "name": "Softx World"
@@ -58,7 +60,7 @@ export const WebSiteSchema: WithContext<WebSite> = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://softx-world.com/search?q={search_term_string}"
+      "urlTemplate": "https://softx.world/search?q={search_term_string}"
     }
   } as any
 };
@@ -76,7 +78,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -129,7 +131,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -148,7 +150,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -167,7 +169,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -186,7 +188,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -205,7 +207,7 @@ export const ServicesSchema: WithContext<Service>[] = [
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://softx-world.com/#services"
+      "serviceUrl": "https://softx.world/#services"
     },
     "offers": {
       "@type": "Offer",
@@ -247,14 +249,14 @@ export function generateArticleSchema(article: {
     "author": {
       "@type": "Organization",
       "name": article.author,
-      "url": "https://softx-world.com"
+      "url": "https://softx.world"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Softx World",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://softx-world.com/logo.png"
+        "url": "https://softx.world/logo.png"
       }
     },
     "mainEntityOfPage": {

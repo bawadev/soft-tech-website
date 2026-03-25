@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Softx World`,
     description: post.excerpt,
     keywords: post.tags,
-    authors: [{ name: post.author, url: 'https://softx-world.com' }],
+    authors: [{ name: post.author, url: 'https://softx.world' }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      url: `https://softx-world.com/blog/${slug}`,
+      url: `https://softx.world/blog/${slug}`,
       images: [
         {
           url: post.image,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [post.image],
     },
     alternates: {
-      canonical: `https://softx-world.com/blog/${slug}`,
+      canonical: `https://softx.world/blog/${slug}`,
     },
   };
 }
@@ -119,13 +119,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     datePublished: new Date(post.date).toISOString(),
     dateModified: new Date(post.date).toISOString(),
     author: post.author,
-    url: `https://softx-world.com/blog/${slug}`,
+    url: `https://softx.world/blog/${slug}`,
   });
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://softx-world.com' },
-    { name: 'Blog', url: 'https://softx-world.com/blog' },
-    { name: post.title, url: `https://softx-world.com/blog/${slug}` },
+    { name: 'Home', url: 'https://softx.world' },
+    { name: 'Blog', url: 'https://softx.world/blog' },
+    { name: post.title, url: `https://softx.world/blog/${slug}` },
   ]);
 
   return (

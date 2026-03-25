@@ -12,7 +12,6 @@ const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
   { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Pricing', href: '#pricing' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -28,7 +27,7 @@ export const Navigation: React.FC = () => {
       setIsScrolled(window.scrollY > 10);
 
       // Determine active section based on scroll position
-      const sections = ['about', 'services', 'portfolio', 'pricing', 'contact'];
+      const sections = ['about', 'services', 'portfolio', 'contact'];
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {

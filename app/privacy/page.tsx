@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Softx World',
   description: 'Privacy Policy for Softx LLC (Softx World). Learn how we collect, use, and protect your personal information.',
   alternates: {
-    canonical: 'https://softx-world.com/privacy',
+    canonical: 'https://softx.world/privacy',
   },
 };
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
                 <p>
                   Softx LLC, operating as Softx World (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), is committed to protecting your
                   privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
-                  information when you visit our website <strong>softx-world.com</strong> or engage our services.
+                  information when you visit our website <strong>softx.world</strong> or engage our services.
                 </p>
               </section>
 
@@ -92,8 +92,8 @@ export default function PrivacyPolicy() {
                 </ul>
                 <p className="mt-3">
                   To exercise any of these rights, contact us at{' '}
-                  <a href="mailto:contact@softx-world.com" className="text-primary-600 hover:underline">
-                    contact@softx-world.com
+                  <a href="mailto:contact@softx.world" className="text-primary-600 hover:underline">
+                    contact@softx.world
                   </a>.
                 </p>
               </section>
@@ -112,8 +112,8 @@ export default function PrivacyPolicy() {
                 <p>If you have questions about this Privacy Policy, please contact us:</p>
                 <div className="mt-3 bg-secondary-50 rounded-lg p-4 text-sm">
                   <p><strong>Softx LLC (Softx World)</strong></p>
-                  <p>Email: <a href="mailto:contact@softx-world.com" className="text-primary-600 hover:underline">contact@softx-world.com</a></p>
-                  <p>Website: <a href="https://softx-world.com" className="text-primary-600 hover:underline">softx-world.com</a></p>
+                  <p>Email: <a href="mailto:contact@softx.world" className="text-primary-600 hover:underline">contact@softx.world</a></p>
+                  <p>Website: <a href="https://softx.world" className="text-primary-600 hover:underline">softx.world</a></p>
                 </div>
               </section>
 

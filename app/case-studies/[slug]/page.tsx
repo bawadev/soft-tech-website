@@ -82,7 +82,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       name: 'Softx World',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://softx-world.com/logo.png',
+        url: 'https://softx.world/logo.png',
       },
     },
     datePublished: new Date().toISOString(),

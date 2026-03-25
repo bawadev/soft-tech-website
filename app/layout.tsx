@@ -25,13 +25,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://softx-world.com'),
+  metadataBase: new URL('https://softx.world'),
   title: {
-    default: "Softx World - You Focus on Business, We Bring You Customers",
-    template: "%s | Softx World"
+    default: "SoftX World | AI Automation, RAG Systems & Customer Acquisition",
+    template: "%s | SoftX World"
   },
-  description: "AI-powered automation, RAG systems, n8n workflows, and marketing automation that delivers 3-5x ROI. We handle customer acquisition so you can focus on business growth. 24/7 support, lifetime upgrades.",
+  description: "SoftX World — AI-powered automation, RAG systems, n8n workflows, and marketing automation that delivers 3-5x ROI. We handle customer acquisition so you can focus on business growth.",
   keywords: [
+    "SoftX",
+    "SoftX World",
+    "softx.world",
     "n8n automation",
     "RAG systems",
     "AI chatbots",
@@ -48,9 +51,9 @@ export const metadata: Metadata = {
     "customer service automation",
     "business growth"
   ],
-  authors: [{ name: "Softx World", url: "https://softx-world.com" }],
-  creator: "Softx World",
-  publisher: "Softx World",
+  authors: [{ name: "SoftX World", url: "https://softx.world" }],
+  creator: "SoftX World",
+  publisher: "SoftX World",
   formatDetection: {
     email: false,
     address: false,
@@ -59,24 +62,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://softx-world.com",
-    siteName: "Softx World",
-    title: "Softx World - AI Automation & Customer Acquisition Partner",
-    description: "Transform your business with n8n automation, RAG systems, AI chatbots, and marketing automation. We bring you customers while you focus on your business. 3-5x ROI guaranteed.",
+    url: "https://softx.world",
+    siteName: "SoftX World",
+    title: "SoftX World | AI Automation & Customer Acquisition Partner",
+    description: "SoftX World — Transform your business with n8n automation, RAG systems, AI chatbots, and marketing automation. We bring you customers while you focus on your business.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Softx World - AI Automation & Customer Acquisition Partner",
+        alt: "SoftX World - AI Automation & Customer Acquisition Partner",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Softx World - AI Automation & Customer Acquisition Partner",
-    description: "AI-powered automation, RAG systems, and marketing automation that brings you customers. We handle acquisition, you handle business.",
+    title: "SoftX World | AI Automation & Customer Acquisition Partner",
+    description: "SoftX World — AI-powered automation, RAG systems, and marketing automation that brings you customers. We handle acquisition, you handle business.",
     images: ["/twitter-image.jpg"],
     creator: "@SoftxWorld",
     site: "@SoftxWorld",
@@ -107,7 +110,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://softx-world.com',
+    canonical: 'https://softx.world',
   },
   category: 'technology',
 };

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service | Softx World',
   description: 'Terms of Service for Softx LLC (Softx World). Understand the terms governing the use of our website and services.',
   alternates: {
-    canonical: 'https://softx-world.com/terms',
+    canonical: 'https://softx.world/terms',
   },
 };
 
@@ -27,7 +27,7 @@ export default function TermsOfService() {
               <section>
                 <h2 className="text-xl font-semibold text-secondary-900 mb-3">1. Agreement to Terms</h2>
                 <p>
-                  By accessing or using the website <strong>softx-world.com</strong> or engaging any services
+                  By accessing or using the website <strong>softx.world</strong> or engaging any services
                   provided by Softx LLC (&quot;Softx World&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), you agree to be bound
                   by these Terms of Service. If you do not agree, please discontinue use immediately.
                 </p>
@@ -126,8 +126,8 @@ export default function TermsOfService() {
                 <p>For questions about these Terms, please reach out:</p>
                 <div className="mt-3 bg-secondary-50 rounded-lg p-4 text-sm">
                   <p><strong>Softx LLC (Softx World)</strong></p>
-                  <p>Email: <a href="mailto:contact@softx-world.com" className="text-primary-600 hover:underline">contact@softx-world.com</a></p>
-                  <p>Website: <a href="https://softx-world.com" className="text-primary-600 hover:underline">softx-world.com</a></p>
+                  <p>Email: <a href="mailto:contact@softx.world" className="text-primary-600 hover:underline">contact@softx.world</a></p>
+                  <p>Website: <a href="https://softx.world" className="text-primary-600 hover:underline">softx.world</a></p>
                 </div>
               </section>
 

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Blog - AI, Automation & Marketing Insights | Softx World',
     description: 'Expert articles on n8n automation, RAG systems, AI chatbots, marketing automation, and digital transformation.',
     type: 'website',
-    url: 'https://softx-world.com/blog',
+    url: 'https://softx.world/blog',
     images: [
       {
         url: '/og-blog.jpg',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ['/twitter-blog.jpg'],
   },
   alternates: {
-    canonical: 'https://softx-world.com/blog',
+    canonical: 'https://softx.world/blog',
   },
 };
 

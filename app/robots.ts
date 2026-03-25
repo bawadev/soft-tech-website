@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://softx-world.com/sitemap.xml',
-    host: 'https://softx-world.com',
+    sitemap: 'https://softx.world/sitemap.xml',
+    host: 'https://softx.world',
   };
 }
