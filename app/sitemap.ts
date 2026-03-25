@@ -1,21 +1,12 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '@/data/blog-posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://softx.world';
 
-  // Blog posts
-  const blogPosts = [
-    'ai-transformation-2024',
-    'legacy-migration-guide',
-    'customer-acquisition-ai',
-    'chatbot-roi',
-    'competitive-advantage-ai',
-    'future-of-work-ai',
-  ];
-
-  const blogUrls = blogPosts.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date('2024-01-15'),
+  const blogUrls = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

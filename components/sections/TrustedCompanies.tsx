@@ -7,12 +7,12 @@ import { Container, ScrollReveal, AnimateCounter } from '../ui';
 
 export const TrustedCompanies: React.FC = () => {
   const companies = [
-    { name: 'IFS', logo: '/logos/ifs.svg' },
-    { name: 'Tech Mahindra', logo: '/logos/tech-mahindra.svg' },
-    { name: 'WorkWave', logo: '/logos/workwave.svg' },
-    { name: 'Virtusa', logo: '/logos/virtusa.svg' },
-    { name: 'New York Life Insurance', logo: '/logos/new-york-life.svg' },
-    { name: 'Codegen', logo: '/logos/codegen.svg' },
+    { name: 'IFS', logo: '/logos/ifs.png' },
+    { name: 'Tech Mahindra', logo: '/logos/tech-mahindra.png' },
+    { name: 'Cisco', logo: '/logos/cisco.png' },
+    { name: 'Virtusa', logo: '/logos/virtusa.png' },
+    { name: 'New York Life Insurance', logo: '/logos/new-york-life.png' },
+    { name: 'Codegen', logo: '/logos/codegen.png' },
   ];
 
   // Duplicate for seamless marquee loop
@@ -54,7 +54,7 @@ export const TrustedCompanies: React.FC = () => {
   const statsScale = useTransform(scrollYProgress, [0.22, 0.50], [1, 0.9]);
 
   return (
-    <div ref={wrapperRef} className="relative h-[200vh] z-10">
+    <div ref={wrapperRef} className="relative h-[300vh] z-10">
       <section className="sticky top-0 h-screen overflow-hidden relative flex flex-col justify-center py-8 sm:py-12">
         {/* White background overlay — fades to reveal Sigiriya behind */}
         <motion.div
@@ -85,12 +85,10 @@ export const TrustedCompanies: React.FC = () => {
                   {/* Subtle overlay */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent" />
                   {/* Caption badge */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/80 backdrop-blur-md rounded-xl px-4 py-3 border border-primary-100/40 shadow-lg">
-                      <p className="text-sm font-medium text-secondary-800 italic">
-                        &quot;Every line of code crafted with the same precision and care.&quot;
-                      </p>
-                    </div>
+                  <div className="absolute bottom-0 right-0">
+                    <p className="text-sm font-medium text-white/90 italic bg-black/30 backdrop-blur-sm px-3 py-2 rounded-tl-xl">
+                      &quot;Every line of code crafted with the same precision and care.&quot;
+                    </p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -100,15 +98,8 @@ export const TrustedCompanies: React.FC = () => {
             <motion.div style={{ x: rightX, y: rightY, opacity: rightOpacity, scale: rightScale }}>
               <ScrollReveal variant="fadeRight">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-700 rounded-full text-sm font-medium mb-4">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span>Enterprise Expertise</span>
-                  </div>
-
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
-                    Crafted by Engineers from Sri Lanka&apos;s Leading Tech Companies
+                    Crafted with Elegance of Sri Lankan Engineering
                   </h2>
 
                   <p className="text-base sm:text-lg text-secondary-700 mb-6">
@@ -146,13 +137,14 @@ export const TrustedCompanies: React.FC = () => {
               {marqueeLogos.map((company, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                  className="flex-shrink-0 mx-6 flex items-center justify-center bg-white rounded-lg px-5 py-3 shadow-sm border border-secondary-100/50"
+                  style={{ width: '140px', height: '50px' }}
                 >
                   <img
                     src={company.logo}
                     alt={company.name}
-                    className="max-h-[40px] w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                    style={{ minWidth: '80px' }}
+                    className="max-h-[30px] max-w-[110px] w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
+                    style={{ filter: 'grayscale(100%) brightness(0.5) contrast(1.1)' }}
                   />
                 </div>
               ))}

@@ -73,9 +73,13 @@ export const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call - replace with actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form data:', data);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
 
       setSubmitStatus('success');
       clearSavedData();
@@ -141,7 +145,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-secondary-900 mb-1">Email Us</h4>
-                  <p className="text-secondary-700">contact@softtech.com</p>
+                  <p className="text-secondary-700">admin@softx.world</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -346,7 +350,7 @@ export const Contact: React.FC = () => {
                 </svg>
                 <div>
                   <p className="font-semibold text-error-700">Something went wrong</p>
-                  <p className="text-sm text-error-600 mt-1">Please try again or email us directly at contact@softtech.com</p>
+                  <p className="text-sm text-error-600 mt-1">Please try again or email us directly at admin@softx.world</p>
                 </div>
               </div>
             )}

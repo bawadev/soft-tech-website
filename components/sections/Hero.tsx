@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
               variants={fadeUpVariants}
               transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
             >
-              Just Focus on Business.{' '}
+              Focus on Business.{' '}
               <span className="text-gradient">We Bring You Customers.</span>
             </motion.h1>
 

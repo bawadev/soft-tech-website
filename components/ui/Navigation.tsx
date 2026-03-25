@@ -9,11 +9,11 @@ import { Logo } from './Logo';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
+  { name: 'About', href: '/#about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Portfolio', href: '/#portfolio' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export const Navigation: React.FC = () => {
@@ -57,9 +57,14 @@ export const Navigation: React.FC = () => {
 
   // Smooth scroll handler for anchor links
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
+    const hash = href.includes('#') ? '#' + href.split('#')[1] : null;
+    if (hash) {
+      // If not on homepage, let Next.js Link handle navigation to /#section
+      if (pathname !== '/') {
+        return;
+      }
       e.preventDefault();
-      const element = document.querySelector(href);
+      const element = document.querySelector(hash);
       if (element) {
         const offset = 80; // Account for fixed navbar height
         const elementPosition = element.getBoundingClientRect().top;
@@ -80,8 +85,8 @@ export const Navigation: React.FC = () => {
     if (link.href === pathname) return true;
 
     // For anchor links, check if we're on homepage and section is active
-    if (link.href.startsWith('#') && pathname === '/') {
-      return activeSection === link.href.substring(1);
+    if (link.href.includes('#') && pathname === '/') {
+      return activeSection === link.href.split('#')[1];
     }
 
     return false;

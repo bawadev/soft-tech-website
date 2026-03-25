@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "@/lib/seo/schemas";
 import Script from "next/script";
-import { ParticleNetwork } from "@/components/ui";
+import { ParticleNetwork, SmoothScroll } from "@/components/ui";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -98,14 +98,17 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/icon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/icon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#3b82f6' },
+      { rel: 'mask-icon', url: '/favicon.svg', color: '#0c62aa' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -131,10 +134,12 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ParticleNetwork />
-        <div className="relative z-[2]">
-          {children}
-        </div>
+        <SmoothScroll>
+          <ParticleNetwork />
+          <div className="relative z-[2]">
+            {children}
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );

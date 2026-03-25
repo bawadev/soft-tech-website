@@ -13,3 +13,4 @@ export { ScrollReveal } from './ScrollReveal';
 export { AnimateCounter } from './AnimateCounter';
 export { ParallaxSection } from './ParallaxSection';
 export { ParticleNetwork } from './ParticleNetwork';
+export { SmoothScroll } from './SmoothScroll';

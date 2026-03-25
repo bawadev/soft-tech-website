@@ -190,12 +190,12 @@ export const About: React.FC = () => {
   });
 
   /*
-   * TC wrapper = 200vh, About wrapper = 400vh, marginTop = -200vh
+   * TC wrapper = 300vh, About wrapper = 600vh, marginTop = -300vh
    * About top aligns with TC top. Both sticky sections overlap.
-   * scrollYProgress 0→1 spans ~300vh of scroll (400vh - 100vh viewport).
+   * scrollYProgress 0→1 spans ~500vh of scroll (600vh - 100vh viewport).
    *
    * TC scatter completes at TC scrollYProgress ~0.50 = ~100vh scroll.
-   * In About terms: 100vh / 300vh ≈ 0.33.
+   * In About terms: 100vh / 500vh ≈ 0.20.
    *
    * Timeline:
    *   0.00–0.20  Sigiriya bg fades in (behind TC white overlay)
@@ -260,7 +260,7 @@ export const About: React.FC = () => {
   const sectionOpacity = useTransform(scrollYProgress, [0.90, 1.0], [1, 0]);
 
   return (
-    <div ref={wrapperRef} className="relative z-0" style={{ height: '400vh', marginTop: '-200vh' }}>
+    <div ref={wrapperRef} className="relative z-0" style={{ height: '600vh', marginTop: '-300vh' }}>
       <motion.section
         id="about"
         className="sticky top-0 h-screen overflow-hidden flex flex-col"

@@ -35,7 +35,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior handled by Lenis for smooth inertial scrolling */
   }
 
   /* Improve readability with optimal line length */
