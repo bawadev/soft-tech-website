@@ -8,9 +8,10 @@ export const OrganizationSchema: WithContext<Organization> = {
   "legalName": "Softx LLC",
   "url": "https://softx.world",
   "logo": "https://softx.world/logo.png",
+  "image": "https://softx.world/og-image.jpg",
   "description": "SoftX World — AI-powered business solutions and strategic technology partnership. Expert in AI chat agents, legacy system migrations, n8n automation, RAG systems, and business consultation.",
   "foundingDate": "2017",
-  "email": "contact@softx.world",
+  "email": "admin@softx.world",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "MT",
@@ -49,20 +50,16 @@ export const WebSiteSchema: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "SoftX World",
-  "alternateName": ["SoftX", "Softx"],
+  "alternateName": ["SoftX", "Softx", "softx.world"],
   "url": "https://softx.world",
-  "description": "SoftX World — AI-powered automation, RAG systems, n8n workflows, and customer acquisition solutions",
+  "description": "SoftX World — AI-powered automation, RAG systems, n8n workflows, and customer acquisition solutions. Enterprise software company from Sri Lanka.",
   "publisher": {
     "@type": "Organization",
-    "name": "Softx World"
+    "name": "SoftX World",
+    "url": "https://softx.world",
+    "logo": "https://softx.world/logo.png"
   },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://softx.world/search?q={search_term_string}"
-    }
-  } as any
+  "inLanguage": "en-US"
 };
 
 export const ServicesSchema: WithContext<Service>[] = [
