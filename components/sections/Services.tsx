@@ -289,7 +289,7 @@ export const Services: React.FC = () => {
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab) || serviceCategories[0];
 
   return (
-    <section id="services" className="relative bg-secondary-50/70 pt-16 md:pt-24 lg:pt-32" onMouseMove={autoRotate ? stopAutoRotate : undefined}>
+    <section id="services" className="relative bg-secondary-50/40 pt-16 md:pt-24 lg:pt-32" onMouseMove={autoRotate ? stopAutoRotate : undefined}>
       {/* Background Depth */}
       <div className="absolute inset-0 pointer-events-none opacity-50" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.08) 1px, transparent 0)',
@@ -298,7 +298,7 @@ export const Services: React.FC = () => {
       <div className="absolute top-1/3 right-0 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl pointer-events-none" />
 
       {/* ── Layer 1: Title ── sticks below nav, gets covered by tab pane + cards */}
-      <div className="sticky top-[77px] z-10 bg-secondary-50/70 backdrop-blur-md py-6 sm:py-8">
+      <div className="sticky top-[77px] z-10 bg-secondary-50/50 backdrop-blur-md py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal variant="fadeUp">
             <div className="text-center">
@@ -314,10 +314,10 @@ export const Services: React.FC = () => {
       </div>
 
       {/* ── Layer 2: Tab Pane ── scrolls over title (stacks on top), then sticks */}
-      <div className="sticky top-[77px] z-20 bg-secondary-50/70 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+      <div className="sticky top-[77px] z-20 bg-secondary-50/50 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
           <div
-            className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3"
+            className="flex flex-row justify-center gap-2 sm:gap-3"
             role="tablist"
             aria-label="Service categories"
           >
@@ -333,8 +333,10 @@ export const Services: React.FC = () => {
                   aria-selected={isActive}
                   aria-controls={`panel-${category.id}`}
                   id={`tab-${category.id}`}
+                  aria-label={category.name}
+                  title={category.name}
                   className={`
-                    group relative flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold min-h-[48px]
+                    group relative flex items-center justify-center gap-0 sm:gap-3 px-3 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold min-h-[48px]
                     transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
                     ${isActive
                       ? 'bg-primary-600 text-white shadow-lg scale-105'
@@ -343,10 +345,10 @@ export const Services: React.FC = () => {
                   `}
                 >
                   <TabIcon
-                    className={`w-5 h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
+                    className={`w-6 h-6 sm:w-5 sm:h-5 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`}
                     aria-hidden="true"
                   />
-                  <span className="text-sm sm:text-base">{category.name}</span>
+                  <span className="hidden sm:inline text-sm sm:text-base">{category.name}</span>
                   {isActive && (
                     <div
                       className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full animate-scale-in"
@@ -358,8 +360,13 @@ export const Services: React.FC = () => {
             })}
           </div>
 
+          {/* Active category name - mobile only */}
+          <div className="sm:hidden text-center mt-2">
+            <span className="text-sm font-medium text-primary-600">{activeCategory.name}</span>
+          </div>
+
           {/* Category Description */}
-          <div className="text-center mt-4 animate-fade-in">
+          <div className="hidden sm:block text-center mt-4 animate-fade-in">
             <p className="text-base sm:text-lg text-secondary-700 max-w-prose mx-auto px-4">
               {activeCategory.description}
             </p>
@@ -368,7 +375,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* ── Layer 3: Service Cards ── covers title (z-[15] > z-10), scrolls under tab pane (z-[15] < z-20) */}
-      <div className="relative z-[15] bg-secondary-50/70">
+      <div className="relative z-[15] bg-secondary-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-16 md:pb-24 lg:pb-32">
           <div
             role="tabpanel"
@@ -382,10 +389,10 @@ export const Services: React.FC = () => {
                 <ScrollReveal key={index} variant="fadeUp" delay={index * 0.1}>
                 <Card
                   padding="lg"
-                  className="flex flex-col h-full group hover:border-primary-300 border-2 border-transparent"
+                  className="flex flex-col h-full group hover:border-primary-300/60 liquid-glass"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 bg-primary-50 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <div className="p-3 bg-primary-50/80 backdrop-blur-sm rounded-xl group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-8 h-8 text-primary-600" aria-hidden="true" />
                     </div>
                   </div>
@@ -435,12 +442,12 @@ export const Services: React.FC = () => {
 
           {/* Support Highlight */}
           <div className="mt-10 sm:mt-12">
-            <Card className="bg-primary-600 text-white text-center" padding="lg">
+            <Card className="text-white text-center liquid-glass glass-panel-highlight" padding="lg">
               <div className="max-w-3xl mx-auto">
-                <h3 className="text-3xl font-bold mb-4">
+                <h3 className="text-xl sm:text-3xl font-bold mb-4">
                   24/7 Support with Lifetime Change Requests
                 </h3>
-                <p className="text-xl mb-6 opacity-90">
+                <p className="text-base sm:text-xl mb-4 sm:mb-6 opacity-90">
                   Unlike traditional agencies, we&apos;re committed to your long-term success. Get unlimited support and continuous improvements as your business evolves.
                 </p>
                 <Button href="#contact" variant="secondary" size="lg">

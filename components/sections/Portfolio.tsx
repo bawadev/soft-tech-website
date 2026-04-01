@@ -36,15 +36,15 @@ export const Portfolio: React.FC = () => {
     >
       {/* ── Title ── sticks below nav, stays visible above cards */}
       <div
-        className="sticky top-[77px] z-20 py-4 sm:py-6 bg-white/70 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-b border-primary-100/40"
+        className="sticky top-[77px] z-20 py-3 sm:py-6 bg-white/70 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-b border-primary-100/40"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal variant="fadeUp">
             <div className="text-center">
-              <h2 className="heading-2 mb-4">
+              <h2 className="heading-2 mb-2 sm:mb-4">
                 Success <span className="text-gradient">Stories</span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
+              <p className="hidden sm:block text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
                 Led by senior engineers who previously worked at Sri Lanka&apos;s leading software companies, we deliver real results for businesses through AI-powered solutions and enterprise-grade expertise.
               </p>
             </div>
@@ -59,15 +59,15 @@ export const Portfolio: React.FC = () => {
             className="px-4 sm:px-6 lg:px-8"
             style={{
               position: 'sticky',
-              top: `${310 + index * 16}px`,
+              top: `calc(var(--portfolio-card-base) + ${index * 16}px)`,
               zIndex: 12 + index * 2,
             }}
           >
-            <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden brand-border">
+            <div className="max-w-7xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-primary-100/40">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
                 {/* Image */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative h-[280px] sm:h-[320px] lg:h-full group">
+                  <div className="relative h-[160px] sm:h-[320px] lg:h-full group">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -80,14 +80,14 @@ export const Portfolio: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h3 className="heading-3 mb-3 sm:mb-4">{project.title}</h3>
-                  <p className="text-base sm:text-lg text-secondary-700 mb-5 sm:mb-6">
+                <div className={`p-4 sm:p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <h3 className="heading-3 mb-2 sm:mb-4">{project.title}</h3>
+                  <p className="text-sm sm:text-lg text-secondary-700 mb-3 sm:mb-6">
                     {project.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-5 sm:mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-6">
                     {project.tags.map((tag, idx) => (
                       <span
                         key={idx}

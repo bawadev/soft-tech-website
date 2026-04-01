@@ -18,12 +18,12 @@ const panels = [
     badgeColor: 'blue',
     content: (
       <>
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 italic leading-snug max-w-3xl mx-auto">
+        <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 italic leading-snug max-w-3xl mx-auto">
           <span className="text-primary-400 not-italic font-bold">Softx World</span> was
           built by former engineers and architects who spent years inside Sri
           Lanka&apos;s leading software companies.
         </p>
-        <p className="mt-6 font-serif text-base sm:text-lg md:text-xl text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-4 sm:mt-6 font-serif text-sm sm:text-base md:text-lg text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
           We learned what it takes to design, build, and maintain systems that
           operate at scale — where reliability, security, and long-term thinking
           are non-negotiable.
@@ -36,14 +36,14 @@ const panels = [
     badgeColor: 'cyan',
     content: (
       <>
-        <div className="bg-white/10 border-l-4 border-primary-400 p-5 sm:p-6 rounded-r-xl mb-6 max-w-3xl mx-auto">
-          <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white italic leading-snug">
+        <div className="bg-white/10 border-l-4 border-primary-400 p-4 sm:p-6 rounded-r-xl mb-4 sm:mb-6 max-w-3xl mx-auto">
+          <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white italic leading-snug">
             We saw a gap: businesses needed{' '}
             <span className="text-primary-300 not-italic font-bold">enterprise-level engineering</span>{' '}
             without the enterprise-level cost and complexity.
           </p>
         </div>
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-primary-300 font-bold not-italic leading-snug max-w-3xl mx-auto">
+        <p className="font-serif text-base sm:text-xl md:text-2xl text-primary-300 font-bold not-italic leading-snug max-w-3xl mx-auto">
           Softx World bridges that gap.
         </p>
       </>
@@ -54,10 +54,10 @@ const panels = [
     badgeColor: 'indigo',
     content: (
       <>
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 italic leading-snug max-w-3xl mx-auto mb-6">
+        <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 italic leading-snug max-w-3xl mx-auto mb-4 sm:mb-6">
           We bring enterprise-level experience to organizations of all sizes.
         </p>
-        <p className="font-serif text-base sm:text-lg md:text-xl text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
+        <p className="font-serif text-sm sm:text-base md:text-lg text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
           Whether you&apos;re scaling an established business or building
           something new in a rapidly evolving, AI-driven landscape, we work as a
           practical partner — focused on{' '}
@@ -101,7 +101,7 @@ function StoryPanel({
     >
       {/* Glass card — matches Hero panel frosted-glass aesthetic */}
       <div
-        className="relative w-full h-full liquid-glass glass-panel-dark p-6 sm:p-10 lg:p-14 overflow-hidden flex items-center justify-center"
+        className="relative w-full h-full liquid-glass glass-panel-dark p-4 sm:p-8 lg:p-14 overflow-hidden flex items-center justify-center"
       >
         {/* Top edge highlight */}
         <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-100/70 to-transparent pointer-events-none" />
@@ -276,7 +276,7 @@ export const About: React.FC = () => {
             alt="Sigiriya — Built to last"
             fill
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-[center_30%] sm:object-center"
             priority
           />
         </motion.div>
@@ -286,7 +286,7 @@ export const About: React.FC = () => {
 
         {/* Title */}
         <motion.div
-          className="relative z-10 pt-20 sm:pt-24 flex justify-center"
+          className="relative z-10 pt-24 sm:pt-28 md:pt-32 flex justify-center"
           style={{ y: titleY, opacity: titleOpacity }}
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -303,8 +303,8 @@ export const About: React.FC = () => {
         </motion.div>
 
         {/* Panel container */}
-        <div className="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-          <div className="relative w-full max-w-4xl mx-auto" style={{ minHeight: '280px', maxHeight: '420px', height: '50vh' }}>
+        <div className="relative z-10 flex-1 flex items-start sm:items-center justify-center px-4 sm:px-6 lg:px-8 pt-4 sm:pt-0 pb-10 sm:pb-16 md:pb-20">
+          <div className="relative w-full max-w-4xl mx-auto min-h-[240px] sm:min-h-[280px] max-h-[350px] sm:max-h-[420px] h-[45vh] sm:h-[50vh]">
             <StoryPanel panel={panels[0]} y={p1Y} opacity={p1Opacity} scale={p1Scale} />
             <StoryPanel panel={panels[1]} y={p2Y} opacity={p2Opacity} scale={p2Scale} />
             <StoryPanel panel={panels[2]} y={p3Y} opacity={p3Opacity} scale={p3Scale} />

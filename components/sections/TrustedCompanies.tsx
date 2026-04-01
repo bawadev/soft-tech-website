@@ -31,31 +31,31 @@ export const TrustedCompanies: React.FC = () => {
   // Background white overlay fade — reveals Sigiriya behind
   const bgFadeOpacity = useTransform(scrollYProgress, [0.0, 0.35], [1, 0]);
 
-  // Left column: flies left + down + scale
-  const leftX = useTransform(scrollYProgress, [0.08, 0.42], [0, -200]);
+  // Left column: flies left + down + scale (reduced X for mobile)
+  const leftX = useTransform(scrollYProgress, [0.08, 0.42], [0, -100]);
   const leftY = useTransform(scrollYProgress, [0.08, 0.42], [0, 60]);
   const leftOpacity = useTransform(scrollYProgress, [0.08, 0.42], [1, 0]);
   const leftScale = useTransform(scrollYProgress, [0.08, 0.42], [1, 0.85]);
 
-  // Right column: flies right + down + scale
-  const rightX = useTransform(scrollYProgress, [0.12, 0.45], [0, 200]);
+  // Right column: flies right + down + scale (reduced X for mobile)
+  const rightX = useTransform(scrollYProgress, [0.12, 0.45], [0, 100]);
   const rightY = useTransform(scrollYProgress, [0.12, 0.45], [0, 60]);
   const rightOpacity = useTransform(scrollYProgress, [0.12, 0.45], [1, 0]);
   const rightScale = useTransform(scrollYProgress, [0.12, 0.45], [1, 0.85]);
 
   // Marquee: drops down
-  const marqueeY = useTransform(scrollYProgress, [0.18, 0.48], [0, 140]);
+  const marqueeY = useTransform(scrollYProgress, [0.18, 0.48], [0, 100]);
   const marqueeOpacity = useTransform(scrollYProgress, [0.18, 0.48], [1, 0]);
   const marqueeScale = useTransform(scrollYProgress, [0.18, 0.48], [1, 0.9]);
 
   // Stats bar: drops further down
-  const statsY = useTransform(scrollYProgress, [0.22, 0.50], [0, 180]);
+  const statsY = useTransform(scrollYProgress, [0.22, 0.50], [0, 120]);
   const statsOpacity = useTransform(scrollYProgress, [0.22, 0.50], [1, 0]);
   const statsScale = useTransform(scrollYProgress, [0.22, 0.50], [1, 0.9]);
 
   return (
     <div ref={wrapperRef} className="relative h-[300vh] z-10">
-      <section className="sticky top-0 h-screen overflow-hidden relative flex flex-col justify-center py-8 sm:py-12">
+      <section className="sticky top-0 h-screen overflow-hidden relative flex flex-col justify-center py-4 sm:py-12">
         {/* White background overlay — fades to reveal Sigiriya behind */}
         <motion.div
           className="absolute inset-0 bg-white pointer-events-none"
@@ -69,11 +69,11 @@ export const TrustedCompanies: React.FC = () => {
 
         <Container className="relative z-10">
           {/* Two-column header: image left, text right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-10 lg:gap-16 items-center mb-4 sm:mb-12">
             {/* Left — Image */}
             <motion.div style={{ x: leftX, y: leftY, opacity: leftOpacity, scale: leftScale }}>
               <ScrollReveal variant="fadeLeft">
-                <div className="relative w-full h-[280px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-full h-[180px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/media/craftsmanship.png"
                     alt="Precision craftsmanship — the care we bring to every line of code"
@@ -98,11 +98,11 @@ export const TrustedCompanies: React.FC = () => {
             <motion.div style={{ x: rightX, y: rightY, opacity: rightOpacity, scale: rightScale }}>
               <ScrollReveal variant="fadeRight">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-2 sm:mb-4">
                     Crafted with Elegance of Sri Lankan Engineering
                   </h2>
 
-                  <p className="text-base sm:text-lg text-secondary-700 mb-6">
+                  <p className="text-sm sm:text-lg text-secondary-700 mb-3 sm:mb-6">
                     We are a software company founded by senior engineers and solution architects with deep roots in Sri Lanka&apos;s leading technology companies. Our enterprise-grade experience powers intelligent AI and automation solutions built for scale, reliability, and impact.
                   </p>
 
@@ -126,7 +126,7 @@ export const TrustedCompanies: React.FC = () => {
 
           {/* Infinite Logo Marquee */}
           <motion.div
-            className="relative overflow-hidden mb-8"
+            className="relative overflow-hidden mb-4 sm:mb-8"
             style={{ y: marqueeY, opacity: marqueeOpacity, scale: marqueeScale }}
           >
             {/* Fade edges */}
@@ -156,29 +156,29 @@ export const TrustedCompanies: React.FC = () => {
             className="pt-6 border-t border-secondary-100"
             style={{ y: statsY, opacity: statsOpacity, scale: statsScale }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
+            <div className="grid grid-cols-3 gap-3 sm:gap-8 text-center">
               <ScrollReveal variant="fadeUp" delay={0}>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-2">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={98} suffix="%" />
                   </div>
-                  <div className="text-sm sm:text-base text-secondary-700">Client Satisfaction Rate</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Client Satisfaction Rate</div>
                 </div>
               </ScrollReveal>
               <ScrollReveal variant="fadeUp" delay={0.1}>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-2">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={15} suffix="+" />
                   </div>
-                  <div className="text-sm sm:text-base text-secondary-700">Years Combined Experience</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Years Combined Experience</div>
                 </div>
               </ScrollReveal>
               <ScrollReveal variant="fadeUp" delay={0.2}>
                 <div>
-                  <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-2">
+                  <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={50} suffix="+" />
                   </div>
-                  <div className="text-sm sm:text-base text-secondary-700">Ex-Enterprise Engineers</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Ex-Enterprise Engineers</div>
                 </div>
               </ScrollReveal>
             </div>

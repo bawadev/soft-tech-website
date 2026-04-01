@@ -136,7 +136,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SmoothScroll>
           <ParticleNetwork />
-          <div className="relative z-[2]">
+          <div className="relative z-[2] max-w-full overflow-x-clip">
             {children}
           </div>
         </SmoothScroll>

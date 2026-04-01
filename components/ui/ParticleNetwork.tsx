@@ -63,8 +63,8 @@ export const ParticleNetwork: React.FC = () => {
         y: Math.random() * window.innerHeight,
         vx: (Math.random() - 0.5) * baseSpeed * 2 * depth,
         vy: (Math.random() - 0.5) * baseSpeed * 2 * depth,
-        radius: 1.2 + depth * 2.3,
-        baseAlpha: 0.2 + depth * 0.5,
+        radius: 2.0 + depth * 3.0,
+        baseAlpha: 0.35 + depth * 0.55,
         phase: Math.random() * Math.PI * 2,
         depth,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
@@ -101,12 +101,12 @@ export const ParticleNetwork: React.FC = () => {
             const dist = Math.sqrt(distSq);
             const fade = 1 - dist / maxDist;
             const avgDepth = (particles[i].depth + particles[j].depth) / 2;
-            const opacity = 0.18 * fade * fade * avgDepth;
+            const opacity = 0.3 * fade * fade * avgDepth;
 
             const ci = particles[i].color;
             const cj = particles[j].color;
             ctx.strokeStyle = `rgba(${(ci.r + cj.r) >> 1}, ${(ci.g + cj.g) >> 1}, ${(ci.b + cj.b) >> 1}, ${opacity})`;
-            ctx.lineWidth = 0.4 + avgDepth * 0.7;
+            ctx.lineWidth = 0.6 + avgDepth * 1.0;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, adjustedY[i]);
             ctx.lineTo(particles[j].x, adjustedY[j]);

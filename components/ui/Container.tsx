@@ -19,7 +19,7 @@ export const Container: React.FC<ContainerProps> = ({
   };
 
   return (
-    <div className={`${sizeStyles[size]} mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
+    <div className={`w-full ${sizeStyles[size]} mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
       {children}
     </div>
   );
