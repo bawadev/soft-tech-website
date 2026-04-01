@@ -137,14 +137,13 @@ export const TrustedCompanies: React.FC = () => {
               {marqueeLogos.map((company, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 mx-6 flex items-center justify-center bg-white rounded-lg px-5 py-3 shadow-sm border border-secondary-100/50"
-                  style={{ width: '140px', height: '50px' }}
+                  className="flex-shrink-0 mx-4 sm:mx-6 flex items-center justify-center bg-white/60 backdrop-blur-sm rounded-xl px-5 py-3 border border-primary-100/30 shadow-sm hover:shadow-md hover:bg-white/80 transition-all duration-300"
+                  style={{ width: '150px', height: '50px' }}
                 >
                   <img
                     src={company.logo}
                     alt={company.name}
-                    className="max-h-[30px] max-w-[110px] w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
-                    style={{ filter: 'grayscale(100%) brightness(0.5) contrast(1.1)' }}
+                    className="max-h-[32px] max-w-[120px] w-auto object-contain opacity-60 hover:opacity-90 transition-all duration-300"
                   />
                 </div>
               ))}
