@@ -45,7 +45,7 @@ export const Portfolio: React.FC = () => {
                 Success <span className="text-gradient">Stories</span>
               </h2>
               <p className="hidden sm:block text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-                Led by senior engineers who previously worked at Sri Lanka&apos;s leading software companies, we deliver real results for businesses through AI-powered solutions and enterprise-grade expertise.
+                Our strength is our customers&apos; trust in our ability to deliver high-quality, reliable products every time.
               </p>
             </div>
           </ScrollReveal>
@@ -63,11 +63,11 @@ export const Portfolio: React.FC = () => {
               zIndex: 12 + index * 2,
             }}
           >
-            <div className="max-w-7xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-primary-100/40">
+            <div className="max-w-7xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-primary-100/40 lg:min-h-[380px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
                 {/* Image */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative h-[160px] sm:h-[320px] lg:h-full group">
+                  <div className="relative h-[160px] sm:h-[320px] lg:h-full group overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -75,7 +75,7 @@ export const Portfolio: React.FC = () => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                       className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
                     />
-                    <div className="brand-overlay" />
+                    <div className="absolute inset-0 bg-primary-900/25 pointer-events-none group-hover:scale-110 transition-transform duration-500 ease-out" />
                   </div>
                 </div>
 

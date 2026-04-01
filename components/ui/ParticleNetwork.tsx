@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 
 const COLORS = [
-  { r: 14, g: 165, b: 233 },  // sky-500
-  { r: 56, g: 189, b: 248 },  // sky-400
-  { r: 2, g: 132, b: 199 },   // sky-600
+  { r: 12, g: 98, b: 170 },   // primary-500 (logo blue)
+  { r: 77, g: 142, b: 197 },  // primary-400
+  { r: 10, g: 83, b: 145 },   // primary-600
 ];
 
 interface Particle {

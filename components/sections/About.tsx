@@ -282,7 +282,7 @@ export const About: React.FC = () => {
         </motion.div>
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60 pointer-events-none" />
 
         {/* Title */}
         <motion.div
@@ -290,13 +290,13 @@ export const About: React.FC = () => {
           style={{ y: titleY, opacity: titleOpacity }}
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
               Why Choose{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">
+              <span className="text-primary-400" style={{ textShadow: '0 0 30px rgba(77,142,197,0.6)' }}>
                 Softx World
               </span>
             </h2>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-primary-200/70 text-center max-w-2xl mx-auto font-light">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-primary-200/70 text-center max-w-2xl mx-auto font-light" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
               Built by engineers from Sri Lanka&apos;s leading tech companies
             </p>
           </div>
