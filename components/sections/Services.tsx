@@ -26,12 +26,12 @@ const serviceCategories: ServiceCategory[] = [
     id: 'software-development',
     name: 'Software Development',
     icon: Code,
-    description: 'Full-service software development that powers businesses of all sizes',
+    description: 'Your idea, built right the first time — web apps, mobile apps, and integrations that scale',
     services: [
       {
         icon: Code,
         title: 'Custom Web Applications',
-        description: 'Build scalable, high-performance web applications tailored to your business needs. From e-commerce platforms to SaaS products, we deliver enterprise-grade solutions.',
+        description: 'Whether it\'s an e-commerce platform, a SaaS product, or an internal tool — we build web applications your team and customers will actually love using.',
         features: [
           'Full-stack development (React, Node.js, Next.js)',
           'Progressive Web Apps (PWA)',
@@ -44,7 +44,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Globe,
         title: 'Mobile App Development',
-        description: 'Native and cross-platform mobile applications for iOS and Android. Engage your customers wherever they are with intuitive, feature-rich apps.',
+        description: 'Put your business in your customers\' pockets. We build iOS and Android apps that people keep opening — not just downloading.',
         features: [
           'React Native & Flutter development',
           'iOS & Android native apps',
@@ -57,7 +57,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Wrench,
         title: 'Enterprise Solutions',
-        description: 'Robust enterprise software that scales with your organization. From CRM systems to inventory management, we build solutions that drive efficiency.',
+        description: 'CRM, inventory, ERP — custom-built to fit how your business actually works, not the other way around. Scales from 10 users to 10,000.',
         features: [
           'Custom ERP & CRM systems',
           'Multi-tenant SaaS platforms',
@@ -70,7 +70,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: RefreshCw,
         title: 'API Development & Integration',
-        description: 'Connect your systems and enable seamless data flow. We build robust APIs and integrate third-party services to enhance your platform capabilities.',
+        description: 'Your tools should talk to each other. We build the APIs and integrations that connect your systems so data flows where it needs to go.',
         features: [
           'RESTful & GraphQL API design',
           'Payment gateway integration',
@@ -86,12 +86,12 @@ const serviceCategories: ServiceCategory[] = [
     id: 'ai-automation',
     name: 'AI & Automation',
     icon: Zap,
-    description: 'Automate business processes and cut costs with intelligent solutions',
+    description: 'Put repetitive work on autopilot and let AI handle your customers 24/7',
     services: [
       {
         icon: Bot,
         title: 'AI-Powered Chat Agents',
-        description: '24/7 intelligent chatbots that qualify leads, handle support queries, and drive conversions. Cut support costs by up to 90% while boosting satisfaction by 30%.',
+        description: 'Intelligent chatbots that qualify leads, answer support questions, and close deals — even at 3 AM. Your best sales rep that never sleeps.',
         features: [
           'Handles 80% of routine queries',
           'Response time: under 5 seconds',
@@ -104,7 +104,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: BookOpen,
         title: 'RAG Knowledge Systems',
-        description: 'Retrieval-Augmented Generation that provides accurate, context-aware responses from your business data. Deliver $3.5 ROI for every $1 invested.',
+        description: 'Turn your documents, databases, and knowledge into an AI that gives customers instant, accurate answers — grounded in your actual data, not hallucinations.',
         features: [
           'Semantic search on your documents',
           'Real-time data updates',
@@ -117,7 +117,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: RefreshCw,
         title: 'Business Process Automation',
-        description: 'Eliminate manual workflows and save 20+ hours weekly. We automate repetitive tasks across departments, leading to significant cost reduction.',
+        description: 'Stop wasting 20+ hours a week on tasks a machine can do. We connect your tools, automate your workflows, and give your team their time back.',
         features: [
           '500+ tool integrations available',
           'Lead-to-revenue automation',
@@ -130,7 +130,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Workflow,
         title: 'Workflow Optimization',
-        description: 'Analyze and optimize your business processes for maximum efficiency. Identify bottlenecks, eliminate redundancy, and implement streamlined workflows.',
+        description: 'Before you automate, you need to know what\'s broken. We map your processes, find the bottlenecks, and redesign workflows that actually flow.',
         features: [
           'Process mapping & analysis',
           'Bottleneck identification',
@@ -146,12 +146,12 @@ const serviceCategories: ServiceCategory[] = [
     id: 'marketing-seo',
     name: 'Marketing & SEO',
     icon: Megaphone,
-    description: 'Drive growth with data-driven marketing and search engine optimization',
+    description: 'Get found, get chosen, and turn visitors into paying customers',
     services: [
       {
         icon: LineChart,
         title: 'SEO Optimization',
-        description: 'Boost your organic rankings and drive qualified traffic. Our comprehensive SEO strategy covers technical SEO, content optimization, and link building.',
+        description: 'Show up when your customers are searching. We fix the technical issues, create the content, and build the authority that gets you to page one.',
         features: [
           'Technical SEO audits & fixes',
           'Keyword research & strategy',
@@ -164,7 +164,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: BarChart3,
         title: 'Digital Marketing Strategy',
-        description: 'End-to-end digital marketing that delivers measurable results. From brand awareness to conversion, we create campaigns that drive ROI.',
+        description: 'Paid ads, content, email, and social — all working together toward one goal: more revenue. Every dollar tracked, every campaign measured.',
         features: [
           'Google Ads & Meta Ads management',
           'Content marketing & copywriting',
@@ -177,7 +177,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: TrendingUp,
         title: 'Lead Generation',
-        description: 'Attract, qualify, and convert high-quality leads. Our multi-channel approach ensures a steady pipeline of prospects ready to buy.',
+        description: 'Build a pipeline that doesn\'t depend on referrals or luck. We create systems that attract, qualify, and deliver leads ready to buy.',
         features: [
           'Lead magnet creation',
           'Landing page optimization',
@@ -190,7 +190,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Users,
         title: 'Brand Building',
-        description: 'Develop a strong brand identity that resonates with your audience. From logo design to brand messaging, we help you stand out in crowded markets.',
+        description: 'A strong brand is a competitive moat. We craft your visual identity, messaging, and voice so you\'re instantly recognizable and impossible to ignore.',
         features: [
           'Brand identity & visual design',
           'Brand messaging & voice',
@@ -206,12 +206,12 @@ const serviceCategories: ServiceCategory[] = [
     id: 'consulting',
     name: 'Consulting',
     icon: Lightbulb,
-    description: 'Expert software consulting for solo founders and businesses navigating the AI revolution',
+    description: 'Smart guidance for founders and teams making high-stakes technology decisions',
     services: [
       {
         icon: Lightbulb,
         title: 'Startup Consulting for Solo Founders',
-        description: 'Specialized guidance for solo founders emerging in AI revolution. We help you navigate technology decisions, build MVPs efficiently, and scale smart.',
+        description: 'Building something alone? We help solo founders pick the right stack, build MVPs that actually validate, and avoid the expensive mistakes that kill startups.',
         features: [
           'AI technology stack selection',
           'MVP development strategy',
@@ -224,7 +224,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Briefcase,
         title: 'Software Architecture Consulting',
-        description: 'Design scalable, maintainable systems that grow with your business. We provide architectural guidance to ensure your software supports your long-term goals.',
+        description: 'Bad architecture is invisible until it isn\'t — then it costs you months. We design systems that won\'t need a rewrite when you 10x your users.',
         features: [
           'System design & architecture',
           'Technology stack evaluation',
@@ -237,7 +237,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: Rocket,
         title: 'Product Strategy & Roadmap',
-        description: 'Translate your vision into a actionable product roadmap. We help prioritize features, set milestones, and create development plans that deliver value.',
+        description: 'Turn your vision into a roadmap your team can execute. We prioritize ruthlessly, cut scope creep, and make sure every sprint delivers real value.',
         features: [
           'Product-market fit analysis',
           'Feature prioritization',
@@ -250,7 +250,7 @@ const serviceCategories: ServiceCategory[] = [
       {
         icon: BookOpen,
         title: 'AI Implementation Consulting',
-        description: 'Identify and implement AI solutions that drive real business value. We help you select the right AI tools and integrate them into your workflows.',
+        description: 'Not every problem needs AI — but when it does, we find the highest-ROI opportunities and implement them so they actually stick.',
         features: [
           'AI opportunity assessment',
           'Tool selection & integration',
@@ -306,7 +306,7 @@ export const Services: React.FC = () => {
                 Our <span className="text-gradient">Services</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-                We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
+                From the software that runs your business to the AI that grows it — everything you need under one roof. When you grow, we grow with you.
               </p>
             </div>
           </ScrollReveal>
@@ -448,7 +448,7 @@ export const Services: React.FC = () => {
                   24/7 Support with Lifetime Change Requests
                 </h3>
                 <p className="text-base sm:text-xl mb-4 sm:mb-6 opacity-90">
-                  Unlike traditional agencies, we&apos;re committed to your long-term success. Get unlimited support and continuous improvements as your business evolves.
+                  We don&apos;t disappear after launch. Get ongoing support, updates, and improvements for as long as you need us — because your business never stops evolving.
                 </p>
                 <Button href="#contact" variant="secondary" size="lg">
                   Start Your Project

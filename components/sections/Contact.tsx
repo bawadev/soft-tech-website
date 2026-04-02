@@ -103,12 +103,10 @@ export const Contact: React.FC = () => {
   };
 
   const services = [
-    'AI-Powered Chat Agents',
-    'Legacy System Migration',
-    'AI Knowledge Systems',
-    'Strategic Consultation',
-    'Website Maintenance',
-    'User Analysis & Customer Acquisition',
+    'Custom Software Development',
+    'AI Chatbots & Automation',
+    'Marketing & SEO',
+    'Consulting & Strategy',
     'Other',
   ];
 
@@ -127,10 +125,10 @@ export const Contact: React.FC = () => {
         <div>
           <ScrollReveal variant="fadeLeft">
             <h2 className="heading-2 mb-6">
-              Let's Build Something <span className="text-gradient">Amazing</span>
+              Ready to Grow <span className="text-gradient">Faster</span>?
             </h2>
             <p className="text-lg text-secondary-700 mb-8">
-              Ready to transform your business with AI-powered solutions? Schedule a free consultation to discuss your needs and discover how we can help you gain competitive advantage.
+              Tell us what you&apos;re trying to achieve. We&apos;ll come back with a clear plan and honest pricing — no pressure, no jargon.
             </p>
           </ScrollReveal>
 

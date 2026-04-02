@@ -14,57 +14,53 @@ import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 
 const panels = [
   {
-    badge: 'Our Story',
+    badge: 'The Problem',
     badgeColor: 'blue',
     content: (
       <>
         <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 italic leading-snug max-w-3xl mx-auto">
-          <span className="text-primary-400 not-italic font-bold">Softx World</span> was
-          built by former engineers and architects who spent years inside Sri
-          Lanka&apos;s leading software companies.
+          You shouldn&apos;t have to choose between{' '}
+          <span className="text-primary-400 not-italic font-bold">quality and affordability</span>.
         </p>
         <p className="mt-4 sm:mt-6 font-serif text-sm sm:text-base md:text-lg text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
-          We learned what it takes to design, build, and maintain systems that
-          operate at scale — where reliability, security, and long-term thinking
-          are non-negotiable.
+          Softx World was started to give growing businesses the same caliber of
+          engineering that powers the world&apos;s biggest companies — without
+          the price tag or the red tape.
         </p>
       </>
     ),
   },
   {
-    badge: 'The Gap We Bridged',
+    badge: 'Our Approach',
     badgeColor: 'cyan',
     content: (
       <>
         <div className="bg-white/10 border-l-4 border-primary-400 p-4 sm:p-6 rounded-r-xl mb-4 sm:mb-6 max-w-3xl mx-auto">
           <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white italic leading-snug">
-            We saw a gap: businesses needed{' '}
-            <span className="text-primary-300 not-italic font-bold">enterprise-level engineering</span>{' '}
-            without the enterprise-level cost and complexity.
+            Most agencies build fast and move on. Enterprise shops build well but{' '}
+            <span className="text-primary-300 not-italic font-bold">charge a fortune</span>.
           </p>
         </div>
         <p className="font-serif text-base sm:text-xl md:text-2xl text-primary-300 font-bold not-italic leading-snug max-w-3xl mx-auto">
-          Softx World bridges that gap.
+          We give you both: systems designed to last, at a price that makes sense.
         </p>
       </>
     ),
   },
   {
-    badge: 'Today',
+    badge: 'What You Get',
     badgeColor: 'indigo',
     content: (
       <>
         <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 italic leading-snug max-w-3xl mx-auto mb-4 sm:mb-6">
-          We bring enterprise-level experience to organizations of all sizes.
+          AI chatbots that sell for you around the clock. Marketing systems that fill your pipeline.
         </p>
         <p className="font-serif text-sm sm:text-base md:text-lg text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
-          Whether you&apos;re scaling an established business or building
-          something new in a rapidly evolving, AI-driven landscape, we work as a
-          practical partner — focused on{' '}
+          We build the machines that{' '}
           <span className="text-primary-400 not-italic font-bold">
-            clarity, efficiency, and real business outcomes
+            grow your business
           </span>
-          .
+          . You focus on what you do best — we handle the rest.
         </p>
       </>
     ),
@@ -297,7 +293,7 @@ export const About: React.FC = () => {
               </span>
             </h2>
             <p className="mt-3 sm:mt-4 text-base sm:text-lg text-primary-200/70 text-center max-w-2xl mx-auto font-light" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
-              Built by engineers from Sri Lanka&apos;s leading tech companies
+              The partner your business actually needs
             </p>
           </div>
         </motion.div>

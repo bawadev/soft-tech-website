@@ -16,10 +16,7 @@ export const Footer: React.FC = () => {
               <Logo />
             </div>
             <p className="text-secondary-300 mb-4 max-w-md">
-              Your strategic AI technology partner. Our team consists of senior engineers and architects who previously worked at Sri Lanka's leading software companies, bringing enterprise-grade expertise to your business.
-            </p>
-            <p className="text-secondary-400 text-sm mb-4">
-              Ex-employees from Sri Lanka's tech giants with 15+ years combined experience
+              Software, AI, and marketing — built to grow your business. We&apos;re the team behind the systems that bring you customers.
             </p>
 
             {/* Social Media Links */}
@@ -118,11 +115,10 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-secondary-300">AI Chat Agents</li>
-              <li className="text-secondary-300">Legacy Migrations</li>
-              <li className="text-secondary-300">AI Knowledge Systems</li>
-              <li className="text-secondary-300">Strategic Consultation</li>
-              <li className="text-secondary-300">24/7 Support</li>
+              <li className="text-secondary-300">Software Development</li>
+              <li className="text-secondary-300">AI & Automation</li>
+              <li className="text-secondary-300">Marketing & SEO</li>
+              <li className="text-secondary-300">Consulting & Strategy</li>
             </ul>
           </div>
         </div>

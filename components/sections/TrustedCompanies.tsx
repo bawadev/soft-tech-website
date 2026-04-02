@@ -87,7 +87,7 @@ export const TrustedCompanies: React.FC = () => {
                   {/* Caption badge */}
                   <div className="absolute bottom-0 right-0">
                     <p className="text-sm font-medium text-white/90 italic bg-black/30 backdrop-blur-sm px-3 py-2 rounded-tl-xl">
-                      &quot;Every line of code crafted with the same precision and care.&quot;
+                      &quot;Big-company craft. Small-company speed.&quot;
                     </p>
                   </div>
                 </div>
@@ -99,11 +99,11 @@ export const TrustedCompanies: React.FC = () => {
               <ScrollReveal variant="fadeRight">
                 <div>
                   <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-2 sm:mb-4">
-                    Crafted with Elegance of Sri Lankan Engineering
+                    Enterprise DNA, Startup Speed
                   </h2>
 
                   <p className="text-sm sm:text-lg text-secondary-700 mb-3 sm:mb-6">
-                    We are a software company founded by senior engineers and solution architects with deep roots in Sri Lanka&apos;s leading technology companies. Our enterprise-grade experience powers intelligent AI and automation solutions built for scale, reliability, and impact.
+                    Our team shipped production systems at IFS, Cisco, Virtusa, and other global tech companies. Now that experience works for you — faster, leaner, and without the overhead.
                   </p>
 
                   {/* Star Rating */}
@@ -169,7 +169,7 @@ export const TrustedCompanies: React.FC = () => {
                   <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={15} suffix="+" />
                   </div>
-                  <div className="text-xs sm:text-base text-secondary-700">Years Combined Experience</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Years in Enterprise Software</div>
                 </div>
               </ScrollReveal>
               <ScrollReveal variant="fadeUp" delay={0.2}>
@@ -177,7 +177,7 @@ export const TrustedCompanies: React.FC = () => {
                   <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={50} suffix="+" />
                   </div>
-                  <div className="text-xs sm:text-base text-secondary-700">Ex-Enterprise Engineers</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Enterprise Projects Shipped</div>
                 </div>
               </ScrollReveal>
             </div>
