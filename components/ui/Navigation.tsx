@@ -12,7 +12,6 @@ const navLinks = [
   { name: 'About', href: '/#about' },
   { name: 'Services', href: '/#services' },
   { name: 'Portfolio', href: '/#portfolio' },
-  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/#contact' },
 ];
 
@@ -181,7 +180,7 @@ export const Navigation: React.FC = () => {
         <div
           className={`
             md:hidden overflow-hidden transition-all duration-300 ease-in-out
-            ${isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}
+            ${isMobileMenuOpen ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
           `}
         >
           <div className="flex flex-col space-y-2 pb-4 border-t border-secondary-200 pt-4">

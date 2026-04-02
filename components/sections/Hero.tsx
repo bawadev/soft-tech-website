@@ -48,8 +48,7 @@ export const Hero: React.FC = () => {
               variants={fadeUpVariants}
               transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
             >
-              Focus on Business.{' '}
-              <span className="text-gradient">We Bring You Customers.</span>
+              <span className="text-gradient">World of</span> Software, AI & Marketing That Grows Your Business
             </motion.h1>
 
             {/* Glass panel — paragraph + buttons + stats */}
@@ -74,7 +73,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-primary-400/25 rounded-full blur-2xl pointer-events-none" />
 
                 <p className="relative z-10 text-base sm:text-lg md:text-xl text-secondary-700 mb-6 leading-relaxed">
-                  AI chatbots, automated workflows, and smart marketing — working around the clock to bring you customers while you run your business.
+                  AI systems integration, automated workflows, and smart marketing — working around the clock to bring you customers while you run your business.
                 </p>
 
                 <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">

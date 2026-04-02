@@ -9,9 +9,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-secondary-900 text-white py-12 border-t border-primary-800">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <div className="mb-4">
               <Logo />
             </div>
@@ -77,48 +77,43 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  Blog
+                <Link href="#contact" className="text-secondary-300 hover:text-primary-400 transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Expertise */}
           <div>
-            <h3 className="font-semibold mb-4">Blog Categories</h3>
+            <h3 className="font-semibold mb-4">Expertise</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog?category=AI" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  AI & RAG
-                </Link>
+                <span className="text-secondary-300">Software Development</span>
               </li>
               <li>
-                <Link href="/blog?category=Automation" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  Automation
-                </Link>
+                <span className="text-secondary-300">AI & Automation</span>
               </li>
               <li>
-                <Link href="/blog?category=Marketing" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  Marketing
-                </Link>
+                <span className="text-secondary-300">Marketing & SEO</span>
               </li>
               <li>
-                <Link href="/blog?category=Technology" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  Technology
-                </Link>
+                <span className="text-secondary-300">Consulting & Strategy</span>
               </li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-secondary-300">Software Development</li>
-              <li className="text-secondary-300">AI & Automation</li>
-              <li className="text-secondary-300">Marketing & SEO</li>
-              <li className="text-secondary-300">Consulting & Strategy</li>
+              <li className="text-secondary-300">admin@softx.world</li>
+              <li>
+                <a href="tel:+94110000000" className="text-secondary-300 hover:text-primary-400 transition-colors">
+                  +94 11 000 0000
+                </a>
+              </li>
+              <li className="text-secondary-300">24/7 Support</li>
             </ul>
           </div>
         </div>

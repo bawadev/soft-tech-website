@@ -84,14 +84,14 @@ const serviceCategories: ServiceCategory[] = [
   },
   {
     id: 'ai-automation',
-    name: 'AI & Automation',
+    name: 'AI & Systems',
     icon: Zap,
     description: 'Put repetitive work on autopilot and let AI handle your customers 24/7',
     services: [
       {
         icon: Bot,
         title: 'AI-Powered Chat Agents',
-        description: 'Intelligent chatbots that qualify leads, answer support questions, and close deals — even at 3 AM. Your best sales rep that never sleeps.',
+        description: 'AI systems that qualify leads, handle support, and close deals — even at 3 AM. Always-on customer service that never sleeps.',
         features: [
           'Handles 80% of routine queries',
           'Response time: under 5 seconds',
