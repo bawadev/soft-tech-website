@@ -16,10 +16,10 @@ export const Footer: React.FC = () => {
               <Logo />
             </div>
             <p className="text-secondary-300 mb-4 max-w-md">
-              Your strategic AI technology partner. Our team consists of senior engineers and architects who previously worked at Sri Lanka's leading software companies, bringing enterprise-grade expertise to your business.
+              Enterprise software, built the human way. Senior engineers, designers, and strategists from Sri Lanka's leading software companies — building platforms designed to last for decades, for a deliberately small roster of clients.
             </p>
             <p className="text-secondary-400 text-sm mb-4">
-              Ex-employees from Sri Lanka's tech giants with 15+ years combined experience
+              Founded 2017 · Engineering pedigree from global enterprises
             </p>
 
             {/* Social Media Links */}
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/blog?category=AI" className="text-secondary-300 hover:text-primary-400 transition-colors">
-                  AI & RAG
+                  AI & Engineering
                 </Link>
               </li>
               <li>
@@ -118,11 +118,11 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-secondary-300">AI Chat Agents</li>
-              <li className="text-secondary-300">Legacy Migrations</li>
-              <li className="text-secondary-300">AI Knowledge Systems</li>
-              <li className="text-secondary-300">Strategic Consultation</li>
-              <li className="text-secondary-300">24/7 Support</li>
+              <li className="text-secondary-300">Platform Engineering</li>
+              <li className="text-secondary-300">Mobile Products</li>
+              <li className="text-secondary-300">Design & Research</li>
+              <li className="text-secondary-300">Growth & Strategy</li>
+              <li className="text-secondary-300">Long-Term Partnership</li>
             </ul>
           </div>
         </div>

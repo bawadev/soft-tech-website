@@ -103,7 +103,7 @@ export const TrustedCompanies: React.FC = () => {
                   </h2>
 
                   <p className="text-sm sm:text-lg text-secondary-700 mb-3 sm:mb-6">
-                    We are a software company founded by senior engineers and solution architects with deep roots in Sri Lanka&apos;s leading technology companies. Our enterprise-grade experience powers intelligent AI and automation solutions built for scale, reliability, and impact.
+                    We are a software company founded by senior engineers and solution architects with deep roots in Sri Lanka&apos;s leading technology companies. That enterprise pedigree — and a deliberately small client roster — is how we deliver platforms built for scale, reliability, and decades of service.
                   </p>
 
                   {/* Star Rating */}
@@ -159,9 +159,9 @@ export const TrustedCompanies: React.FC = () => {
               <ScrollReveal variant="fadeUp" delay={0}>
                 <div>
                   <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
-                    <AnimateCounter value={98} suffix="%" />
+                    <AnimateCounter value={6} />
                   </div>
-                  <div className="text-xs sm:text-base text-secondary-700">Client Satisfaction Rate</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Global Enterprises in Our Engineering DNA</div>
                 </div>
               </ScrollReveal>
               <ScrollReveal variant="fadeUp" delay={0.1}>
@@ -169,15 +169,15 @@ export const TrustedCompanies: React.FC = () => {
                   <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
                     <AnimateCounter value={15} suffix="+" />
                   </div>
-                  <div className="text-xs sm:text-base text-secondary-700">Years Combined Experience</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Years Engineering at Enterprise Scale</div>
                 </div>
               </ScrollReveal>
               <ScrollReveal variant="fadeUp" delay={0.2}>
                 <div>
                   <div className="text-2xl sm:text-4xl font-bold text-primary-600 mb-1 sm:mb-2">
-                    <AnimateCounter value={50} suffix="+" />
+                    <AnimateCounter value={98} suffix="%" />
                   </div>
-                  <div className="text-xs sm:text-base text-secondary-700">Ex-Enterprise Engineers</div>
+                  <div className="text-xs sm:text-base text-secondary-700">Client Satisfaction Rate</div>
                 </div>
               </ScrollReveal>
             </div>

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Button, Container, AnimateCounter } from '../ui';
+import { Button, Container } from '../ui';
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -48,8 +48,8 @@ export const Hero: React.FC = () => {
               variants={fadeUpVariants}
               transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
             >
-              Focus on Business.{' '}
-              <span className="text-gradient">We Bring You Customers.</span>
+              Enterprise Software.{' '}
+              <span className="text-gradient">Built the Human Way.</span>
             </motion.h1>
 
             {/* Glass panel — paragraph + buttons + stats */}
@@ -74,15 +74,15 @@ export const Hero: React.FC = () => {
                 <div className="absolute -bottom-4 left-1/4 right-1/4 h-10 bg-primary-400/25 rounded-full blur-2xl pointer-events-none" />
 
                 <p className="relative z-10 text-base sm:text-lg md:text-xl text-secondary-700 mb-6 leading-relaxed">
-                  With deep expertise in enterprise software and AI, we help companies acquire customers, reduce costs, and grow with confidence.
+                  SoftX World is an engineering partner for enterprises — and for ambitious teams becoming one. We take on a few substantial builds at a time and deliver them with senior engineers, human-led discovery, and craftsmanship designed to last for decades.
                 </p>
 
                 <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
                   <Button href="#contact" size="lg" className="shadow-xl">
-                    Start Getting Customers
+                    Start a Conversation
                   </Button>
                   <Button href="#services" variant="secondary" size="lg">
-                    See How It Works
+                    See How We Work
                   </Button>
                 </div>
 
@@ -90,20 +90,16 @@ export const Hero: React.FC = () => {
                 <div className="relative z-10 border-t border-white/40 pt-5">
                   <div className="flex flex-nowrap gap-4 sm:gap-8 items-center justify-between">
                     <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">
-                        <AnimateCounter value={90} suffix="%" />
-                      </div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">Cost Reduction</div>
+                      <div className="text-lg sm:text-2xl font-bold text-primary-600">Industry-Proven</div>
+                      <div className="text-[10px] sm:text-xs text-secondary-700">Careers Built at Enterprise Scale</div>
                     </div>
                     <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">
-                        $<AnimateCounter value={3.5} decimals={1} />
-                      </div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">Avg ROI per $1</div>
+                      <div className="text-lg sm:text-2xl font-bold text-primary-600">A Few</div>
+                      <div className="text-[10px] sm:text-xs text-secondary-700">Clients at a Time, by Design</div>
                     </div>
                     <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">24/7</div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">Customer Acquisition</div>
+                      <div className="text-lg sm:text-2xl font-bold text-primary-600">Decades</div>
+                      <div className="text-[10px] sm:text-xs text-secondary-700">The Lifespan We Build For</div>
                     </div>
                   </div>
                 </div>
@@ -140,7 +136,7 @@ export const Hero: React.FC = () => {
               }`}>
                 <Image
                   src="/media/hero-video-frame-1.png"
-                  alt="AI Technology and Business Growth"
+                  alt="Enterprise software engineering at SoftX World"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                   className="object-cover"

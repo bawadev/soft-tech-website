@@ -32,19 +32,20 @@ const panels = [
     ),
   },
   {
-    badge: 'The Gap We Bridged',
+    badge: 'The Human Difference',
     badgeColor: 'cyan',
     content: (
       <>
         <div className="bg-white/10 border-l-4 border-primary-400 p-4 sm:p-6 rounded-r-xl mb-4 sm:mb-6 max-w-3xl mx-auto">
           <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white italic leading-snug">
-            We saw a gap: businesses needed{' '}
-            <span className="text-primary-300 not-italic font-bold">enterprise-level engineering</span>{' '}
-            without the enterprise-level cost and complexity.
+            Anyone can generate software now. Understanding{' '}
+            <span className="text-primary-300 not-italic font-bold">people</span>{' '}
+            — your customers, their psychology, their trust — is the part that
+            can&apos;t be automated.
           </p>
         </div>
         <p className="font-serif text-base sm:text-xl md:text-2xl text-primary-300 font-bold not-italic leading-snug max-w-3xl mx-auto">
-          Softx World bridges that gap.
+          That&apos;s where we live.
         </p>
       </>
     ),
@@ -55,14 +56,15 @@ const panels = [
     content: (
       <>
         <p className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 italic leading-snug max-w-3xl mx-auto mb-4 sm:mb-6">
-          We bring enterprise-level experience to organizations of all sizes.
+          We build enterprise platforms for organizations that expect software
+          to last.
         </p>
         <p className="font-serif text-sm sm:text-base md:text-lg text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
-          Whether you&apos;re scaling an established business or building
-          something new in a rapidly evolving, AI-driven landscape, we work as a
-          practical partner — focused on{' '}
+          A deliberately small client roster. Human designers, marketing
+          strategists, and customer-facing engineers around every build. Systems
+          that run for decades and evolve with your business —{' '}
           <span className="text-primary-400 not-italic font-bold">
-            clarity, efficiency, and real business outcomes
+            earning your customers&apos; trust year after year
           </span>
           .
         </p>

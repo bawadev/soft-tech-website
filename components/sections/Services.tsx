@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Bot, RefreshCw, BookOpen, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Zap, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
+import { RefreshCw, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
 import { Card, Button, ScrollReveal } from '../ui';
 
 interface Service {
@@ -9,7 +9,6 @@ interface Service {
   title: string;
   description: string;
   features: string[];
-  pricing: string;
   cta: string;
 }
 
@@ -23,249 +22,233 @@ interface ServiceCategory {
 
 const serviceCategories: ServiceCategory[] = [
   {
-    id: 'software-development',
-    name: 'Software Development',
+    id: 'platform-engineering',
+    name: 'Platform Engineering',
     icon: Code,
-    description: 'Full-service software development that powers businesses of all sizes',
+    description: 'Large-scale platforms engineered for reliability, security, and decades of evolution',
     services: [
-      {
-        icon: Code,
-        title: 'Custom Web Applications',
-        description: 'Build scalable, high-performance web applications tailored to your business needs. From e-commerce platforms to SaaS products, we deliver enterprise-grade solutions.',
-        features: [
-          'Full-stack development (React, Node.js, Next.js)',
-          'Progressive Web Apps (PWA)',
-          'API-first architecture',
-          'Mobile-responsive design',
-        ],
-        pricing: 'Starting at $4,999/mo',
-        cta: 'Start Development',
-      },
       {
         icon: Globe,
-        title: 'Mobile App Development',
-        description: 'Native and cross-platform mobile applications for iOS and Android. Engage your customers wherever they are with intuitive, feature-rich apps.',
+        title: 'Enterprise Web Platforms',
+        description: 'Multi-tenant SaaS, consumer platforms, and internal systems built for horizontal scale — with the real-time capabilities modern products demand: live data, chat, presence, payments, video, and geo services.',
         features: [
-          'React Native & Flutter development',
-          'iOS & Android native apps',
-          'App Store & Play Store deployment',
-          'Push notifications & offline support',
+          'Distributed, event-driven architecture',
+          'Real-time systems — live data, chat, presence',
+          'Payments, identity & third-party integrations',
+          'Security and compliance from day one',
         ],
-        pricing: 'Starting at $5,999/mo',
-        cta: 'Build Your App',
-      },
-      {
-        icon: Wrench,
-        title: 'Enterprise Solutions',
-        description: 'Robust enterprise software that scales with your organization. From CRM systems to inventory management, we build solutions that drive efficiency.',
-        features: [
-          'Custom ERP & CRM systems',
-          'Multi-tenant SaaS platforms',
-          'Real-time collaboration tools',
-          'Enterprise security & compliance',
-        ],
-        pricing: 'Custom pricing',
-        cta: 'Discuss Your Needs',
-      },
-      {
-        icon: RefreshCw,
-        title: 'API Development & Integration',
-        description: 'Connect your systems and enable seamless data flow. We build robust APIs and integrate third-party services to enhance your platform capabilities.',
-        features: [
-          'RESTful & GraphQL API design',
-          'Payment gateway integration',
-          'Third-party service integration',
-          'Webhook & event systems',
-        ],
-        pricing: 'Starting at $2,499/mo',
-        cta: 'Integrate Your Systems',
-      },
-    ],
-  },
-  {
-    id: 'ai-automation',
-    name: 'AI & Automation',
-    icon: Zap,
-    description: 'Automate business processes and cut costs with intelligent solutions',
-    services: [
-      {
-        icon: Bot,
-        title: 'AI-Powered Chat Agents',
-        description: '24/7 intelligent chatbots that qualify leads, handle support queries, and drive conversions. Cut support costs by up to 90% while boosting satisfaction by 30%.',
-        features: [
-          'Handles 80% of routine queries',
-          'Response time: under 5 seconds',
-          'Custom RAG training on your data',
-          'CRM & email integration',
-        ],
-        pricing: 'Starting at $2,999/mo',
-        cta: 'Deploy Chatbot',
-      },
-      {
-        icon: BookOpen,
-        title: 'RAG Knowledge Systems',
-        description: 'Retrieval-Augmented Generation that provides accurate, context-aware responses from your business data. Deliver $3.5 ROI for every $1 invested.',
-        features: [
-          'Semantic search on your documents',
-          'Real-time data updates',
-          'Source attribution & citations',
-          'Multi-format integration (PDF, DB, API)',
-        ],
-        pricing: 'Starting at $1,999/mo',
-        cta: 'Build RAG System',
-      },
-      {
-        icon: RefreshCw,
-        title: 'Business Process Automation',
-        description: 'Eliminate manual workflows and save 20+ hours weekly. We automate repetitive tasks across departments, leading to significant cost reduction.',
-        features: [
-          '500+ tool integrations available',
-          'Lead-to-revenue automation',
-          'Customer onboarding workflows',
-          'Finance & accounting automation',
-        ],
-        pricing: 'Starting at $1,499/mo',
-        cta: 'Automate Your Processes',
-      },
-      {
-        icon: Workflow,
-        title: 'Workflow Optimization',
-        description: 'Analyze and optimize your business processes for maximum efficiency. Identify bottlenecks, eliminate redundancy, and implement streamlined workflows.',
-        features: [
-          'Process mapping & analysis',
-          'Bottleneck identification',
-          'ROI calculation for automation',
-          'Continuous optimization',
-        ],
-        pricing: 'Starting at $2,999/mo',
-        cta: 'Optimize Workflows',
-      },
-    ],
-  },
-  {
-    id: 'marketing-seo',
-    name: 'Marketing & SEO',
-    icon: Megaphone,
-    description: 'Drive growth with data-driven marketing and search engine optimization',
-    services: [
-      {
-        icon: LineChart,
-        title: 'SEO Optimization',
-        description: 'Boost your organic rankings and drive qualified traffic. Our comprehensive SEO strategy covers technical SEO, content optimization, and link building.',
-        features: [
-          'Technical SEO audits & fixes',
-          'Keyword research & strategy',
-          'On-page & off-page optimization',
-          'Local SEO for businesses',
-        ],
-        pricing: 'Starting at $1,999/mo',
-        cta: 'Improve Rankings',
-      },
-      {
-        icon: BarChart3,
-        title: 'Digital Marketing Strategy',
-        description: 'End-to-end digital marketing that delivers measurable results. From brand awareness to conversion, we create campaigns that drive ROI.',
-        features: [
-          'Google Ads & Meta Ads management',
-          'Content marketing & copywriting',
-          'Email marketing campaigns',
-          'Social media marketing',
-        ],
-        pricing: 'Starting at $2,999/mo',
-        cta: 'Grow Your Audience',
-      },
-      {
-        icon: TrendingUp,
-        title: 'Lead Generation',
-        description: 'Attract, qualify, and convert high-quality leads. Our multi-channel approach ensures a steady pipeline of prospects ready to buy.',
-        features: [
-          'Lead magnet creation',
-          'Landing page optimization',
-          'A/B testing & optimization',
-          'CRM & funnel integration',
-        ],
-        pricing: 'Starting at $2,499/mo',
-        cta: 'Generate Leads',
-      },
-      {
-        icon: Users,
-        title: 'Brand Building',
-        description: 'Develop a strong brand identity that resonates with your audience. From logo design to brand messaging, we help you stand out in crowded markets.',
-        features: [
-          'Brand identity & visual design',
-          'Brand messaging & voice',
-          'Social media presence',
-          'Brand guidelines & strategy',
-        ],
-        pricing: 'Starting at $1,999/mo',
-        cta: 'Build Your Brand',
-      },
-    ],
-  },
-  {
-    id: 'consulting',
-    name: 'Consulting',
-    icon: Lightbulb,
-    description: 'Expert software consulting for solo founders and businesses navigating the AI revolution',
-    services: [
-      {
-        icon: Lightbulb,
-        title: 'Startup Consulting for Solo Founders',
-        description: 'Specialized guidance for solo founders emerging in AI revolution. We help you navigate technology decisions, build MVPs efficiently, and scale smart.',
-        features: [
-          'AI technology stack selection',
-          'MVP development strategy',
-          'Cost optimization guidance',
-          'Growth roadmap planning',
-        ],
-        pricing: 'Starting at $1,999/mo',
-        cta: 'Get Expert Guidance',
-      },
-      {
-        icon: Briefcase,
-        title: 'Software Architecture Consulting',
-        description: 'Design scalable, maintainable systems that grow with your business. We provide architectural guidance to ensure your software supports your long-term goals.',
-        features: [
-          'System design & architecture',
-          'Technology stack evaluation',
-          'Scalability planning',
-          'Security best practices',
-        ],
-        pricing: 'Starting at $2,499/mo',
-        cta: 'Review Your Architecture',
+        cta: 'Discuss Your Platform',
       },
       {
         icon: Rocket,
-        title: 'Product Strategy & Roadmap',
-        description: 'Translate your vision into a actionable product roadmap. We help prioritize features, set milestones, and create development plans that deliver value.',
+        title: 'Mobile Products',
+        description: 'iOS and Android products that hold their own against the best consumer apps — engineered by the same senior team that builds your platform, so nothing is lost in translation.',
         features: [
-          'Product-market fit analysis',
-          'Feature prioritization',
-          'Agile development planning',
-          'Metrics & KPIs definition',
+          'iOS & Android from a single senior team',
+          'Offline-first & performance engineering',
+          'App Store & Play Store lifecycle',
+          'Deep integration with your platform',
         ],
-        pricing: 'Starting at $2,999/mo',
-        cta: 'Plan Your Product',
+        cta: 'Build Your Product',
       },
       {
-        icon: BookOpen,
-        title: 'AI Implementation Consulting',
-        description: 'Identify and implement AI solutions that drive real business value. We help you select the right AI tools and integrate them into your workflows.',
+        icon: Workflow,
+        title: 'Cloud & DevOps',
+        description: 'Infrastructure your customers never have to think about. We design, provision, and operate cloud environments with observability, alerting, and disaster recovery built in.',
         features: [
-          'AI opportunity assessment',
-          'Tool selection & integration',
-          'Implementation planning',
-          'ROI measurement',
+          'Infrastructure as code',
+          'CI/CD & release engineering',
+          'Observability, alerting & SLOs',
+          'Backup & disaster recovery',
         ],
-        pricing: 'Starting at $2,499/mo',
-        cta: 'Explore AI Opportunities',
+        cta: 'Review Your Infrastructure',
+      },
+      {
+        icon: RefreshCw,
+        title: 'Modernization & Integration',
+        description: 'Legacy systems re-platformed without stopping the business. Incremental migration, API programs, and integration layers that let long-lived systems and new platforms work as one.',
+        features: [
+          'Incremental, zero-downtime migration',
+          'API design & integration layers',
+          'Data migration & integrity',
+          'Coexistence strategies for legacy systems',
+        ],
+        cta: 'Plan Your Modernization',
+      },
+    ],
+  },
+  {
+    id: 'product-design-research',
+    name: 'Design & Research',
+    icon: Users,
+    description: 'Human designers who study how your customers think, decide, and come to trust you',
+    services: [
+      {
+        icon: Lightbulb,
+        title: 'Consumer Psychology & Research',
+        description: 'We reach out to your customers and listen. Real interviews, behavioral mapping, and decision-journey analysis — so the product is built for how people actually choose, not how we assume they do.',
+        features: [
+          'User interviews & field research',
+          'Behavioral & decision-journey mapping',
+          'Psychology-informed product decisions',
+          'Findings you can act on across the business',
+        ],
+        cta: 'Understand Your Customers',
+      },
+      {
+        icon: Sparkles,
+        title: 'Product & UX Design',
+        description: 'Interfaces designed by human designers with taste and intent — clear, calm, and credible. Design systems keep that quality consistent as your product grows.',
+        features: [
+          'End-to-end product design',
+          'Design systems & component libraries',
+          'Prototyping & usability testing',
+          'Accessibility as standard',
+        ],
+        cta: 'Design With Us',
+      },
+      {
+        icon: Users,
+        title: 'Customer-Facing Discovery',
+        description: 'Our engineers sit with your teams and your users. Requirements come from conversations and observation — not ticket queues — so what ships is what was actually needed.',
+        features: [
+          'Engineers embedded in discovery',
+          'Workshops with your teams',
+          'Requirements from real conversations',
+          'Shared understanding before code',
+        ],
+        cta: 'Start Discovery',
+      },
+      {
+        icon: TrendingUp,
+        title: 'Trust & Retention Design',
+        description: 'Products people return to are products they trust. We design onboarding, communication, and transparency patterns that build long-term confidence with your customers.',
+        features: [
+          'Onboarding that earns confidence',
+          'Clear communication & state design',
+          'Retention without dark patterns',
+          'Measured through real behavior',
+        ],
+        cta: 'Build Customer Trust',
+      },
+    ],
+  },
+  {
+    id: 'growth-strategy',
+    name: 'Growth & Strategy',
+    icon: Megaphone,
+    description: 'Human strategists who help improve the business — not just the software',
+    services: [
+      {
+        icon: Sparkles,
+        title: 'Positioning & Brand',
+        description: 'Human strategists define how you are seen: positioning, messaging, and brand systems that make your value obvious to the customers who matter most.',
+        features: [
+          'Positioning & messaging',
+          'Brand identity & guidelines',
+          'Launch & campaign narratives',
+          'Consistency across every touchpoint',
+        ],
+        cta: 'Sharpen Your Position',
+      },
+      {
+        icon: TrendingUp,
+        title: 'Go-to-Market & Growth',
+        description: 'From launch plans to distribution channels, we help your product reach the market it was built for — and help the business grow around it.',
+        features: [
+          'Go-to-market planning',
+          'Channel & partnership strategy',
+          'Pricing & packaging guidance',
+          'Growth experiments, measured honestly',
+        ],
+        cta: 'Plan Your Growth',
+      },
+      {
+        icon: LineChart,
+        title: 'SEO & Content',
+        description: 'Durable organic presence built on substance: technical SEO, editorial content, and authority that compounds — no tricks that evaporate with the next algorithm change.',
+        features: [
+          'Technical SEO & site architecture',
+          'Editorial content strategy',
+          'Authority building',
+          'Analytics & search performance',
+        ],
+        cta: 'Grow Organic Reach',
+      },
+      {
+        icon: BarChart3,
+        title: 'Customer Analytics & Insight',
+        description: 'Analytics that explain customers instead of just counting them. We instrument products carefully and turn behavior into decisions your whole business can use.',
+        features: [
+          'Product & funnel instrumentation',
+          'Behavioral analysis',
+          'Insight reports for decision-makers',
+          'Privacy-respecting measurement',
+        ],
+        cta: 'See Your Customers Clearly',
+      },
+    ],
+  },
+  {
+    id: 'enterprise-partnership',
+    name: 'Partnership',
+    icon: Briefcase,
+    description: 'A long-term engineering partner, accountable across the life of your product',
+    services: [
+      {
+        icon: Users,
+        title: 'Dedicated Product Teams',
+        description: 'Senior engineers, designers, and strategists dedicated to your product — a stable team that carries context for years instead of rotating strangers through it.',
+        features: [
+          'Senior, stable, dedicated teams',
+          'Direct access to the people building',
+          'Context that compounds over years',
+          'Transparent cadence & reporting',
+        ],
+        cta: 'Meet Your Team',
+      },
+      {
+        icon: Briefcase,
+        title: 'Architecture & Roadmap',
+        description: 'Systems designed for the next decade, not the next demo. Architecture reviews, technology strategy, and roadmaps that survive growth, pivots, and platform generations.',
+        features: [
+          'Architecture for decades of change',
+          'Technology strategy & evaluation',
+          'Scalability & security reviews',
+          'Roadmaps tied to business goals',
+        ],
+        cta: 'Review Your Architecture',
+      },
+      {
+        icon: Wrench,
+        title: 'Production Ownership',
+        description: 'We stay accountable after launch: 24/7 operations, monitoring, incident response, and the unglamorous discipline that keeps enterprise software trustworthy.',
+        features: [
+          '24/7 monitoring & incident response',
+          'SLOs, alerting & on-call discipline',
+          'Security patching & upgrades',
+          'Continuous performance care',
+        ],
+        cta: 'Secure Your Operations',
+      },
+      {
+        icon: Rocket,
+        title: 'Evolution Programs',
+        description: 'Businesses change; software should keep up gracefully. Ongoing evolution — new capabilities, integrations, and refinements — planned with your team, quarter by quarter.',
+        features: [
+          'Quarterly evolution planning',
+          'New capabilities & integrations',
+          'UX refinement from live feedback',
+          'AI adopted where it serves people',
+        ],
+        cta: 'Evolve Your Platform',
       },
     ],
   },
 ];
 
 export const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('software-development');
+  const [activeTab, setActiveTab] = useState('platform-engineering');
   const [autoRotate, setAutoRotate] = useState(true);
 
   const stopAutoRotate = useCallback(() => {
@@ -303,10 +286,10 @@ export const Services: React.FC = () => {
           <ScrollReveal variant="fadeUp">
             <div className="text-center">
               <h2 className="heading-2 mb-4">
-                Our <span className="text-gradient">Services</span>
+                How We <span className="text-gradient">Work</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-                We support businesses across the full customer journey—from attracting the right audience to building lasting relationships—so you can focus on running and scaling your business. Simply put, when you grow, we grow with you.
+                We support a small number of clients across the whole life of their product — from the first conversations with your customers to platforms that run reliably for decades. When something carries our name, senior people built it.
               </p>
             </div>
           </ScrollReveal>
@@ -429,6 +412,7 @@ export const Services: React.FC = () => {
                   </ul>
 
                   <Button
+                    href="#contact"
                     variant="outline"
                     className="w-full group-hover:bg-primary-600 group-hover:text-white group-hover:border-primary-600 transition-all duration-300"
                   >
@@ -440,18 +424,18 @@ export const Services: React.FC = () => {
             })}
           </div>
 
-          {/* Support Highlight */}
+          {/* Partnership Highlight */}
           <div className="mt-10 sm:mt-12">
             <Card className="text-white text-center liquid-glass glass-panel-highlight" padding="lg">
               <div className="max-w-3xl mx-auto">
                 <h3 className="text-xl sm:text-3xl font-bold mb-4">
-                  24/7 Support with Lifetime Change Requests
+                  Engagements Measured in Years, Not Sprints
                 </h3>
                 <p className="text-base sm:text-xl mb-4 sm:mb-6 opacity-90">
-                  Unlike traditional agencies, we&apos;re committed to your long-term success. Get unlimited support and continuous improvements as your business evolves.
+                  We keep our client roster deliberately small and stay accountable for the life of the product — through growth, pivots, and platform generations. Senior people stay close to your product, and your customers feel it.
                 </p>
                 <Button href="#contact" variant="secondary" size="lg">
-                  Start Your Project
+                  Start a Conversation
                 </Button>
               </div>
             </Card>

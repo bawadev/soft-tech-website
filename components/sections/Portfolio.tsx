@@ -45,7 +45,7 @@ export const Portfolio: React.FC = () => {
                 Success <span className="text-gradient">Stories</span>
               </h2>
               <p className="hidden sm:block text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-                Our strength is our customers&apos; trust in our ability to deliver high-quality, reliable products every time.
+                Enterprise systems our engineers have designed, modernized, and operated — the kind of work where reliability isn&apos;t optional.
               </p>
             </div>
           </ScrollReveal>

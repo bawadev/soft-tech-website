@@ -9,7 +9,7 @@ export const OrganizationSchema: WithContext<Organization> = {
   "url": "https://softx.world",
   "logo": "https://softx.world/logo.png",
   "image": "https://softx.world/og-image.jpg",
-  "description": "SoftX World — AI-powered business solutions and strategic technology partnership. Expert in AI chat agents, legacy system migrations, n8n automation, RAG systems, and business consultation.",
+  "description": "SoftX World designs, builds, and operates enterprise-grade software platforms. Human-led discovery, senior engineering, and long-term partnerships — software built to last for decades.",
   "foundingDate": "2017",
   "email": "admin@softx.world",
   "address": {
@@ -28,21 +28,17 @@ export const OrganizationSchema: WithContext<Organization> = {
     "availableLanguage": ["English"],
     "areaServed": "Worldwide"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "50",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "knowsAbout": [
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Business Consultation",
-    "Web Development",
+    "Enterprise Software Development",
+    "Platform Engineering",
+    "Product Design",
+    "UX Research",
+    "Mobile Application Development",
+    "Cloud Infrastructure",
+    "DevOps",
+    "Software Modernization",
     "Digital Transformation",
-    "Legacy System Migration",
-    "Customer Acquisition"
+    "Growth Strategy"
   ]
 };
 
@@ -52,7 +48,7 @@ export const WebSiteSchema: WithContext<WebSite> = {
   "name": "SoftX World",
   "alternateName": ["SoftX", "Softx", "softx.world"],
   "url": "https://softx.world",
-  "description": "SoftX World — AI-powered automation, RAG systems, n8n workflows, and customer acquisition solutions. Enterprise software company from Sri Lanka.",
+  "description": "SoftX World — enterprise software engineering, built the human way. Platforms designed to last for decades, from a senior Sri Lankan engineering team.",
   "publisher": {
     "@type": "Organization",
     "name": "SoftX World",
@@ -66,65 +62,12 @@ export const ServicesSchema: WithContext<Service>[] = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "AI-Powered Chat Agents",
+    "serviceType": "Platform Engineering",
     "provider": {
       "@type": "Organization",
       "name": "Softx World"
     },
-    "description": "Intelligent conversational AI that engages customers 24/7, qualifies leads, and drives conversions. Seamlessly integrate with your existing systems.",
-    "areaServed": "Worldwide",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://softx.world/#services"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "AI Chat Agent Features",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Natural language processing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Multi-language support"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Custom training on your data"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "CRM integration"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Legacy System Migrations",
-    "provider": {
-      "@type": "Organization",
-      "name": "Softx World"
-    },
-    "description": "Transform outdated systems into modern AI-powered solutions. Maintain business continuity while upgrading to cutting-edge technology.",
+    "description": "Large-scale web and mobile platforms engineered for reliability, security, and decades of evolution — real-time systems, payments, video, geo services, cloud infrastructure, and modernization.",
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
@@ -138,12 +81,12 @@ export const ServicesSchema: WithContext<Service>[] = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "AI Knowledge Systems",
+    "serviceType": "Product Design & Research",
     "provider": {
       "@type": "Organization",
       "name": "Softx World"
     },
-    "description": "Build intelligent knowledge bases that learn and evolve. Empower your team and customers with instant access to accurate information.",
+    "description": "Human designers and researchers who study how your customers think and decide — user interviews, consumer psychology, decision-journey mapping, and trust-centered product design.",
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
@@ -157,12 +100,12 @@ export const ServicesSchema: WithContext<Service>[] = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Strategic Consultation",
+    "serviceType": "Growth & Marketing Strategy",
     "provider": {
       "@type": "Organization",
       "name": "Softx World"
     },
-    "description": "Navigate the rapidly changing technology landscape with expert guidance. We help you identify opportunities and implement solutions that matter.",
+    "description": "Human marketing strategists who help improve the business, not just the software — positioning, go-to-market, SEO and content, and customer analytics that explain behavior.",
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",
@@ -176,31 +119,12 @@ export const ServicesSchema: WithContext<Service>[] = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Website Maintenance & Tech Upgrades",
+    "serviceType": "Long-Term Engineering Partnership",
     "provider": {
       "@type": "Organization",
       "name": "Softx World"
     },
-    "description": "Keep your digital presence cutting-edge with continuous improvements, security updates, and performance optimization.",
-    "areaServed": "Worldwide",
-    "availableChannel": {
-      "@type": "ServiceChannel",
-      "serviceUrl": "https://softx.world/#services"
-    },
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "User Analysis & Customer Acquisition",
-    "provider": {
-      "@type": "Organization",
-      "name": "Softx World"
-    },
-    "description": "Data-driven insights to understand your users and attract more customers. Turn analytics into actionable growth strategies.",
+    "description": "Dedicated senior product teams, architecture and roadmap stewardship, 24/7 production ownership, and evolution programs — partnerships measured in years, software built to last decades.",
     "areaServed": "Worldwide",
     "availableChannel": {
       "@type": "ServiceChannel",

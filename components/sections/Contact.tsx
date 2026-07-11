@@ -103,12 +103,12 @@ export const Contact: React.FC = () => {
   };
 
   const services = [
-    'AI-Powered Chat Agents',
-    'Legacy System Migration',
-    'AI Knowledge Systems',
-    'Strategic Consultation',
-    'Website Maintenance',
-    'User Analysis & Customer Acquisition',
+    'Platform Engineering',
+    'Mobile Product Development',
+    'Product Design & Customer Research',
+    'Growth & Marketing Strategy',
+    'Legacy Modernization',
+    'Long-Term Engineering Partnership',
     'Other',
   ];
 
@@ -127,10 +127,10 @@ export const Contact: React.FC = () => {
         <div>
           <ScrollReveal variant="fadeLeft">
             <h2 className="heading-2 mb-6">
-              Let's Build Something <span className="text-gradient">Amazing</span>
+              Let's Build Something <span className="text-gradient">That Lasts</span>
             </h2>
             <p className="text-lg text-secondary-700 mb-8">
-              Ready to transform your business with AI-powered solutions? Schedule a free consultation to discuss your needs and discover how we can help you gain competitive advantage.
+              Tell us about your product and your customers. A senior engineer — not a sales team — will read it, and if we&apos;re the right partner, we&apos;ll start with a real conversation about your business.
             </p>
           </ScrollReveal>
 
@@ -187,8 +187,8 @@ export const Contact: React.FC = () => {
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <div className="font-semibold text-secondary-900">No Obligation Consultation</div>
-                  <div className="text-sm text-secondary-500">100% Free, No Commitment Required</div>
+                  <div className="font-semibold text-secondary-900">Straight Answers from Senior People</div>
+                  <div className="text-sm text-secondary-500">No sales scripts — an honest conversation about fit</div>
                 </div>
               </div>
             </Card>
@@ -332,9 +332,9 @@ export const Contact: React.FC = () => {
                 </div>
                 <ol className="list-decimal list-inside space-y-1 text-sm text-success-600 ml-9">
                   <li>You'll receive a confirmation email</li>
-                  <li>We'll review within 2 hours</li>
-                  <li>Schedule a free 30-min consultation</li>
-                  <li>Get a custom proposal within 24 hours</li>
+                  <li>A senior engineer reviews your message personally</li>
+                  <li>We schedule an in-depth conversation about your business</li>
+                  <li>You receive a considered proposal — scope, team, and timeline</li>
                 </ol>
               </div>
             )}
