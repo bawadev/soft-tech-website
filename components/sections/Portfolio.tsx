@@ -7,28 +7,6 @@ import { Card, Button, ScrollReveal } from '../ui';
 export const Portfolio: React.FC = () => {
   const projects = [
     {
-      title: 'Enterprise Insurance Platform',
-      description: 'Modernized legacy insurance management system with AI-powered document processing, reducing claim processing time by 60%.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
-      tags: ['AI Integration', 'Legacy Migration', 'Enterprise'],
-      caseStudySlug: 'new-york-life-insurance-platform-modernization',
-    },
-    {
-      title: 'Smart Service Management',
-      description: 'Built AI-powered scheduling and dispatch system that optimizes routes and resource allocation for field service teams.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-      tags: ['AI Optimization', 'Real-time Systems', 'SaaS'],
-      caseStudySlug: 'workwave-smart-service-management',
-    },
-    {
-      title: 'Health & Wellness AI Assistant',
-      description: 'Developed intelligent health assistant with personalized recommendations, increasing user engagement by 80%.',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
-      tags: ['Healthcare AI', 'Mobile App', 'Personalization'],
-      caseStudySlug: 'mapbe-wellbeing-health-ai-assistant',
-    },
-    // ── SoftX products (own ventures) ──
-    {
       title: 'PlayMate',
       description: 'A social app to organize pickup sports games and find players nearby — realtime geospatial matchmaking across iOS, Android and web.',
       image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80',
@@ -85,10 +63,10 @@ export const Portfolio: React.FC = () => {
           <ScrollReveal variant="fadeUp">
             <div className="text-center">
               <h2 className="heading-2 mb-2 sm:mb-4">
-                Success <span className="text-gradient">Stories</span>
+                Our <span className="text-gradient">Products</span>
               </h2>
               <p className="hidden sm:block text-base sm:text-lg md:text-xl text-secondary-700 max-w-prose mx-auto px-4">
-                Our strength is our customers&apos; trust in our ability to deliver high-quality, reliable products every time.
+                Products we&apos;ve designed, built, and shipped end to end — from mobile and web apps to AI-powered platforms.
               </p>
             </div>
           </ScrollReveal>
