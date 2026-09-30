@@ -27,6 +27,49 @@ export const Portfolio: React.FC = () => {
       tags: ['Healthcare AI', 'Mobile App', 'Personalization'],
       caseStudySlug: 'mapbe-wellbeing-health-ai-assistant',
     },
+    // ── SoftX products (own ventures) ──
+    {
+      title: 'PlayMate',
+      description: 'A social app to organize pickup sports games and find players nearby — realtime geospatial matchmaking across iOS, Android and web.',
+      image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80',
+      tags: ['React Native', 'Supabase', 'PostGIS'],
+      caseStudySlug: 'playmate',
+    },
+    {
+      title: 'Suwa Care',
+      description: 'A telemedicine platform for doctor booking and in-app video consultations, built on Spring Boot with LiveKit video.',
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80',
+      tags: ['Spring Boot', 'LiveKit', 'Telemedicine'],
+      caseStudySlug: 'suwa-care',
+    },
+    {
+      title: 'Sri Lanka Wildlife Guide',
+      description: 'A biodiversity species directory for Sri Lanka with community photo uploads, powered by a FastAPI backend.',
+      image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=800&q=80',
+      tags: ['FastAPI', 'Python', 'Biodiversity'],
+      caseStudySlug: 'sri-lanka-wildlife-guide',
+    },
+    {
+      title: 'Ideanote',
+      description: 'An AI note-taking app that summarizes notes and clusters them by meaning into a visual note network, with smart reminders.',
+      image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80',
+      tags: ['Next.js', 'Convex', 'AI Clustering'],
+      caseStudySlug: 'ideanote',
+    },
+    {
+      title: 'PropertyWeb',
+      description: 'A real-estate marketplace with listing search, saved properties, an agent directory and multi-role accounts, built with React and Supabase.',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      tags: ['React', 'Vite', 'Supabase'],
+      caseStudySlug: 'propertyweb',
+    },
+    {
+      title: 'Locked',
+      description: 'A direct-to-consumer apparel store using AI-generated product photography, built with Next.js and a Neo4j graph database.',
+      image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80',
+      tags: ['Next.js', 'Neo4j', 'E-Commerce'],
+      caseStudySlug: 'locked',
+    },
   ];
 
   return (

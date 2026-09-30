@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Navigation, Footer, Button, Section, Card } from '@/components/ui';
 import { getCaseStudyBySlug, getAllCaseStudySlugs, getRelatedCaseStudies } from '@/data/case-studies';
-import { CheckCircle, Clock, Building2, ArrowRight, Quote } from 'lucide-react';
+import { CheckCircle, Clock, Building2, ArrowRight, Quote, ExternalLink } from 'lucide-react';
 
 interface CaseStudyPageProps {
   params: Promise<{
@@ -125,33 +125,36 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {caseStudy.tagline}
             </p>
 
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-400 mb-2">
-                  {caseStudy.results.metrics[0].value}
-                </div>
-                <div className="text-sm text-secondary-300">
-                  {caseStudy.results.metrics[0].label}
-                </div>
+            {/* Quick Stats — only when verified metrics exist (omitted for own products, no fabricated numbers) */}
+            {caseStudy.results.metrics && caseStudy.results.metrics.length > 0 && (
+              <div className="flex flex-wrap justify-center gap-8 mt-12">
+                {caseStudy.results.metrics.slice(0, 3).map((metric, idx) => (
+                  <div key={idx} className="text-center">
+                    <div className="text-3xl font-bold text-primary-400 mb-2">
+                      {metric.value}
+                    </div>
+                    <div className="text-sm text-secondary-300">
+                      {metric.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-400 mb-2">
-                  {caseStudy.results.metrics[1].value}
-                </div>
-                <div className="text-sm text-secondary-300">
-                  {caseStudy.results.metrics[1].label}
-                </div>
+            )}
+
+            {/* Live product link (SoftX ventures) */}
+            {caseStudy.liveUrl && (
+              <div className="mt-10 flex justify-center">
+                <a
+                  href={caseStudy.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary px-8 py-4 text-lg min-h-[52px] gap-2"
+                >
+                  Visit Live Site
+                  <ExternalLink className="w-5 h-5" />
+                </a>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-400 mb-2">
-                  {caseStudy.results.metrics[2].value}
-                </div>
-                <div className="text-sm text-secondary-300">
-                  {caseStudy.results.metrics[2].label}
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </section>
 
@@ -256,7 +259,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               Key <span className="text-gradient">Features</span>
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Innovative capabilities that transformed {caseStudy.company}'s operations
+              {caseStudy.isProduct
+                ? 'The core capabilities that make it work'
+                : `Innovative capabilities that transformed ${caseStudy.company}'s operations`}
             </p>
           </div>
 
@@ -310,35 +315,45 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <Section className="bg-white">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-4">
-              Measurable <span className="text-gradient">Results</span>
+              {caseStudy.results.metrics ? (
+                <>Measurable <span className="text-gradient">Results</span></>
+              ) : (
+                <>Product <span className="text-gradient">Highlights</span></>
+              )}
             </h2>
             <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-              Real impact on business performance and user satisfaction
+              {caseStudy.results.metrics
+                ? 'Real impact on business performance and user satisfaction'
+                : 'Factual highlights — what the product does and how it is built'}
             </p>
           </div>
 
-          {/* Metrics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {caseStudy.results.metrics.map((metric, idx) => (
-              <Card key={idx} className="text-center bg-primary-50 border-2 border-primary-100">
-                <div className="text-5xl font-bold text-gradient mb-3">
-                  {metric.value}
-                </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
-                  {metric.label}
-                </h3>
-                <p className="text-secondary-600 text-sm">
-                  {metric.description}
-                </p>
-              </Card>
-            ))}
-          </div>
+          {/* Metrics Grid — only when verified metrics exist */}
+          {caseStudy.results.metrics && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {caseStudy.results.metrics.map((metric, idx) => (
+                <Card key={idx} className="text-center bg-primary-50 border-2 border-primary-100">
+                  <div className="text-5xl font-bold text-gradient mb-3">
+                    {metric.value}
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                    {metric.label}
+                  </h3>
+                  <p className="text-secondary-600 text-sm">
+                    {metric.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          )}
 
-          {/* Outcomes List */}
+          {/* Outcomes / Highlights List */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-8 text-center">
-              Business Outcomes
-            </h3>
+            {caseStudy.results.metrics && (
+              <h3 className="text-2xl font-bold text-secondary-900 mb-8 text-center">
+                Business Outcomes
+              </h3>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {caseStudy.results.outcomes.map((outcome, idx) => (
                 <div key={idx} className="flex gap-3 items-start">
@@ -350,23 +365,26 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </Section>
 
-        {/* Testimonial Section */}
-        <Section className="bg-primary-600 text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <Quote className="w-16 h-16 mx-auto mb-8 opacity-50" />
-            <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-8">
-              "{caseStudy.testimonial.quote}"
-            </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <div className="text-left">
-                <div className="font-semibold text-lg">{caseStudy.testimonial.author}</div>
-                <div className="text-primary-100">{caseStudy.testimonial.position}</div>
+        {/* Testimonial Section — only when a real testimonial exists */}
+        {caseStudy.testimonial && (
+          <Section className="bg-primary-600 text-white">
+            <div className="max-w-4xl mx-auto text-center">
+              <Quote className="w-16 h-16 mx-auto mb-8 opacity-50" />
+              <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-8">
+                "{caseStudy.testimonial.quote}"
+              </blockquote>
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-left">
+                  <div className="font-semibold text-lg">{caseStudy.testimonial.author}</div>
+                  <div className="text-primary-100">{caseStudy.testimonial.position}</div>
+                </div>
               </div>
             </div>
-          </div>
-        </Section>
+          </Section>
+        )}
 
-        {/* Timeline Section */}
+        {/* Timeline Section — only when timeline phases exist */}
+        {caseStudy.timeline && caseStudy.timeline.length > 0 && (
         <Section className="bg-secondary-50">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-4">
@@ -400,6 +418,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
           </div>
         </Section>
+        )}
 
         {/* Related Case Studies */}
         {relatedStudies.length > 0 && (
@@ -453,7 +472,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-primary-50 mb-8 max-w-2xl mx-auto">
-              Join {caseStudy.company} and other industry leaders who have achieved remarkable results with our AI-powered solutions.
+              {caseStudy.isProduct
+                ? 'This is one of the products we design, build and run at SoftX. Want us to build something like it with you?'
+                : `Join ${caseStudy.company} and other industry leaders who have achieved remarkable results with our AI-powered solutions.`}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button href="/#contact" variant="secondary" size="lg">
