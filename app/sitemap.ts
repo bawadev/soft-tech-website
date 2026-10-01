@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/blog-posts';
+import { getAllCaseStudySlugs } from '@/data/case-studies';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://softx.world';
@@ -11,14 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Case studies
-  const caseStudies = [
-    'new-york-life-insurance-platform-modernization',
-    'workwave-smart-service-management',
-    'mapbe-wellbeing-health-ai-assistant',
-  ];
-
-  const caseStudyUrls = caseStudies.map((slug) => ({
+  // Case studies (derived from data so new entries flow through automatically)
+  const caseStudyUrls = getAllCaseStudySlugs().map((slug) => ({
     url: `${baseUrl}/case-studies/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
