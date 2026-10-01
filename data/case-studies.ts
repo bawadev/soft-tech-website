@@ -262,7 +262,6 @@ export const caseStudies: CaseStudy[] = [
     projectDuration: 'Ongoing',
     heroImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1920&q=80',
     tagline: 'A species directory for Sri Lanka\'s biodiversity',
-    liveUrl: 'https://srilankan.guide',
     isProduct: true,
 
     overview: 'Sri Lanka Wildlife Guide is a SoftX product: a biodiversity species directory for Sri Lanka, enriched by community photo uploads. It is built on a FastAPI (Python) backend.',
@@ -316,7 +315,6 @@ export const caseStudies: CaseStudy[] = [
 
     results: {
       outcomes: [
-        'Live at srilankan.guide',
         'Biodiversity species directory for Sri Lanka',
         'Community photo uploads',
         'Built on a FastAPI (Python) backend'
@@ -325,7 +323,7 @@ export const caseStudies: CaseStudy[] = [
 
     tags: ['FastAPI', 'Python', 'Biodiversity', 'Directory'],
 
-    metaDescription: 'Sri Lanka Wildlife Guide is a SoftX biodiversity species directory with community photo uploads, built on a FastAPI (Python) backend. Live at srilankan.guide.',
+    metaDescription: 'Sri Lanka Wildlife Guide is a SoftX biodiversity species directory with community photo uploads, built on a FastAPI (Python) backend.',
     ogImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80',
   },
 
