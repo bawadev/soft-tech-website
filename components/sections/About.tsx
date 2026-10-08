@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, MotionValue } from 'framer-motion';
 
 /* ------------------------------------------------------------------ */
 /*  Shared styles                                                      */
@@ -23,7 +23,7 @@ const panels = [
           built by former engineers and architects who spent years inside Sri
           Lanka&apos;s leading software companies.
         </p>
-        <p className="mt-4 sm:mt-6 font-serif text-sm sm:text-base md:text-lg text-primary-200/80 leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-primary-100/90 leading-relaxed max-w-3xl mx-auto">
           We learned what it takes to design, build, and maintain systems that
           operate at scale — where reliability, security, and long-term thinking
           are non-negotiable.
@@ -59,7 +59,7 @@ const panels = [
           We build enterprise platforms for organizations that expect software
           to last.
         </p>
-        <p className="font-serif text-sm sm:text-base md:text-lg text-primary-200/85 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-primary-100/90 leading-relaxed max-w-3xl mx-auto">
           A deliberately small client roster. Human designers, marketing
           strategists, and customer-facing engineers around every build. Systems
           that run for decades and evolve with your business —{' '}
@@ -105,6 +105,9 @@ function StoryPanel({
       <div
         className="relative w-full h-full liquid-glass glass-panel-dark p-4 sm:p-8 lg:p-14 overflow-hidden flex items-center justify-center"
       >
+        {/* Readability scrim — the glass alone is ~10% alpha, so the background
+            texture was showing straight through the body copy */}
+        <div className="absolute inset-0 bg-primary-900/45 rounded-2xl sm:rounded-3xl pointer-events-none" />
         {/* Top edge highlight */}
         <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-100/70 to-transparent pointer-events-none" />
         {/* Inner surface gloss */}
@@ -209,6 +212,7 @@ export const About: React.FC = () => {
    */
 
   /* --- Background --- */
+  const reduceMotion = useReducedMotion();
   const bgScale = useTransform(scrollYProgress, [0, 0.25], [1.12, 1.0]);
   const bgOpacity = useTransform(scrollYProgress, [0, 0.20], [0, 1]);
 
@@ -268,23 +272,39 @@ export const About: React.FC = () => {
         className="sticky top-0 h-screen overflow-hidden flex flex-col"
         style={{ opacity: sectionOpacity }}
       >
-        {/* Background: Sigiriya image */}
+        {/* Background: Sigiriya image.
+            Outer div: the scroll-driven entrance zoom (1.12 -> 1.0).
+            Inner div: a slow continuous breathe. Nested so the two transforms
+            compose instead of fighting over the same `scale`. */}
         <motion.div
           className="absolute inset-0"
           style={{ scale: bgScale, opacity: bgOpacity }}
         >
-          <Image
-            src="/media/sigiriya.jpg"
-            alt="Sigiriya — Built to last"
-            fill
-            sizes="100vw"
-            className="object-cover object-[center_30%] sm:object-center"
-            priority
-          />
+          <motion.div
+            className="absolute inset-0 will-change-transform"
+            animate={reduceMotion ? undefined : { scale: [1, 1.09, 1] }}
+            transition={
+              reduceMotion
+                ? undefined
+                : { duration: 24, repeat: Infinity, ease: 'easeInOut', times: [0, 0.5, 1] }
+            }
+          >
+            <Image
+              src="/media/sigiriya.jpg"
+              alt="Sigiriya — Built to last"
+              fill
+              sizes="100vw"
+              className="object-cover object-[center_30%] sm:object-center grayscale contrast-[1.08] brightness-[0.92]"
+              priority
+            />
+          </motion.div>
         </motion.div>
 
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60 pointer-events-none" />
+        {/* Brand duotone — the photo is desaturated above, this gives it the navy */}
+        <div className="absolute inset-0 bg-primary-900/65 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-primary-700/25 mix-blend-screen pointer-events-none" />
+        {/* Contrast wash so the white type holds at every scroll position */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-900/55 via-primary-900/35 to-primary-900/70 pointer-events-none" />
 
         {/* Title */}
         <motion.div
