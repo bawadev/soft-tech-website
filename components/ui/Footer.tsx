@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="heading-6 text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="#about" className="text-secondary-300 hover:text-primary-400 transition-colors">
@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
 
           {/* Categories */}
           <div>
-            <h3 className="font-semibold mb-4">Blog Categories</h3>
+            <h3 className="heading-6 text-white mb-4">Blog Categories</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/blog?category=AI" className="text-secondary-300 hover:text-primary-400 transition-colors">
@@ -116,7 +116,7 @@ export const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="heading-6 text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li className="text-secondary-300">Platform Engineering</li>
               <li className="text-secondary-300">Mobile Products</li>

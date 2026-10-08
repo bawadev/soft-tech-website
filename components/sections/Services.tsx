@@ -410,7 +410,7 @@ export const Services: React.FC = () => {
           <div className="mt-10 sm:mt-12">
             <Card className="text-white text-center liquid-glass glass-panel-highlight" padding="lg">
               <div className="max-w-3xl mx-auto">
-                <h3 className="text-xl sm:text-3xl font-bold mb-4">
+                <h3 className="heading-3 text-white mb-4">
                   Engagements Measured in Years, Not Sprints
                 </h3>
                 <p className="text-base sm:text-xl mb-4 sm:mb-6 opacity-90">

@@ -9,8 +9,8 @@ export default function NotFound() {
 
       <div className="flex-grow flex items-center justify-center bg-secondary-50">
         <div className="container-custom text-center py-20">
-          <h1 className="text-6xl font-bold text-secondary-900 mb-4">404</h1>
-          <h2 className="text-3xl font-bold text-secondary-800 mb-6">
+          <h1 className="heading-1 mb-4">404</h1>
+          <h2 className="heading-3 mb-6">
             Case Study Not Found
           </h2>
           <p className="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">

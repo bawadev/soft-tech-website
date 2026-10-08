@@ -144,7 +144,7 @@ export const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-secondary-900 mb-1">Email Us</h4>
+                  <h4 className="heading-6 mb-1">Email Us</h4>
                   <p className="text-secondary-700">admin@softx.world</p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-secondary-900 mb-1">Response Time</h4>
+                  <h4 className="heading-6 mb-1">Response Time</h4>
                   <p className="text-secondary-700">We respond in under 2 hours</p>
                 </div>
               </div>
@@ -172,7 +172,7 @@ export const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-secondary-900 mb-1">Support</h4>
+                  <h4 className="heading-6 mb-1">Support</h4>
                   <p className="text-secondary-700">24/7 Available</p>
                 </div>
               </div>

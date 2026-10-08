@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
       <main className="min-h-screen bg-white pt-24 pb-16">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-secondary-900 mb-2">Privacy Policy</h1>
+            <h1 className="heading-1 mb-2">Privacy Policy</h1>
             <p className="text-secondary-500 text-sm mb-10">
               Effective Date: February 17, 2026 &nbsp;|&nbsp; Softx LLC (Softx World)
             </p>
@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
             <div className="prose prose-secondary max-w-none space-y-8 text-secondary-700">
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">1. Introduction</h2>
+                <h2 className="heading-5 mb-3">1. Introduction</h2>
                 <p>
                   Softx LLC, operating as Softx World (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), is committed to protecting your
                   privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">2. Information We Collect</h2>
+                <h2 className="heading-5 mb-3">2. Information We Collect</h2>
                 <p>We may collect the following types of information:</p>
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                   <li><strong>Contact information</strong> — name, email address, phone number, and company name provided through our contact form.</li>
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">3. How We Use Your Information</h2>
+                <h2 className="heading-5 mb-3">3. How We Use Your Information</h2>
                 <p>We use the information we collect to:</p>
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                   <li>Respond to your inquiries and provide our services.</li>
@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">4. Cookies</h2>
+                <h2 className="heading-5 mb-3">4. Cookies</h2>
                 <p>
                   Our website may use cookies and similar tracking technologies to improve your browsing
                   experience and analyze site traffic. You can control cookie settings through your browser.
@@ -65,7 +65,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">5. Third-Party Services</h2>
+                <h2 className="heading-5 mb-3">5. Third-Party Services</h2>
                 <p>
                   We may use third-party tools (such as analytics or email services) that collect information
                   on our behalf. These providers have their own privacy policies and are not permitted to use
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">6. Data Security</h2>
+                <h2 className="heading-5 mb-3">6. Data Security</h2>
                 <p>
                   We implement industry-standard security measures to protect your personal information.
                   However, no method of transmission over the internet is 100% secure, and we cannot
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">7. Your Rights</h2>
+                <h2 className="heading-5 mb-3">7. Your Rights</h2>
                 <p>Depending on your location, you may have the right to:</p>
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                   <li>Access the personal information we hold about you.</li>
@@ -99,7 +99,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">8. Changes to This Policy</h2>
+                <h2 className="heading-5 mb-3">8. Changes to This Policy</h2>
                 <p>
                   We may update this Privacy Policy from time to time. Changes will be posted on this page
                   with an updated effective date. Continued use of our website constitutes acceptance of
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">9. Contact Us</h2>
+                <h2 className="heading-5 mb-3">9. Contact Us</h2>
                 <p>If you have questions about this Privacy Policy, please contact us:</p>
                 <div className="mt-3 bg-secondary-50 rounded-lg p-4 text-sm">
                   <p><strong>Softx LLC (Softx World)</strong></p>

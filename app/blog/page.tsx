@@ -101,7 +101,7 @@ export default function BlogPage() {
                 <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
                   Featured Post
                 </div>
-                <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+                <h2 className="heading-2 mb-4">
                   {blogPosts[0].title}
                 </h2>
                 <p className="text-secondary-600 mb-6">
@@ -138,7 +138,7 @@ export default function BlogPage() {
                   <div className="inline-block px-3 py-1 bg-secondary-100 text-secondary-700 rounded-lg text-xs font-medium mb-3 self-start">
                     {post.category}
                   </div>
-                  <h3 className="text-xl font-bold text-secondary-900 mb-3">
+                  <h3 className="heading-4 mb-3">
                     {post.title}
                   </h3>
                   <p className="text-secondary-600 mb-4 flex-grow">
@@ -165,7 +165,7 @@ export default function BlogPage() {
 
           {/* Newsletter CTA */}
           <Card className="mt-16 bg-primary-600 text-white text-center" padding="lg">
-            <h3 className="text-3xl font-bold mb-4">
+            <h3 className="heading-3 text-white mb-4">
               Get Weekly ROI Insights
             </h3>
             <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">

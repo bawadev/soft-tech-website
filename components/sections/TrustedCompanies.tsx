@@ -102,7 +102,7 @@ export const TrustedCompanies: React.FC = () => {
             <motion.div style={{ x: rightX, y: rightY, opacity: rightOpacity, scale: rightScale }}>
               <ScrollReveal variant="fadeRight">
                 <div>
-                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-secondary-900 mb-2 sm:mb-4">
+                  <h2 className="heading-2 mb-2 sm:mb-4">
                     Crafted with Elegance of Sri Lankan Engineering
                   </h2>
 

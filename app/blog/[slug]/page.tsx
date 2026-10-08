@@ -191,7 +191,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   ST
                 </div>
                 <div>
-                  <h4 className="font-bold text-secondary-900 mb-2">
+                  <h4 className="heading-6 mb-2">
                     {post.author}
                   </h4>
                   <p className="text-secondary-600">
@@ -203,7 +203,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
             {/* CTA */}
             <Card className="bg-primary-600 text-white text-center" padding="lg">
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="heading-3 text-white mb-4">
                 Ready to Transform Your Business?
               </h3>
               <p className="text-lg mb-6 opacity-90">
@@ -235,7 +235,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     />
                   </div>
                   <div className="p-6">
-                    <h4 className="text-xl font-bold text-secondary-900 hover:text-primary-600 transition-colors">
+                    <h4 className="heading-5 hover:text-primary-600 transition-colors">
                       {relatedPost.title}
                     </h4>
                   </div>

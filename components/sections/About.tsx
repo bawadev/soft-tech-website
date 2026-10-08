@@ -312,7 +312,7 @@ export const About: React.FC = () => {
           style={{ y: titleY, opacity: titleOpacity }}
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+            <h2 className="heading-2 text-white text-center" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
               Why Choose{' '}
               <span className="text-primary-400" style={{ textShadow: '0 0 30px rgba(77,142,197,0.6)' }}>
                 Softx World

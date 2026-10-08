@@ -17,7 +17,7 @@ export default function TermsOfService() {
       <main className="min-h-screen bg-white pt-24 pb-16">
         <Container>
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold text-secondary-900 mb-2">Terms of Service</h1>
+            <h1 className="heading-1 mb-2">Terms of Service</h1>
             <p className="text-secondary-500 text-sm mb-10">
               Effective Date: February 17, 2026 &nbsp;|&nbsp; Softx LLC (Softx World)
             </p>
@@ -25,7 +25,7 @@ export default function TermsOfService() {
             <div className="prose prose-secondary max-w-none space-y-8 text-secondary-700">
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">1. Agreement to Terms</h2>
+                <h2 className="heading-5 mb-3">1. Agreement to Terms</h2>
                 <p>
                   By accessing or using the website <strong>softx.world</strong> or engaging any services
                   provided by Softx LLC (&quot;Softx World&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), you agree to be bound
@@ -34,7 +34,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">2. Services</h2>
+                <h2 className="heading-5 mb-3">2. Services</h2>
                 <p>
                   Softx LLC provides software development, AI automation, marketing, and consulting services
                   as described on our website. The specific scope, deliverables, timelines, and pricing for
@@ -44,7 +44,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">3. Intellectual Property</h2>
+                <h2 className="heading-5 mb-3">3. Intellectual Property</h2>
                 <p>
                   All content on this website — including text, graphics, logos, and code — is the property
                   of Softx LLC and protected by applicable intellectual property laws. You may not reproduce,
@@ -57,7 +57,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">4. Client Responsibilities</h2>
+                <h2 className="heading-5 mb-3">4. Client Responsibilities</h2>
                 <p>Clients engaging our services agree to:</p>
                 <ul className="list-disc pl-6 mt-2 space-y-2">
                   <li>Provide accurate and complete information required to perform the services.</li>
@@ -67,7 +67,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">5. Payment</h2>
+                <h2 className="heading-5 mb-3">5. Payment</h2>
                 <p>
                   Payment terms are specified in the individual service agreement or proposal. Invoices are
                   due upon the dates specified therein. Softx LLC reserves the right to pause or terminate
@@ -76,7 +76,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">6. Limitation of Liability</h2>
+                <h2 className="heading-5 mb-3">6. Limitation of Liability</h2>
                 <p>
                   To the fullest extent permitted by law, Softx LLC shall not be liable for any indirect,
                   incidental, special, or consequential damages arising from the use of our website or services.
@@ -86,7 +86,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">7. Confidentiality</h2>
+                <h2 className="heading-5 mb-3">7. Confidentiality</h2>
                 <p>
                   Both parties agree to keep confidential any proprietary or sensitive information shared
                   during the course of an engagement, and not to disclose it to third parties without prior
@@ -95,7 +95,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">8. Termination</h2>
+                <h2 className="heading-5 mb-3">8. Termination</h2>
                 <p>
                   Either party may terminate a service engagement with written notice as specified in the
                   applicable service agreement. Softx LLC reserves the right to terminate access to our
@@ -104,7 +104,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">9. Governing Law</h2>
+                <h2 className="heading-5 mb-3">9. Governing Law</h2>
                 <p>
                   These Terms are governed by the laws of the State of Montana, United States. Any disputes
                   arising from these Terms shall be subject to the exclusive jurisdiction of the courts of
@@ -113,7 +113,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">10. Changes to Terms</h2>
+                <h2 className="heading-5 mb-3">10. Changes to Terms</h2>
                 <p>
                   We reserve the right to update these Terms at any time. Changes will be posted on this
                   page with a revised effective date. Continued use of our website or services after changes
@@ -122,7 +122,7 @@ export default function TermsOfService() {
               </section>
 
               <section>
-                <h2 className="text-xl font-semibold text-secondary-900 mb-3">11. Contact Us</h2>
+                <h2 className="heading-5 mb-3">11. Contact Us</h2>
                 <p>For questions about these Terms, please reach out:</p>
                 <div className="mt-3 bg-secondary-50 rounded-lg p-4 text-sm">
                   <p><strong>Softx LLC (Softx World)</strong></p>

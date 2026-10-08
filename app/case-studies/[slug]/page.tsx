@@ -209,7 +209,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-6">Key Pain Points:</h3>
+                <h3 className="heading-4 mb-6">Key Pain Points:</h3>
                 <div className="space-y-4">
                   {caseStudy.challenge.painPoints.map((point, idx) => (
                     <div key={idx} className="flex gap-3">
@@ -236,7 +236,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </p>
               </div>
               <div className="lg:order-1">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-6">Our Approach:</h3>
+                <h3 className="heading-4 mb-6">Our Approach:</h3>
                 <div className="space-y-4">
                   {caseStudy.solution.approach.map((step, idx) => (
                     <div key={idx} className="flex gap-3">
@@ -268,7 +268,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudy.features.map((feature, idx) => (
               <Card key={idx} className="bg-white hover:shadow-2xl transition-all duration-300">
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">
+                <h3 className="heading-4 mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-secondary-600 leading-relaxed">
@@ -282,7 +282,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {/* Technologies Section */}
         <Section className="bg-secondary-900 text-white">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="heading-2 text-white mb-4">
               Technology <span className="text-gradient">Stack</span>
             </h2>
             <p className="text-xl text-secondary-300 max-w-3xl mx-auto">
@@ -293,7 +293,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {caseStudy.technologies.map((tech, idx) => (
               <div key={idx} className="bg-secondary-800/50 backdrop-blur rounded-xl p-6 border border-secondary-700">
-                <h3 className="text-lg font-semibold text-primary-400 mb-4">
+                <h3 className="heading-5 text-primary-400 mb-4">
                   {tech.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -336,7 +336,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   <div className="text-5xl font-bold text-gradient mb-3">
                     {metric.value}
                   </div>
-                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                  <h3 className="heading-5 mb-2">
                     {metric.label}
                   </h3>
                   <p className="text-secondary-600 text-sm">
@@ -350,7 +350,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           {/* Outcomes / Highlights List */}
           <div className="max-w-4xl mx-auto">
             {caseStudy.results.metrics && (
-              <h3 className="text-2xl font-bold text-secondary-900 mb-8 text-center">
+              <h3 className="heading-3 mb-8 text-center">
                 Business Outcomes
               </h3>
             )}
@@ -402,7 +402,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary-600 border-4 border-white shadow-lg" />
                   <div className="bg-white rounded-xl p-6 shadow-md">
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-3">
-                      <h3 className="text-xl font-semibold text-secondary-900">
+                      <h3 className="heading-4">
                         {phase.phase}
                       </h3>
                       <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
@@ -448,7 +448,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     <div className="inline-block px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-3">
                       {study.company}
                     </div>
-                    <h3 className="text-xl font-semibold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">
+                    <h3 className="heading-4 mb-3 group-hover:text-primary-600 transition-colors">
                       {study.title}
                     </h3>
                     <p className="text-secondary-600 mb-4 line-clamp-2">
@@ -468,7 +468,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {/* CTA Section */}
         <Section className="bg-secondary-900 text-white">
           <Card className="bg-primary-600 text-white max-w-4xl mx-auto text-center" padding="lg">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="heading-2 text-white mb-6">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-primary-50 mb-8 max-w-2xl mx-auto">
