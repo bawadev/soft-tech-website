@@ -506,6 +506,7 @@ export const caseStudies: CaseStudy[] = [
     projectDuration: 'In development',
     heroImage: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1920&q=80',
     tagline: 'Direct-to-consumer apparel with AI-generated product photography',
+    liveUrl: 'https://locked-demo.softx.world',
     isProduct: true,
 
     overview: 'Locked is a SoftX internal venture: a direct-to-consumer branded apparel store that uses AI-generated product photography. It is built with Next.js and a Neo4j graph database.',
