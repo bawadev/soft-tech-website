@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { RefreshCw, Briefcase, Wrench, BarChart3, Sparkles, Rocket, TrendingUp, Workflow, Globe, Megaphone, Code, Lightbulb, Users, LineChart } from 'lucide-react';
 import { Card, Button, ScrollReveal } from '../ui';
 
@@ -248,31 +248,13 @@ const serviceCategories: ServiceCategory[] = [
 ];
 
 export const Services: React.FC = () => {
+  // Tabs are switched by the reader, not on a timer.
   const [activeTab, setActiveTab] = useState('platform-engineering');
-  const [autoRotate, setAutoRotate] = useState(true);
-
-  const stopAutoRotate = useCallback(() => {
-    setAutoRotate(false);
-  }, []);
-
-  const nextTab = useCallback(() => {
-    setActiveTab(current => {
-      const currentIndex = serviceCategories.findIndex(cat => cat.id === current);
-      const nextIndex = (currentIndex + 1) % serviceCategories.length;
-      return serviceCategories[nextIndex].id;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!autoRotate) return;
-    const interval = setInterval(nextTab, 5000);
-    return () => clearInterval(interval);
-  }, [autoRotate, nextTab]);
 
   const activeCategory = serviceCategories.find(cat => cat.id === activeTab) || serviceCategories[0];
 
   return (
-    <section id="services" className="relative bg-secondary-50/40 pt-16 md:pt-24 lg:pt-32" onMouseMove={autoRotate ? stopAutoRotate : undefined}>
+    <section id="services" className="relative bg-secondary-50/40 pt-16 md:pt-24 lg:pt-32">
       {/* Background Depth */}
       <div className="absolute inset-0 pointer-events-none opacity-50" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.08) 1px, transparent 0)',
@@ -311,7 +293,7 @@ export const Services: React.FC = () => {
               return (
                 <button
                   key={category.id}
-                  onClick={() => { stopAutoRotate(); setActiveTab(category.id); }}
+                  onClick={() => setActiveTab(category.id)}
                   role="tab"
                   aria-selected={isActive}
                   aria-controls={`panel-${category.id}`}

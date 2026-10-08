@@ -54,10 +54,6 @@ export const TheModel: React.FC = () => {
         {/* Heading */}
         <ScrollReveal variant="fadeUp">
           <div className="text-center mb-12 sm:mb-16">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50/80 backdrop-blur-sm rounded-full border border-primary-200/40 text-primary-600 text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-              The Model
-            </span>
             <h2 className="heading-2 mb-4">
               The shape of{' '}
               <span className="text-gradient">what&apos;s next.</span>
