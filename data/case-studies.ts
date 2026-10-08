@@ -262,6 +262,7 @@ export const caseStudies: CaseStudy[] = [
     projectDuration: 'Ongoing',
     heroImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1920&q=80',
     tagline: 'A species directory for Sri Lanka\'s biodiversity',
+    liveUrl: 'https://wildlife-demo.softx.world',
     isProduct: true,
 
     overview: 'Sri Lanka Wildlife Guide is a SoftX product: a biodiversity species directory for Sri Lanka, enriched by community photo uploads. It is built on a FastAPI (Python) backend.',
