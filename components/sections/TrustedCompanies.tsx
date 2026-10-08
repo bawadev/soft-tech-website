@@ -73,20 +73,24 @@ export const TrustedCompanies: React.FC = () => {
             {/* Left — Image */}
             <motion.div style={{ x: leftX, y: leftY, opacity: leftOpacity, scale: leftScale }}>
               <ScrollReveal variant="fadeLeft">
-                <div className="relative w-full h-[180px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="group relative w-full h-[180px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-primary-900/10 transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-18px_rgba(4,35,68,0.55)]">
+                  {/* The photo is warm honey/amber and the site is navy, so it is
+                      held back to ~55% saturation to sit in the palette — and
+                      returns to full colour on hover, so the craft comes alive
+                      when you reach for it. */}
                   <Image
                     src="/media/craftsmanship.png"
                     alt="Precision craftsmanship — the care we bring to every line of code"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-cover saturate-[0.55] contrast-[1.04] transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.06] group-hover:saturate-100"
                     priority
                   />
-                  {/* Subtle overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/20 to-transparent" />
+                  {/* Brand tint, lifted on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/45 via-primary-800/18 to-transparent transition-opacity duration-700 ease-out group-hover:opacity-40 pointer-events-none" />
                   {/* Caption badge */}
                   <div className="absolute bottom-0 right-0">
-                    <p className="text-sm font-medium text-white/90 italic bg-black/30 backdrop-blur-sm px-3 py-2 rounded-tl-xl">
+                    <p className="text-sm font-medium text-white/90 italic bg-primary-900/55 backdrop-blur-sm px-3 py-2 rounded-tl-xl transition-colors duration-500 group-hover:bg-primary-900/75">
                       &quot;Every line of code crafted with the same precision and care.&quot;
                     </p>
                   </div>
