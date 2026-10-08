@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button, Container } from '../ui';
@@ -11,18 +11,6 @@ const fadeUpVariants = {
 };
 
 export const Hero: React.FC = () => {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch((error) => {
-        console.log('Autoplay was prevented:', error);
-      });
-    }
-  }, []);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-50/70">
       {/* Background Pattern */}
@@ -49,7 +37,9 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
             >
               Enterprise Software.{' '}
-              <span className="text-gradient">Built the Human Way.</span>
+              <span className="text-gradient">
+                Built the <span className="whitespace-nowrap">Human Way.</span>
+              </span>
             </motion.h1>
 
             {/* Glass panel — paragraph + buttons + stats */}
@@ -88,26 +78,31 @@ export const Hero: React.FC = () => {
 
                 {/* Divider */}
                 <div className="relative z-10 border-t border-white/40 pt-5">
-                  <div className="flex flex-nowrap gap-4 sm:gap-8 items-center justify-between">
-                    <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">Industry-Proven</div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">Careers Built at Enterprise Scale</div>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">A Few</div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">Clients at a Time, by Design</div>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-lg sm:text-2xl font-bold text-primary-600">Decades</div>
-                      <div className="text-[10px] sm:text-xs text-secondary-700">The Lifespan We Build For</div>
-                    </div>
+                  <div className="grid grid-cols-3 gap-4 sm:gap-8 items-start">
+                    {[
+                      { value: 'Industry-Proven', label: 'Careers Built at Enterprise Scale' },
+                      { value: 'A Few', label: 'Clients at a Time, by Design' },
+                      { value: 'Decades', label: 'The Lifespan We Build For' },
+                    ].map((stat) => (
+                      <div key={stat.value} className="min-w-0">
+                        {/* fixed value row so a wrapped value never shifts its label */}
+                        <div className="flex items-end min-h-[3.25rem] sm:min-h-[4rem]">
+                          <div className="text-lg sm:text-2xl font-bold text-primary-600 leading-tight">
+                            {stat.value}
+                          </div>
+                        </div>
+                        <div className="mt-1 text-[11px] sm:text-xs text-secondary-700 leading-snug">
+                          {stat.label}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Right Content - Hero Video */}
+          {/* Right Content — hero image */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: 40 }}
@@ -115,37 +110,19 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
           >
             <div className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              {/* Video Background */}
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-                onCanPlay={() => setVideoLoaded(true)}
-                onLoadedData={() => setVideoLoaded(true)}
-                onError={() => console.log('Video failed to load')}
-              >
-                <source src="/media/hero-video.mp4" type="video/mp4" />
-              </video>
+              {/* Hero image — real craft, brand-graded */}
+              <Image
+                src="/media/hero-craft.webp"
+                alt="A SoftX engineer at work — hands on a keyboard, code on screen"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                className="object-cover scale-105 transition-transform duration-[1200ms] ease-out hover:scale-100"
+                priority
+              />
 
-              {/* First Frame Overlay - Fades out when video loads */}
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
-                videoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
-              }`}>
-                <Image
-                  src="/media/hero-video-frame-1.png"
-                  alt="Enterprise software engineering at SoftX World"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-primary-900/10 pointer-events-none"></div>
+              {/* Brand grade + depth so the panel sits in the palette */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/55 via-primary-800/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
             </div>
           </motion.div>
         </div>

@@ -9,42 +9,63 @@ export const Portfolio: React.FC = () => {
     {
       title: 'PlayMate',
       description: 'A social app to organize pickup sports games and find players nearby — realtime geospatial matchmaking across iOS, Android and web.',
-      image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80',
+      image: '/media/products/playmate.webp',
+      domain: 'playmate.now',
+      liveUrl: 'https://playmate.now',
       tags: ['React Native', 'Supabase', 'PostGIS'],
       caseStudySlug: 'playmate',
     },
     {
       title: 'Suwa Care',
       description: 'A telemedicine platform for doctor booking and in-app video consultations, built on Spring Boot with LiveKit video.',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80',
+      image: '/media/products/suwa-care.webp',
+      domain: 'suwa.care',
+      liveUrl: 'https://dev.suwa.care',
       tags: ['Spring Boot', 'LiveKit', 'Telemedicine'],
       caseStudySlug: 'suwa-care',
     },
     {
-      title: 'Sri Lanka Wildlife Guide',
-      description: 'A biodiversity species directory for Sri Lanka with community photo uploads, powered by a FastAPI backend.',
-      image: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=800&q=80',
-      tags: ['FastAPI', 'Python', 'Biodiversity'],
-      caseStudySlug: 'sri-lanka-wildlife-guide',
+      title: 'Mentyb',
+      description: 'A mental health platform pairing clients with licensed professionals — scheduling, secure video sessions, mood tracking and shared treatment plans.',
+      image: '/media/products/mentyb.webp',
+      domain: 'mentyb-demo.softx.world',
+      liveUrl: 'https://mentyb-demo.softx.world',
+      tags: ['React 19', 'Appwrite', 'LiveKit'],
+      caseStudySlug: 'mentyb',
     },
     {
       title: 'Ideanote',
       description: 'An AI note-taking app that summarizes notes and clusters them by meaning into a visual note network, with smart reminders.',
-      image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80',
+      image: '/media/products/ideanote.webp',
+      domain: 'ideanote.space',
+      liveUrl: 'https://ideanote-demo.softx.world',
       tags: ['Next.js', 'Convex', 'AI Clustering'],
       caseStudySlug: 'ideanote',
     },
     {
+      title: 'Sri Lanka Wildlife Guide',
+      description: 'A biodiversity species directory for Sri Lanka with community photo uploads, powered by a FastAPI backend.',
+      image: '/media/products/wildlife.webp',
+      domain: 'wildlife-demo.softx.world',
+      liveUrl: 'https://wildlife-demo.softx.world',
+      tags: ['FastAPI', 'Python', 'Biodiversity'],
+      caseStudySlug: 'sri-lanka-wildlife-guide',
+    },
+    {
       title: 'PropertyWeb',
       description: 'A real-estate marketplace with listing search, saved properties, an agent directory and multi-role accounts, built with React and Supabase.',
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      image: '/media/products/propertyweb.webp',
+      domain: 'propertyweb.online',
+      liveUrl: 'https://propertyweb.online',
       tags: ['React', 'Vite', 'Supabase'],
       caseStudySlug: 'propertyweb',
     },
     {
       title: 'Locked',
       description: 'A direct-to-consumer apparel store using AI-generated product photography, built with Next.js and a Neo4j graph database.',
-      image: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80',
+      image: '/media/products/locked.webp',
+      domain: 'locked-demo.softx.world',
+      liveUrl: 'https://locked-demo.softx.world',
       tags: ['Next.js', 'Neo4j', 'E-Commerce'],
       caseStudySlug: 'locked',
     },
@@ -84,19 +105,40 @@ export const Portfolio: React.FC = () => {
               zIndex: 12 + index * 2,
             }}
           >
-            <div className="max-w-7xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-primary-100/40 lg:min-h-[380px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
+            <div className="max-w-7xl mx-auto bg-white/70 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-primary-100/40">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch lg:min-h-[420px] lg:divide-x lg:divide-primary-100/60">
                 {/* Image */}
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="relative h-[160px] sm:h-[320px] lg:h-full group overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                      className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  <div className="relative h-[220px] sm:h-[360px] lg:h-full group overflow-hidden bg-gradient-to-br from-primary-100 via-primary-50 to-white">
+                    {/* brand glow behind the window */}
+                    <div
+                      aria-hidden
+                      className="absolute -top-20 -right-16 w-72 h-72 rounded-full bg-primary-300/45 blur-3xl pointer-events-none"
                     />
-                    <div className="absolute inset-0 bg-primary-900/25 pointer-events-none group-hover:scale-110 transition-transform duration-500 ease-out" />
+                    <div
+                      aria-hidden
+                      className="absolute -bottom-24 -left-12 w-64 h-64 rounded-full bg-primary-200/40 blur-3xl pointer-events-none"
+                    />
+                    {/* browser window holding the real product screenshot */}
+                    <div className="absolute inset-5 sm:inset-8 rounded-xl overflow-hidden bg-white shadow-[0_22px_50px_-14px_rgba(15,42,80,0.45)] ring-1 ring-primary-900/15 transition-transform duration-500 ease-out group-hover:-translate-y-1.5">
+                      <div className="flex items-center gap-1.5 h-7 sm:h-8 px-3 bg-secondary-200/80 border-b border-secondary-300/70">
+                        <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
+                        <span className="w-2 h-2 rounded-full bg-[#febc2e]" />
+                        <span className="w-2 h-2 rounded-full bg-[#28c840]" />
+                        <span className="ml-2 truncate text-[10px] sm:text-[11px] text-secondary-600 font-mono">
+                          {project.domain}
+                        </span>
+                      </div>
+                      <div className="relative h-[calc(100%-1.75rem)] sm:h-[calc(100%-2rem)]">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} product screenshot`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -119,7 +161,20 @@ export const Portfolio: React.FC = () => {
                     ))}
                   </div>
 
-                  <Button variant="outline" href={`/case-studies/${project.caseStudySlug}`}>View Case Study</Button>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button variant="outline" href={`/case-studies/${project.caseStudySlug}`}>View Case Study</Button>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-700 hover:text-primary-900 underline-offset-4 hover:underline transition-colors"
+                    >
+                      Visit live
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                        <path d="M7 17 17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

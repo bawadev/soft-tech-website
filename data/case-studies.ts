@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'Social & Sports',
     projectDuration: 'Ongoing',
-    heroImage: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/playmate.webp',
     tagline: 'Organize pickup games and find players near you',
     liveUrl: 'https://playmate.now',
     isProduct: true,
@@ -162,7 +162,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['React Native', 'Supabase', 'PostGIS', 'Realtime', 'Cross-Platform'],
 
     metaDescription: 'PlayMate is a SoftX social app for organizing pickup sports games and finding nearby players — built with React Native / Expo, Next.js and Supabase with PostGIS geospatial matchmaking.',
-    ogImage: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/playmate.webp',
   },
 
   {
@@ -171,7 +171,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'Digital Health',
     projectDuration: 'Ongoing',
-    heroImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/suwa-care.webp',
     tagline: 'Doctor booking and video consultations',
     liveUrl: 'https://dev.suwa.care',
     isProduct: true,
@@ -251,7 +251,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['Spring Boot', 'Java 21', 'LiveKit', 'Telemedicine', 'Next.js'],
 
     metaDescription: 'Suwa Care is a SoftX telemedicine platform for doctor booking and video consultations, built with Spring Boot 3.4 (Java 21), PostgreSQL/PostGIS, Next.js 16, Expo and LiveKit.',
-    ogImage: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/suwa-care.webp',
   },
 
   {
@@ -260,7 +260,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'Biodiversity & Nature',
     projectDuration: 'Ongoing',
-    heroImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/wildlife.webp',
     tagline: 'A species directory for Sri Lanka\'s biodiversity',
     liveUrl: 'https://wildlife-demo.softx.world',
     isProduct: true,
@@ -325,7 +325,103 @@ export const caseStudies: CaseStudy[] = [
     tags: ['FastAPI', 'Python', 'Biodiversity', 'Directory'],
 
     metaDescription: 'Sri Lanka Wildlife Guide is a SoftX biodiversity species directory with community photo uploads, built on a FastAPI (Python) backend.',
-    ogImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/wildlife.webp',
+  },
+
+  {
+    slug: 'mentyb',
+    title: 'Mentyb — Mental Health Platform',
+    company: 'SoftX',
+    industry: 'Mental Health & Telehealth',
+    projectDuration: 'Ongoing',
+    heroImage: '/media/products/mentyb.webp',
+    tagline: 'Therapy that fits around a life',
+    liveUrl: 'https://mentyb-demo.softx.world',
+    isProduct: true,
+
+    overview: 'Mentyb is a SoftX mental health platform that pairs clients with licensed professionals. It covers the whole arc of care: browsing and booking a professional, meeting over secure video, and the work that happens between sessions \u2014 mood tracking, journaling and shared treatment plans. It runs on React 19 with Appwrite for data, authentication and serverless functions, and LiveKit for video, with a React Native companion app.',
+
+    challenge: {
+      title: 'The Challenge: Care Stops at the Session',
+      description: 'Most therapy tooling handles the appointment and nothing else. The weeks between sessions \u2014 where the actual work happens \u2014 are left to memory and paper, and the two sides of the relationship see different, unsynchronised views of it.',
+      painPoints: [
+        'Booking, video and clinical notes live in separate, disconnected tools',
+        'Progress between sessions is tracked on paper, if at all',
+        'Clients and professionals do not share a view of the treatment plan',
+        'Clinical notes and crisis information demand careful access control',
+        'Someone in crisis needs help immediately, not an appointment next week'
+      ]
+    },
+
+    solution: {
+      title: 'The Solution: One Place for the Whole Arc of Care',
+      description: 'Mentyb puts discovery, the session itself and the work between sessions in one product, with the permission model drawn around the clinical relationship rather than bolted on afterwards.',
+      approach: [
+        'A verified professional directory with specialties, availability and instant sessions',
+        'Secure in-app video consultations over LiveKit',
+        'Mood logging and journaling so progress is visible between sessions',
+        'Treatment plans shared between client and professional',
+        'Crisis resources surfaced on every screen, not buried in a menu',
+        'Appwrite for data, authentication and serverless functions, with React Native for mobile'
+      ]
+    },
+
+    features: [
+      {
+        title: 'Professional Directory',
+        description: 'Browse licensed professionals by specialty and availability, with instant sessions when someone is free now.',
+      },
+      {
+        title: 'Secure Video Sessions',
+        description: 'Consultations happen in-app over LiveKit, with no third-party meeting links to pass around.',
+      },
+      {
+        title: 'Mood Tracking & Journaling',
+        description: 'Clients record how they are doing between sessions, so progress is something both sides can see.',
+      },
+      {
+        title: 'Shared Treatment Plans',
+        description: 'Plans are written and revised by the professional and visible to the client, so the work is not held in one head.',
+      },
+      {
+        title: 'Crisis Resources',
+        description: 'Helpline and crisis-text details stay one tap away on every screen.',
+      },
+    ],
+
+    technologies: [
+      {
+        category: 'Frontend',
+        items: ['React 19', 'Vite', 'TypeScript', 'Tailwind CSS']
+      },
+      {
+        category: 'Mobile',
+        items: ['React Native', 'Expo']
+      },
+      {
+        category: 'Backend',
+        items: ['Appwrite', 'Serverless Functions']
+      },
+      {
+        category: 'Realtime Video',
+        items: ['LiveKit']
+      }
+    ],
+
+    results: {
+      outcomes: [
+        'Live demo at mentyb-demo.softx.world',
+        'Client and professional portals sharing one treatment record',
+        'In-app video consultations without third-party meeting links',
+        'Mood tracking and journaling carried between sessions',
+        'A React Native companion app sharing the same backend'
+      ]
+    },
+
+    tags: ['React 19', 'Appwrite', 'LiveKit', 'React Native', 'Telehealth'],
+
+    metaDescription: 'Mentyb is a SoftX mental health platform: a verified professional directory, secure in-app video consultations, mood tracking, journaling and shared treatment plans \u2014 built with React 19, Appwrite and LiveKit.',
+    ogImage: '/media/products/mentyb.webp',
   },
 
   {
@@ -334,7 +430,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'Productivity & AI',
     projectDuration: 'Ongoing',
-    heroImage: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/ideanote.webp',
     tagline: 'Notes that organize themselves by meaning',
     liveUrl: 'https://ideanote-demo.softx.world',
     isProduct: true,
@@ -414,7 +510,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['Next.js', 'Convex', 'Clerk', 'OpenAI', 'AI Clustering'],
 
     metaDescription: 'Ideanote is a SoftX AI note-taking app with auto-summarization, semantic clustering, a visual note network and smart reminders — built with Next.js, Convex, Clerk, OpenAI and Mistral.',
-    ogImage: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/ideanote.webp',
   },
 
   {
@@ -423,7 +519,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'Real Estate / PropTech',
     projectDuration: 'Ongoing',
-    heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/propertyweb.webp',
     tagline: 'Search listings, save properties, connect with agents',
     liveUrl: 'https://propertyweb.online',
     isProduct: true,
@@ -495,7 +591,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['React', 'Vite', 'Supabase', 'Marketplace', 'PropTech'],
 
     metaDescription: 'PropertyWeb is a SoftX real-estate marketplace with listing search, saved properties, an agent directory and multi-role accounts, built with React (Vite) and Supabase.',
-    ogImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/propertyweb.webp',
   },
 
   {
@@ -504,7 +600,7 @@ export const caseStudies: CaseStudy[] = [
     company: 'SoftX',
     industry: 'E-Commerce / Apparel',
     projectDuration: 'In development',
-    heroImage: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1920&q=80',
+    heroImage: '/media/products/locked.webp',
     tagline: 'Direct-to-consumer apparel with AI-generated product photography',
     liveUrl: 'https://locked-demo.softx.world',
     isProduct: true,
@@ -573,7 +669,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ['Next.js', 'Neo4j', 'E-Commerce', 'AI Imagery', 'Internal Venture'],
 
     metaDescription: 'Locked is a SoftX internal venture: a direct-to-consumer apparel store with AI-generated product photography, built with Next.js and Neo4j.',
-    ogImage: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80',
+    ogImage: '/media/products/locked.webp',
   }
 ];
 
